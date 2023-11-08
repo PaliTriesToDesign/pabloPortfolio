@@ -1,0 +1,11 @@
+/*TYPOGRAPHY===========================*/
+
+body {
+    font-family: $font-headings;
+    font-weight: $fw-regular;
+}
+
+h1, h2, h3 {
+    font-family: $font-body;
+    font-weight: $fw-bold;
+}
