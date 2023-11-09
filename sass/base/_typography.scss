@@ -1,12 +1,17 @@
 /*TYPOGRAPHY===========================*/
 
 body {
-    font-family: $font-headings;
+    font-family: $font-body;
     font-weight: $fw-regular;
     color: $contrast-colour;
 }
 
 h1, h2, h3 {
-    font-family: $font-body;
+    font-family: $font-headings;
     font-weight: $fw-bold;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }

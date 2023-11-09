@@ -3,3 +3,20 @@
 body {
     background-color: $background-colour;
 }
+
+body:has(.starship-system:hover) .quote {
+    opacity: 1;
+}
+
+.quote {
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+/*LIFT OF SECTION=================*/
+
+.lift-off-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

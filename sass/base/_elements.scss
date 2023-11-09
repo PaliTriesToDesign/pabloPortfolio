@@ -1,7 +1,86 @@
+/*SECTIONS===========================*/
+section {
+    height: 100vh;
+    max-width: 40vw;
+}
+
+
+
 /*MEDIA===========================*/
 
 img {
     max-width: 100%;
     height: auto;
     display: block;
+    pointer-events: none;
 }
+
+
+/*LINKS========================*/
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+/*LISTS========================*/
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        font-size: $fs-b-s;
+        transition: all 400ms ease-in-out;
+        opacity: 0.5;
+
+        &:hover {
+            color: $accent-colour;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+/*FOLLOWER========================*/
+
+.follower {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    opacity: 0.75;
+}
+
+body:has(.starship-system:hover) .follower {
+    scale: 1.5;
+    background-color: $background-colour;
+
+}
+
+
+/*MASKS===========================*/
+
+
+/*ELEMENT===========================*/
+
+.element {
+    width: 35px;
+    height: 35px;
+    background-color: $background-colour;
+    border-radius: 100%;
+    border: 1px dashed $contrast-colour;
+    transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+
+    &:hover {
+        scale: 1.2;
+        rotate: 45deg;
+    }
+}
+
+

@@ -1,0 +1,18 @@
+html, body {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    // cursor: none; 
+    overflow-x: hidden;
+    scrollbar-color: transparent;
+    position: relative;
+}
+

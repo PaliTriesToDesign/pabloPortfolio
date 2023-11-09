@@ -8,11 +8,157 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Test</h1>
-    <img src="https://picsum.photos/2000/600" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatum illum dolorem obcaecati eum doloribus beatae officiis, ex mollitia amet tenetur et assumenda ipsa sequi numquam dolor magnam qui incidunt.</p>
+    <nav class="navigation-bar">
+        <div class="personal-logo">
+            <div class="element"></div>
+        </div>
+
+
+        <ul>
+            <li><a href="#">+ CONTACT ME</a></li>
+            <li><a href="#">+ ABOUT ME</a></li>
+            <li><a href="#">+ PROJECTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="follower"></div>
+
+    
+
+    <!-- Loader Section -->
+    <section class="loader-section visually-hidden">
+        <div class="title-mask prevent-select">
+            <div class="bottom-element">
+                <h1 class="main-title">Pablo's Portfolio</h1>
+            </div>
+        </div>
+
+        <div class="starship-system" >
+            <div class="quote">
+                <p>"Ad Astra Per Aspera"</p>
+            </div>
+            <div class="starship-container">
+                <img class="starship rotating" src="assets/starship/sprite.png" alt="" draggable="false">
+            </div>
+            <div class="booster-container">
+                <img class="booster rotating" src="assets/starship/boostersprite_1.png" alt="" draggable="false">
+            </div>
+        </div>
+    </section>
+    <!-- End Of Loader Section -->
+
+    <!-- Test Section -->
+    <section id="contact-me" class="test">
+        <h1>Contact Me</h1>
+    </section>
+    <!-- End of Test Section -->
+
+    <!-- Test Section -->
+    <section id="landing" class="test">
+        <h1>Landing</h1>
+    </section>
+    <!-- End of Test Section -->
+    
+    <!-- Test Section -->
+    <section id="projects" class="test">
+        <h1>Projects</h1>
+    </section>
+    <!-- End of Test Section -->
+
+    <!-- Test Section -->
+    <section id="max-q" class="test">
+        <h1>Max Q</h1>
+    </section>
+    <!-- End of Test Section -->
+
+    <!-- What I Do Section -->
+    <section class="what-i-do-section">
+        <ul class="what-i-do-list">
+            <li class="what-i-do-item">UX</li>
+            <li class="what-i-do-item">UI</li>
+            <li class="what-i-do-item">Coding</li>
+            <li class="what-i-do-item">Illustrating</li>
+        </ul>
+
+        <h2>What I Do</h2>
+    </section>
+    <!-- End of What I Do Section -->
+
+
+    <!-- Intro Section -->
+    <section id="about-me" class="intro-section">
+        <h1 class="intro-title">Hey!</h1>
+        <p class="intro-text">I'm Pablo Montoya Varela. I am passionate about web design, coding and illustration. When I'm not crafting digital art, you can find me exploring new design trends or sketching in my notebook.</p>
+
+        <h2>About Me</h2>
+
+    </section>
+    <!-- End of Intro Section -->
+
+    <!--  Birds Section -->
+    <section class="birds-section">
+        <div class="bird"></div>
+        <div class="bird"></div>
+        <div class="bird"></div>
+    </section>
+    <!-- End of Birds Section -->
+
+    <!-- Lift Off Section -->
+    <section id="lift-off" class="lift-off-section">
+        <div class="starship-system" >
+            <div class="starship-container">
+                <img class="starship rotating" src="assets/starship/sprite.png" alt="" draggable="false">
+            </div>
+            <div class="booster-container">
+                <img class="booster rotating" src="assets/starship/boostersprite_1.png" alt="" draggable="false">
+            </div>
+        </div>
+    </section>
+    <!-- End Of Lift Off Section -->
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="altitude-container">
+            <div class="element"></div>
+            <div class="altitude">
+                <p class="altitude-title">Altitude</p>
+                <p class="altitude-value">0m</p>
+            </div>
+        </div>
+
+        <div class="stage-container">
+            <div class="stage-inner">
+                <div class="element"></div>
+                <div class="active-stage-container">
+                    <p class="stage-title">Lift Off</p>
+                    <div class="progress">
+                        <div class="progress-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stages">
+                <ul class="stages-list">
+                    <li><a href="#lift-off">Lift Off!</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#max-q">Max Q</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#landing">Landing</a></li>
+                    <li><a href="#contact-me">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="progress-icons">
+            <div class="element"></div>
+            <div class="element"></div>
+        </div>
+    </div>
+    <!-- End Of Progress Bar -->
+
+    
 </body>
 </html>

@@ -1,0 +1,51 @@
+/*STARSHIP =======================*/
+
+.starship-system {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // animation: translation 8000ms infinite; 
+}
+
+.starship-container, .booster-container {
+    width: 65px;
+    overflow: hidden;
+
+    img {
+        max-width: unset;
+    }
+}
+
+.starship-container {
+    height: 195px;
+}
+
+.booster-container {
+    height: 255px;
+    // position: absolute; 
+    top: 95%;
+}
+
+.rotating {
+    animation: rotation 950ms steps(4) infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes translation {
+    from {
+        transform: translateY(0rem);
+    }
+    to {
+        transform: translateY(-30rem);
+    }
+}

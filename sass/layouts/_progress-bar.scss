@@ -1,0 +1,60 @@
+.progress-bar-container {
+    position: fixed;
+    width: 100%;
+    padding: 0 4rem;
+    bottom: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+
+    background-color: $background-colour;
+
+    .altitude-container, .stage-container, .progress-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .altitude-container .altitude .altitude-value {
+        font-weight: $fw-bold;
+    }
+
+    .stage-inner {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .stage-container {
+        gap: 2rem;
+
+        .stage-title {
+            font-weight: $fw-bold;
+        }
+    }
+
+    .stage-container .progress {
+        width: 10vw;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $contrast-colour;
+
+        .progress-inner {
+            height: 4px;
+            width: 0px;
+            border-radius: 4px;
+            background-color: $accent-colour;
+        }
+    }
+
+    .stage-container .stages-list {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 1rem;
+
+        li {
+            font-size: $fs-pb-s;
+        }
+    }
+}

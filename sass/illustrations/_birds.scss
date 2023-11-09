@@ -1,0 +1,33 @@
+.birds-section {
+    position: relative;
+
+    width: 100%;
+}
+
+.bird {
+    width: 10px;
+    height: 10px;
+    background-color: $accent-colour;
+
+    position: absolute;
+
+    transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+
+    &:hover {
+        border-radius: 100%;
+    }
+}
+
+.bird:nth-of-type(1) {
+    left: 0rem;
+    top: 5rem;
+}
+
+.bird:nth-of-type(2) {
+    left: 10rem;
+    top: 10rem
+}
+
+.bird:nth-of-type(3) {
+    left: 20rem;
+}
