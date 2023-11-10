@@ -98,10 +98,26 @@ h1, h2, h3, p {
   padding: 0;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
 /*SECTIONS===========================*/
 section {
   height: 100vh;
-  max-width: 40vw;
+  max-width: 75vw;
 }
 
 /*MEDIA===========================*/
@@ -194,10 +210,41 @@ body {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   scrollbar-color: transparent;
   position: relative;
+}
+
+button, .launch-project-button {
+  border: #0A0A0A;
+  font-weight: 0.7rem;
+}
+
+.projects-section {
+  width: 100%;
+}
+
+.project {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  padding: 1rem 4rem;
+  width: 100%;
+  background-color: #0A0A0A;
+}
+.project .project-text-container {
+  opacity: 0.5;
+}
+.project:hover {
+  color: #0A0A0A;
+  background-color: #EC5663;
+  padding-left: 4rem;
+  transform: translateX(64px);
+}
+.project:hover .project-text-container {
+  opacity: 1;
 }
 
 .progress-bar-container {
@@ -250,52 +297,126 @@ body {
   font-size: 0.7rem;
 }
 
-/*STARSHIP =======================*/
-.starship-system {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+.stars-section {
   position: relative;
+  width: 100%;
 }
 
-.starship-container, .booster-container {
-  width: 65px;
-  overflow: hidden;
+.stars {
+  width: 10px;
+  height: 10px;
+  background-color: #DEDEDE;
+  position: absolute;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
-.starship-container img, .booster-container img {
-  max-width: unset;
-}
-
-.starship-container {
-  height: 195px;
-}
-
-.booster-container {
-  height: 255px;
-  top: 95%;
+.stars:hover {
+  border-radius: 100%;
 }
 
-.rotating {
-  animation: rotation 950ms steps(4) infinite;
+.stars:nth-of-type(1) {
+  left: 0rem;
+  top: 5rem;
 }
 
-@keyframes rotation {
-  from {
-    transform: translate3d(0px, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
+.stars:nth-of-type(2) {
+  left: 10rem;
+  top: 10rem;
 }
-@keyframes translation {
-  from {
-    transform: translateY(0rem);
-  }
-  to {
-    transform: translateY(-30rem);
-  }
+
+.stars:nth-of-type(3) {
+  left: 20rem;
 }
+
+.satellites-section {
+  position: relative;
+  width: 100%;
+}
+
+.satellite {
+  width: 10px;
+  height: 10px;
+  background-color: #EC5663;
+  position: absolute;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+.satellite:hover {
+  border-radius: 100%;
+}
+
+.satellite:nth-of-type(1) {
+  left: 0rem;
+  top: 5rem;
+}
+
+.satellite:nth-of-type(2) {
+  left: 10rem;
+  top: 10rem;
+}
+
+.satellite:nth-of-type(3) {
+  left: 20rem;
+}
+
+.planes-section {
+  position: relative;
+  width: 100%;
+}
+
+.plane {
+  width: 10px;
+  height: 10px;
+  background-color: #EC5663;
+  position: absolute;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+.plane:hover {
+  border-radius: 100%;
+}
+
+.plane:nth-of-type(1) {
+  left: 0rem;
+  top: 5rem;
+}
+
+.plane:nth-of-type(2) {
+  left: 10rem;
+  top: 10rem;
+}
+
+.plane:nth-of-type(3) {
+  left: 20rem;
+}
+
+.clouds-section {
+  position: relative;
+  width: 100%;
+}
+
+.cloud {
+  width: 10px;
+  height: 10px;
+  background-color: #DEDEDE;
+  position: absolute;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+.cloud:hover {
+  border-radius: 100%;
+}
+
+.cloud:nth-of-type(1) {
+  left: 0rem;
+  top: 5rem;
+}
+
+.cloud:nth-of-type(2) {
+  left: 10rem;
+  top: 10rem;
+}
+
+.cloud:nth-of-type(3) {
+  left: 20rem;
+}
+
 .birds-section {
   position: relative;
   width: 100%;
@@ -326,6 +447,57 @@ body {
   left: 20rem;
 }
 
+/*STARSHIP =======================*/
+.starship-system {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: -1;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.starship-container, .booster-container {
+  width: 65px;
+  overflow: hidden;
+}
+.starship-container img, .booster-container img {
+  max-width: unset;
+}
+
+.starship-container {
+  height: 195px;
+}
+
+.booster-container {
+  height: 255px;
+  position: absolute;
+  top: 95%;
+}
+
+.rotating {
+  animation: rotation 800ms steps(4) infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes translation {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(-30rem);
+  }
+}
 /*HOME============================*/
 body {
   background-color: #0A0A0A;

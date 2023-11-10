@@ -15,3 +15,19 @@ h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
+
+h1 {
+    font-size: $fs-h-l;
+}
+
+h2 {
+    font-size: $fs-h-m;
+}
+
+h3 {
+    font-size: $fs-h-s;
+}
+
+p {
+    font-size: $fs-b-m;
+}

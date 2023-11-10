@@ -1,0 +1,29 @@
+.projects-section {
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    padding: 1rem 4rem;
+    width: 100%;
+
+    background-color: $background-colour;
+
+    .project-text-container {
+        opacity: 0.5;
+    }
+
+    &:hover {
+        color: $background-colour;
+        background-color: $accent-colour;
+        padding-left: 4rem;
+        transform: translateX(64px);
+    }
+
+    &:hover .project-text-container {
+        opacity: 1;
+    }
+}

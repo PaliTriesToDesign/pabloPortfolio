@@ -5,8 +5,13 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    // animation: translation 8000ms infinite; 
+    position: fixed;
+    z-index: -1;
+    // animation: translation 8000ms infinite;
+
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .starship-container, .booster-container {
@@ -24,12 +29,13 @@
 
 .booster-container {
     height: 255px;
-    // position: absolute; 
+    position: absolute; 
     top: 95%;
+    // transform-origin: center;
 }
 
 .rotating {
-    animation: rotation 950ms steps(4) infinite;
+    animation: rotation 800ms steps(4) infinite;
 }
 
 @keyframes rotation {

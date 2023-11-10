@@ -1,6 +1,7 @@
 const follower = document.querySelector('.follower');
 const progressBar = document.querySelector('.progress-inner');
 const altitude = document.querySelector('.altitude-value');
+const starship = document.querySelector('.starship-system')
 
 // CURSOR=================
 document.addEventListener('mousemove', function(e) {
@@ -22,6 +23,10 @@ document.addEventListener("scroll", function () {
   
     progressBar.style.display = "block";
     progressBar.style.width = progress + "%";
+
+    
+    // STARSHIP FOLLOWING SCROLL ===
+    starship.style.top = `20px`;
 });
 
   // ALTITUDE=====================
@@ -39,3 +44,4 @@ document.addEventListener("scroll", function () {
 
   window.addEventListener("scroll", updateCounter);
   updateCounter(); // Call the function initially
+
