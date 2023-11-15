@@ -15,7 +15,7 @@ document.addEventListener('mousemove', function(e) {
   });
   
 
-// PROGRESS BAR=================
+// // PROGRESS BAR=================
 document.addEventListener("scroll", function () {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollTop = window.scrollY;
@@ -45,3 +45,12 @@ document.addEventListener("scroll", function () {
   window.addEventListener("scroll", updateCounter);
   updateCounter(); // Call the function initially
 
+
+
+  // use localstorage to store a flag for the first time
+  // if user opened website first time
+  // then scroll at the bottom
+  // else do nothing
+  window.onbeforeunload = function () {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
