@@ -218,7 +218,87 @@ body {
   margin: 0;
 }
 
-button, .launch-project-button {
+/*CONTACT ME======================*/
+.contact-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+}
+.contact-section .section-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  background-color: #0A0A0A;
+  padding: 2rem 0;
+}
+.contact-section .contact-me-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+.contact-section .contact-me-wrapper .section-title {
+  text-align: center;
+}
+.contact-section .pali-tries-to-design {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.contact-section .pali-tries-to-design h1 {
+  line-height: 0.85;
+}
+.contact-section .pali-tries-to-design h1:last-child {
+  color: #EC5663;
+}
+
+form#contactMe {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+form#contactMe .input-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+form#contactMe .input-group {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.25rem;
+}
+form#contactMe .input-group label {
+  opacity: 0.5;
+}
+form#contactMe .input-group input {
+  color: #DEDEDE;
+  background-color: #0A0A0A;
+  border: 2px solid #DEDEDE;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+form#contactMe .input-group #message {
+  background-color: #0A0A0A;
+  border-radius: 0.5rem;
+  border: 2px solid #DEDEDE;
+  padding: 0.25rem 0.5rem;
+  height: 5rem;
+}
+form#contactMe #submitButton {
+  background-color: #EC5663;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  width: fit-content;
+  padding: 0.25rem 1rem;
+  border: 2px solid #EC5663;
+  align-self: flex-end;
+}
+form#contactMe #submitButton:hover {
+  background-color: #0A0A0A;
+  color: #EC5663;
+  border: 2px solid #EC5663;
+}
+
+button, .launch-project-button, #submitButton {
   border: #0A0A0A;
   font-weight: 0.7rem;
 }
@@ -539,9 +619,68 @@ button, .launch-project-button {
   justify-content: center;
   position: fixed;
   z-index: -1;
-  top: 50%;
+  top: 33.5%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.starship-system.floating {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(-54%, -50%);
+  }
+  50% {
+    transform: translate(-46%, -48%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.starship-system.shaking {
+  animation-name: shaking;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes shaking {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .starship-container, .booster-container {
@@ -681,7 +820,7 @@ section .section-title {
   border-radius: 10rem;
   animation: fade 8s infinite;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;

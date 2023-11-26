@@ -61,27 +61,37 @@
 
     <!-- Contact Section -->
     <section id="contact-me" class="contact-section">
-        <!-- <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-          
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          
-            <input type="submit" value="Submit">
-          </form> -->
-
-
-          <form action="https://formsubmit.co/pablo@palitriestodesign.com" method="POST">
-            <input type="email" name="email" placeholder="Your Email Address" required>
-            <input type="hidden" name="_next" value="https://wwww.palitriestodesign.com/pages/thankyou.html">
-            <input type="text" name="message" placeholder="Write your message here..." required>
-            <button type="submit">Send</button>
-       </form>
-          <h3>Contact Me</h3>
+        
+        <div class="section-wrapper">
+            <div class="contact-me-wrapper">
+                <div class="pali-tries-to-design">
+                    <h1>Pali</h1>
+                    <h1>Triesto</h1>
+                    <h1>design</h1>
+                </div>
+                
+                <form id="contactMe" action="https://formsubmit.co/pablo@palitriestodesign.com" method="POST">
+                    <div class="input-wrapper">
+                        <div class="input-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="username">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_next" value="https://palitriestodesign.com/pages/thankyou.html">
+                    <div class="input-group">
+                        <label for="message">Message:</label>
+                        <textarea type="text" id="message" name="message" placeholder="Write your message here..." required rows="5"></textarea>
+                    </div>
+                    <button id="submitButton" type="submit">Send</button>
+                </form>
+                        </div>
+                
+                <h3 class="section-title">Contact Me</h3>
+            </div>
     </section>
     <!-- End of Contact Section -->
 
@@ -94,11 +104,11 @@
     <!--  Stars Section -->
     <!-- Create this section after Dec 6th -->
 
-    <!-- <section class="stars-section">
+    <section class="stars-section">
         <div class="stars"></div>
         <div class="stars"></div>
         <div class="stars"></div>
-    </section> -->
+    </section>
     <!-- End of Stars Section -->
 
     <!--  Satellites Section -->
@@ -182,12 +192,15 @@
     </section>
     <!-- End of Projects Section -->
 
+
     <!--  Earth Curvature Section -->
     <!-- Create this section after Dec 6th -->
-    <!-- <section class="earth-curvature-section">
+
+    <section class="earth-curvature-section">
         <div class="earth"></div>
-    </section> -->
+    </section>
     <!-- End of Earth Curvature Section -->
+
 
     <!-- Max Q Section -->
     <!-- Create this section after Dec 6th -->
@@ -195,6 +208,7 @@
         <h1>Max Q</h1>
     </section> -->
     <!-- End of Max Q Section -->
+
 
     <!--  Planes Section -->
     <!-- Create this section after Dec 6th -->
@@ -206,6 +220,7 @@
     </section> -->
     <!-- End of Clouds Section -->
 
+    
     <!--  Clouds Section -->
     <!-- Create this section after Dec 6th -->
 
@@ -252,12 +267,11 @@
 
     <!--  Birds Section -->
     <!-- Create this section after Dec 6th -->
-
-    <!-- <section class="birds-section">
+    <section class="birds-section">
             <div class="bird"></div>
             <div class="bird"></div>
             <div class="bird"></div>
-    </section> -->
+    </section>
     <!-- End of Birds Section -->
 
     <!-- Lift Off Section -->
@@ -265,16 +279,19 @@
         <div class="scroll-up-section">
             <p>Scroll up to explore...</p>
         </div>
+        <div class="launch-pad-container">
+            <img src="/assets/starship/launchPad.png" alt="Launch Pad">
+        </div>
     </section>
     <!-- End Of Lift Off Section -->
 
     <!-- Starship -->
-    <div class="starship-system" >
+    <div class="starship-system " >
         <div class="starship-container">
-            <img class="starship rotating" src="assets/starship/sprite.png" alt="" draggable="false">
+            <img class="starship " src="assets/starship/sprite.png" alt="" draggable="false">
         </div>
         <div class="booster-container">
-            <img class="booster rotating" src="assets/starship/boostersprite_1.png" alt="" draggable="false">
+            <img class="booster " src="assets/starship/boostersprite_1.png" alt="" draggable="false">
         </div>
     </div>
     <!-- End Of Starship -->

@@ -1,0 +1,95 @@
+/*CONTACT ME======================*/
+.contact-section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+
+    .section-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        background-color: $background-colour;
+        padding: 2rem 0;
+    }
+
+    .contact-me-wrapper {
+        display: flex;
+        gap: 2rem;
+
+        .section-title {
+            text-align: center;
+        }
+    }
+
+    .pali-tries-to-design {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+
+        h1 { 
+            line-height: 0.85;
+        }
+
+        h1:last-child {
+            color: $accent-colour;
+        }
+    }
+}
+
+form#contactMe {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+
+    .input-wrapper {
+        display: flex;
+        gap: 1rem;
+    }
+
+        .input-group {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0.25rem;
+
+            label {
+                opacity: 0.5;
+            }
+
+            input {
+                color: $contrast-colour;
+                background-color: $background-colour;
+                border: 2px solid $contrast-colour;
+                border-radius: 0.5rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            #message {
+                background-color: $background-colour;
+                border-radius: 0.5rem;
+                border: 2px solid $contrast-colour;
+                padding: 0.25rem 0.5rem;
+                height: 5rem;
+            }
+        }
+
+        #submitButton {
+            background-color: $accent-colour;
+            border-radius: 0.5rem;
+            font-weight: $fw-bold;
+            width: fit-content;
+            padding: 0.25rem 1rem;
+            border: 2px solid $accent-colour;
+
+            align-self: flex-end;
+
+            &:hover {
+                background-color: $background-colour;
+                color: $accent-colour;
+                border: 2px solid $accent-colour
+            }
+        }
+       
+
+}
