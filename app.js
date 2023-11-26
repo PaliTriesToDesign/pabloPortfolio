@@ -1,21 +1,52 @@
+const bodyHeight = document.body.scrollHeight;
 const follower = document.querySelector('.follower');
+const project = document.getElementById('project');
 const progressBar = document.querySelector('.progress-inner');
 const altitude = document.querySelector('.altitude-value');
 const starship = document.querySelector('.starship-system')
+const mute = document.getElementById('soundIcon')
 
-// CURSOR=================
+mute.addEventListener('click', function() {
+  let roomTone = document.getElementById('roomTone');
+  let soundIcon = document.getElementById("soundIcon");
+  
+  if (roomTone.paused) {
+    roomTone.play();
+    soundIcon.innerHTML = `<i class="fa-solid fa-volume-high mute-icon"></i>`
+  } else {
+    roomTone.pause();
+    soundIcon.innerHTML = `<i class="fa-solid fa-volume-xmark mute-icon"></i>`
+
+  }
+})
+
+//CURSOR=================
 document.addEventListener('mousemove', function(e) {
-    let left = e.clientX;
-    let top = e.clientY;
+    let left = e.offsetX;
+    let top = e.offsetY;
     follower.style.left = left + 'px';
     follower.style.top = top + 'px';
 
     // Use the same cursor position for the clip-path
     // hiddenElement.style.clipPath = `circle(25% at ${left}px ${top}px)`;
   });
+
+// PROJETCS=======================
+project.addEventListener("mousemove", function(e){
+  let top = e.offsetY;
+  let left = e.offsetX;
+
+  const previewImages = document.getElementById('previewImages');
+  
+  previewImages.style.top = `${top}px`;
+  previewImages.style.left = `${left}px`;
+
+  console.log(e.offsetY, e.clientY)
+});
+
   
 
-// // PROGRESS BAR=================
+// PROGRESS BAR=================
 document.addEventListener("scroll", function () {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollTop = window.scrollY;

@@ -103,11 +103,11 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 p {
@@ -200,7 +200,7 @@ nav.navigation-bar li {
 }
 
 html, body {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -215,6 +215,7 @@ body {
   overflow-x: hidden;
   scrollbar-color: transparent;
   position: relative;
+  margin: 0;
 }
 
 button, .launch-project-button {
@@ -226,25 +227,102 @@ button, .launch-project-button {
   width: 100%;
 }
 
+.project-link {
+  display: block;
+}
+
 .project {
   display: flex;
   flex-flow: row nowrap;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
   padding: 1rem 4rem;
   width: 100%;
   background-color: #0A0A0A;
+  position: relative;
+}
+.project:hover .project-preview-images-wrapper {
+  opacity: 1;
+  display: block;
+}
+.project .project-preview-images-wrapper {
+  aspect-ratio: 16/9;
+  width: 15rem;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0;
+  display: none;
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0px, -50%);
+  }
+  50% {
+    transform: translate(0px, -45%);
+  }
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+.project .project-preview-images-wrapper .preview-image {
+  width: 100%;
+  height: 100%;
+  background-color: #DEDEDE;
+  border-radius: 0.5rem;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 200ms;
+}
+.project .project-preview-images-wrapper .preview-image:not(.preview-image:first-child) {
+  background-color: tomato;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.project .project-preview-images-wrapper:hover .preview-image:last-child {
+  transform-origin: bottom left;
+  transform: translate(2rem, -1rem) rotate(-15deg);
+}
+.project .project-preview-images-wrapper:hover .preview-image:nth-child(2) {
+  transform-origin: top left;
+  transform: translate(2rem, 1rem) rotate(15deg);
 }
 .project .project-text-container {
   opacity: 0.5;
+}
+.project .project-text-container .project-link:hover {
+  text-decoration: underline;
 }
 .project:hover {
   color: #0A0A0A;
   background-color: #EC5663;
   padding-left: 4rem;
-  transform: translateX(64px);
+}
+.project:hover .launch-project-button {
+  opacity: 1;
 }
 .project:hover .project-text-container {
   opacity: 1;
+  transform: translateX(1rem);
+}
+.project .launch-project-button {
+  padding: 0.25rem 1rem;
+  border-radius: 10rem;
+  border: 2px solid #0A0A0A;
+  opacity: 0;
+}
+.project .launch-project-button > * {
+  font-size: 1rem;
+}
+.project .launch-project-button:hover {
+  background-color: #0A0A0A;
+  color: #EC5663;
 }
 
 .progress-bar-container {
@@ -295,6 +373,11 @@ button, .launch-project-button {
 }
 .progress-bar-container .stage-container .stages-list li {
   font-size: 0.7rem;
+}
+.progress-bar-container .altitude-container .element, .progress-bar-container .progress-icons .element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stars-section {
@@ -419,6 +502,7 @@ button, .launch-project-button {
 
 .birds-section {
   position: relative;
+  max-width: unset;
   width: 100%;
 }
 
@@ -434,8 +518,8 @@ button, .launch-project-button {
 }
 
 .bird:nth-of-type(1) {
-  left: 0rem;
-  top: 5rem;
+  left: 100%;
+  top: 10%;
 }
 
 .bird:nth-of-type(2) {
@@ -455,7 +539,7 @@ button, .launch-project-button {
   justify-content: center;
   position: fixed;
   z-index: -1;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -507,18 +591,115 @@ body:has(.starship-system:hover) .quote {
   opacity: 1;
 }
 
+section .section-title {
+  text-align: center;
+}
+
 .quote {
   opacity: 0;
   transition: all 500ms ease-in-out;
 }
 
-/*LIFT OF SECTION=================*/
-.lift-off-section {
+/*PROJECTS SECTION================*/
+.projects-section {
+  max-width: unset;
+}
+.projects-section .section-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  background-color: #0A0A0A;
+}
+.projects-section .section-wrapper .section-content-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/*END OF PROJECTS SECTION================*/
+/*ABOUT ME SECTION================*/
+.about-me-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.about-me-section .section-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 50%;
+  background-color: #0A0A0A;
+}
+.about-me-section .section-wrapper .section-title {
+  text-align: center;
+}
+.about-me-section .section-wrapper strong {
+  color: #EC5663;
+}
+.about-me-section .section-wrapper .section-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.about-me-section .section-wrapper .section-name-wrapper .section-name {
+  opacity: 0.5;
+}
+.about-me-section .section-wrapper .section-name-wrapper .section-name.active {
+  opacity: 1;
+}
 
+/*END OF ABOUT ME SECTION================*/
+/*BIRDS SECTION=================*/
+.birds-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.birds-section .birds-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/*END OF BIRDS SECTION=================*/
+/*LIFT OFF SECTION=================*/
+.lift-off-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-width: unset;
+}
+
+.scroll-up-section {
+  background-color: #DEDEDE;
+  color: #0A0A0A;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10rem;
+  animation: fade 8s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+}
+@keyframes fade {
+  0%, 50%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+.scroll-up-section p {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/*END OF LIFT OFF SECTION==========*/
 /*ACCESSIBILITY==================*/
 .visually-hidden {
   clip: rect(0 0 0 0);

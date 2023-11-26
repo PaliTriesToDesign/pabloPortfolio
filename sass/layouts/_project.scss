@@ -2,28 +2,117 @@
     width: 100%;
 }
 
+.project-link {
+    display: block;
+}
+
 .project {
     display: flex;
     flex-flow: row nowrap;
-    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
 
     padding: 1rem 4rem;
     width: 100%;
 
     background-color: $background-colour;
 
+    position: relative;
+
+    
+    &:hover .project-preview-images-wrapper {
+        opacity: 1;
+        display: block;
+    }
+
+    .project-preview-images-wrapper {
+        aspect-ratio: 16/9;
+        width: 15rem;
+
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        opacity: 0;
+        display: none;
+
+        animation-name: floating;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        @keyframes floating {
+            0% { transform: translate(0px,  -50%); }
+            50%  { transform: translate(0px, -45%); }
+            100%   { transform: translate(0, -50%); }    
+        }
+        
+        .preview-image {
+            width: 100%;
+            height: 100%;
+            background-color: $contrast-colour;
+            border-radius: 0.5rem;
+
+            transition: all 400ms cubic-bezier(.47,1.64,.41,.8) 200ms;
+        }
+
+        & .preview-image:not(.preview-image:first-child){
+            background-color: tomato;
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        &:hover .preview-image:last-child {
+            transform-origin: bottom left;
+            transform: translate(2rem, -1rem) rotate(-15deg);
+        }
+
+        &:hover .preview-image:nth-child(2) {
+            transform-origin: top left;
+            transform: translate(2rem, 1rem) rotate(15deg);
+        }
+    }
+
     .project-text-container {
         opacity: 0.5;
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
     }
 
     &:hover {
         color: $background-colour;
         background-color: $accent-colour;
         padding-left: 4rem;
-        transform: translateX(64px);
+
+        .launch-project-button {
+            opacity: 1;
+        }
     }
 
     &:hover .project-text-container {
         opacity: 1;
+        transform: translateX(1rem);
+    }
+
+    .launch-project-button {
+        padding: 0.25rem 1rem;
+        border-radius: 10rem;
+        border: 2px solid $background-colour;
+        opacity: 0;
+
+        & > * {
+            font-size: $fs-b-s;
+        }
+
+        &:hover {
+            background-color: $background-colour;
+            color: $accent-colour;
+        }
     }
 }
