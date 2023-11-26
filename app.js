@@ -13,9 +13,11 @@ mute.addEventListener('click', function() {
   if (roomTone.paused) {
     roomTone.play();
     soundIcon.innerHTML = `<i class="fa-solid fa-volume-high mute-icon"></i>`
+    soundIcon.style.opacity = 1;
   } else {
     roomTone.pause();
     soundIcon.innerHTML = `<i class="fa-solid fa-volume-xmark mute-icon"></i>`
+    soundIcon.style.opacity = 0.5;
 
   }
 })
