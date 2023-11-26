@@ -19,6 +19,32 @@ section {
     transition: all 500ms ease-in-out;
 }
 
+/*LANDING SECTION=================*/
+.landing-section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .landing-line {
+        height: 2px;
+        width: 0px;
+        background-color: $contrast-colour;
+        animation: expand 4s infinite;
+
+        &.expanded {
+            width: 200px;
+        }
+
+        @keyframes expand {
+            0% {opacity: 1; width: 0px;}
+            45% {opacity: 1; width: 200px;}
+            80% {opacity: 1; width: 0px;}
+        }
+    }
+}
+/*END OFLANDING SECTION=================*/
+
+
 /*PROJECTS SECTION================*/
 .projects-section {
     max-width: unset;
@@ -109,14 +135,17 @@ section {
 }
 
 .scroll-up-section {
-    background-color: $contrast-colour;
-    color: $background-colour;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    color: $accent-colour;
     padding: 0.25rem 0.5rem;
     border-radius: 10rem;
     animation: fade 8s infinite;
 
     position: absolute;
-    top: 20%;
+    top: 18%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;

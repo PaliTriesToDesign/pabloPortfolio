@@ -155,9 +155,9 @@ ul li:hover {
   width: 20px;
   height: 20px;
   position: absolute;
-  z-index: 9;
+  z-index: 11;
   border: 1px solid #fff;
-  background-color: transparent;
+  background-color: #DEDEDE;
   border-radius: 50%;
   opacity: 0.75;
 }
@@ -170,16 +170,17 @@ body:has(.starship-system:hover) .follower {
 /*MASKS===========================*/
 /*ELEMENT===========================*/
 .element {
-  width: 35px;
-  height: 35px;
-  background-color: #0A0A0A;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #101010;
   border-radius: 100%;
-  border: 1px dashed #DEDEDE;
+  border: 2px dashed #DEDEDE;
   transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 .element:hover {
-  scale: 1.2;
-  rotate: 45deg;
+  scale: 1.1;
+  rotate: 15deg;
+  border: 2px dashed #EC5663;
 }
 
 /*NAV========================*/
@@ -242,7 +243,7 @@ body {
 .contact-section .pali-tries-to-design {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 .contact-section .pali-tries-to-design h1 {
@@ -282,6 +283,7 @@ form#contactMe .input-group #message {
   border: 2px solid #DEDEDE;
   padding: 0.25rem 0.5rem;
   height: 5rem;
+  resize: none;
 }
 form#contactMe #submitButton {
   background-color: #EC5663;
@@ -408,18 +410,20 @@ button, .launch-project-button, #submitButton {
 .progress-bar-container {
   position: fixed;
   width: 100%;
-  padding: 0 4rem;
   bottom: 2rem;
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  background-color: #0A0A0A;
+  padding: 0rem 2rem;
 }
 .progress-bar-container .altitude-container, .progress-bar-container .stage-container, .progress-bar-container .progress-icons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 10rem;
+  background-color: #101010;
 }
 .progress-bar-container .altitude-container .altitude .altitude-value {
   font-weight: 700;
@@ -428,11 +432,28 @@ button, .launch-project-button, #submitButton {
   display: flex;
   gap: 1rem;
 }
+.progress-bar-container .stage-inner .active-stage-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
 .progress-bar-container .stage-container {
   gap: 2rem;
 }
 .progress-bar-container .stage-container .stage-title {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.progress-bar-container .stage-container .prev-next-stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.125rem 0.5rem;
+  background-color: #0A0A0A;
+  border-radius: 2rem;
+}
+.progress-bar-container .stage-container .prev-next-stage i:hover {
+  color: #EC5663;
 }
 .progress-bar-container .stage-container .progress {
   width: 10vw;
@@ -454,7 +475,15 @@ button, .launch-project-button, #submitButton {
 .progress-bar-container .stage-container .stages-list li {
   font-size: 0.7rem;
 }
-.progress-bar-container .altitude-container .element, .progress-bar-container .progress-icons .element {
+.progress-bar-container .stages {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+.progress-bar-container .stages a:hover i {
+  color: #EC5663;
+}
+.progress-bar-container .altitude-container .element, .progress-bar-container .stage-container .element, .progress-bar-container .progress-icons .element {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -739,6 +768,37 @@ section .section-title {
   transition: all 500ms ease-in-out;
 }
 
+/*LANDING SECTION=================*/
+.landing-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.landing-section .landing-line {
+  height: 2px;
+  width: 0px;
+  background-color: #DEDEDE;
+  animation: expand 4s infinite;
+}
+.landing-section .landing-line.expanded {
+  width: 200px;
+}
+@keyframes expand {
+  0% {
+    opacity: 1;
+    width: 0px;
+  }
+  45% {
+    opacity: 1;
+    width: 200px;
+  }
+  80% {
+    opacity: 1;
+    width: 0px;
+  }
+}
+
+/*END OFLANDING SECTION=================*/
 /*PROJECTS SECTION================*/
 .projects-section {
   max-width: unset;
@@ -814,13 +874,15 @@ section .section-title {
 }
 
 .scroll-up-section {
-  background-color: #DEDEDE;
-  color: #0A0A0A;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: #EC5663;
   padding: 0.25rem 0.5rem;
   border-radius: 10rem;
   animation: fade 8s infinite;
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;

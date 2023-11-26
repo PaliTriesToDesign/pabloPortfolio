@@ -25,7 +25,7 @@
     .pali-tries-to-design {
         display: flex;
         flex-flow: column nowrap;
-        align-items: center;
+        align-items: start;
         justify-content: center;
 
         h1 { 
@@ -71,6 +71,7 @@ form#contactMe {
                 border: 2px solid $contrast-colour;
                 padding: 0.25rem 0.5rem;
                 height: 5rem;
+                resize: none;
             }
         }
 

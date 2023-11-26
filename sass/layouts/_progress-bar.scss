@@ -1,20 +1,25 @@
 .progress-bar-container {
     position: fixed;
     width: 100%;
-    padding: 0 4rem;
     bottom: 2rem;
 
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
+    padding: 0rem 2rem;
 
-    background-color: $background-colour;
 
     .altitude-container, .stage-container, .progress-icons {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 1rem;
+
+        padding: 0.5rem 2rem;
+        border-radius: 10rem;
+
+        background-color: $bar-colour;
+
     }
 
     .altitude-container .altitude .altitude-value {
@@ -24,13 +29,34 @@
     .stage-inner {
         display: flex;
         gap: 1rem;
+
+        .active-stage-container {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0.5rem;
+        }
     }
 
     .stage-container {
         gap: 2rem;
 
         .stage-title {
-            font-weight: $fw-bold;
+            font-weight: $fw-regular;
+            font-size: 1rem;
+        }
+
+        .prev-next-stage {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.125rem 0.5rem;
+
+            background-color: $background-colour;
+            border-radius: 2rem;
+
+            i:hover {
+                color: $accent-colour;
+            }
         }
     }
 
@@ -58,7 +84,17 @@
         }
     }
 
-    .altitude-container, .progress-icons {
+    .stages {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+
+        a:hover i {
+            color: $accent-colour;
+        }
+    }
+
+    .altitude-container, .stage-container, .progress-icons {
         
         .element {
             display: flex;

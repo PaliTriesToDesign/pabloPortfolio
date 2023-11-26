@@ -50,9 +50,9 @@ ul {
     width: 20px;
     height: 20px;
     position: absolute;
-    z-index: 9;
+    z-index: 11;
     border: 1px solid #fff;
-    background-color: transparent;
+    background-color: $contrast-colour;
     border-radius: 50%;
     opacity: 0.75;
 }
@@ -70,15 +70,16 @@ body:has(.starship-system:hover) .follower {
 /*ELEMENT===========================*/
 
 .element {
-    width: 35px;
-    height: 35px;
-    background-color: $background-colour;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: $bar-colour;
     border-radius: 100%;
-    border: 1px dashed $contrast-colour;
+    border: 2px dashed $contrast-colour;
     transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
 
     &:hover {
-        scale: 1.2;
-        rotate: 45deg;
+        scale: 1.1;
+        rotate: 15deg;
+        border: 2px dashed $accent-colour;
     }
 }
