@@ -1,0 +1,87 @@
+:root {
+    --margin-top: 2rem;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body.project-body {
+    position: relative;
+
+    .starship-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        rotate: 90deg;
+
+        z-index: -10;
+    }
+
+    .project-intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh;
+    }
+}
+
+main.main-section {
+    max-width: 80%;
+    height: 200vh;
+
+    .main-wrapper {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 6rem;
+        position: relative;
+
+        .overview {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 2rem;
+            position: sticky;
+            top: var(--margin-top);
+            left: 0;
+
+            margin-top: var(--margin-top);
+        }
+
+        .overview > h2 {
+            color: $accent-colour;
+        }
+
+        .project-content {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 4rem;
+            max-width: 50%;
+
+            margin-top: var(--margin-top);
+
+            .project-content-wrapper {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 1rem;
+
+                min-height: 100vh;
+
+
+                &:hover > h3 {
+                    color: $accent-colour;
+                }
+
+                .solution-part {
+                    color: $accent-colour;
+                }
+
+                #challenges {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

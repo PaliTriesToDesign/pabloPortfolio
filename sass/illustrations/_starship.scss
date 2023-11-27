@@ -82,6 +82,27 @@
     }
 }
 
+.descending {
+    animation: descending 2000ms steps(1) infinite;
+}
+
+@keyframes descending {
+    0% {
+        transform: translate3d(-75%, 0, 0);
+    }
+    33% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    66% {
+        transform: translate3d(-75%, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+
+}
+
 @keyframes translation {
     from {
         transform: translateY(0rem);

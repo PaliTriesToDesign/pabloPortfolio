@@ -3,7 +3,14 @@ const follower = document.querySelector('.follower');
 const project = document.getElementById('project');
 const progressBar = document.querySelector('.progress-inner');
 const altitude = document.querySelector('.altitude-value');
-const starship = document.querySelector('.starship-system')
+
+const starshipSystem = document.querySelector('.starship-system');
+const starship = document.querySelector('.starship');
+console.log(starship);
+const booster = document.querySelector('.booster');
+console.log(booster);
+
+
 const mute = document.getElementById('soundIcon')
 
 mute.addEventListener('click', function() {
@@ -24,10 +31,10 @@ mute.addEventListener('click', function() {
 
 //CURSOR=================
 document.addEventListener('mousemove', function(e) {
-    let left = e.offsetX;
-    let top = e.offsetY;
-    follower.style.left = left + 'px';
-    follower.style.top = top + 'px';
+    // let left = e.offsetX;
+    // let top = e.offsetY;
+    // follower.style.left = left + 'px';
+    // follower.style.top = top + 'px';
 
     // Use the same cursor position for the clip-path
     // hiddenElement.style.clipPath = `circle(25% at ${left}px ${top}px)`;
@@ -64,16 +71,24 @@ document.addEventListener("scroll", function () {
 
   // ALTITUDE=====================
   function updateCounter() {
-    const currentScrollPos = window.scrollY;
-    const maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const altitudeValue = maxScrollHeight - currentScrollPos;
+    let currentScrollPos = window.scrollY;
+    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let altitudeValue = maxScrollHeight - currentScrollPos;
 
     if(altitudeValue < 1000){
       altitude.textContent = `${Math.floor(altitudeValue) * 1}m`;
     } else if(altitudeValue >= 1000) {
       altitude.textContent = `${Math.floor(altitudeValue) * 1}km`;
     }
-  }
+
+    if(altitudeValue > 400){
+      starship.classList.add('rotating');
+      booster.classList.add('rotating');
+    } else {
+      starship.classList.remove('rotating');
+      booster.classList.remove('rotating');
+    }
+}
 
   window.addEventListener("scroll", updateCounter);
   updateCounter(); // Call the function initially
