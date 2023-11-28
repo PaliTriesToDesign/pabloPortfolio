@@ -803,23 +803,20 @@ section .section-title {
   height: 2px;
   width: 0px;
   background-color: #DEDEDE;
-  animation: expand 4s infinite;
 }
 .landing-section .landing-line.expanded {
-  width: 200px;
+  width: 150px;
+  animation: expand 2s;
 }
 @keyframes expand {
   0% {
-    opacity: 1;
     width: 0px;
   }
-  45% {
-    opacity: 1;
+  50% {
     width: 200px;
   }
-  80% {
-    opacity: 1;
-    width: 0px;
+  100% {
+    width: 150px;
   }
 }
 
@@ -942,7 +939,6 @@ body.project-body .starship-container {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   rotate: 90deg;
   z-index: -10;
 }
@@ -951,6 +947,11 @@ body.project-body .project-intro {
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+}
+body.project-body .project-final-results {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem;
 }
 
 main.main-section {

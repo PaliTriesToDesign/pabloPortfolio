@@ -1,16 +1,21 @@
 const bodyHeight = document.body.scrollHeight;
+
 const follower = document.querySelector('.follower');
+
 const project = document.getElementById('project');
+
+// Progress Bar=======================
 const progressBar = document.querySelector('.progress-inner');
 const altitude = document.querySelector('.altitude-value');
 
-const starshipSystem = document.querySelector('.starship-system');
-const starship = document.querySelector('.starship');
-console.log(starship);
-const booster = document.querySelector('.booster');
-console.log(booster);
+// Starship=======================
+const starshipSystem = document.getElementById('starshipSystem');
+const starship = document.getElementById('starship');
+const booster = document.getElementById('booster');
 
+const landingPad = document.getElementById('landingPad');
 
+// Sound Fx=======================
 const mute = document.getElementById('soundIcon')
 
 mute.addEventListener('click', function() {
@@ -30,15 +35,7 @@ mute.addEventListener('click', function() {
 })
 
 //CURSOR=================
-document.addEventListener('mousemove', function(e) {
-    // let left = e.offsetX;
-    // let top = e.offsetY;
-    // follower.style.left = left + 'px';
-    // follower.style.top = top + 'px';
 
-    // Use the same cursor position for the clip-path
-    // hiddenElement.style.clipPath = `circle(25% at ${left}px ${top}px)`;
-  });
 
 // PROJETCS=======================
 project.addEventListener("mousemove", function(e){
@@ -70,30 +67,47 @@ document.addEventListener("scroll", function () {
 });
 
   // ALTITUDE=====================
-  function updateCounter() {
-    let currentScrollPos = window.scrollY;
-    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    let altitudeValue = maxScrollHeight - currentScrollPos;
+function updateCounter() {
+  let currentScrollPos = window.scrollY;
+  let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  let altitudeValue = maxScrollHeight - currentScrollPos;
 
-    if(altitudeValue < 1000){
-      altitude.textContent = `${Math.floor(altitudeValue) * 1}m`;
-    } else if(altitudeValue >= 1000) {
-      altitude.textContent = `${Math.floor(altitudeValue) * 1}km`;
-    }
-
-    if(altitudeValue > 400){
-      starship.classList.add('rotating');
-      booster.classList.add('rotating');
-    } else {
-      starship.classList.remove('rotating');
-      booster.classList.remove('rotating');
-    }
+  if(altitudeValue < 1000){
+    altitude.textContent = `${Math.floor(altitudeValue) * 1}m`;
+  } else if(altitudeValue >= 1000) {
+    altitude.textContent = `${Math.floor(altitudeValue) * 1}km`;
+  }
 }
 
   window.addEventListener("scroll", updateCounter);
   updateCounter(); // Call the function initially
 
+// STARSHIO ROTATING==============
+function starshipRotating() {
+  let currentScrollPos = window.scrollY;
+  let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  let altitudeValue = maxScrollHeight - currentScrollPos;
 
+  if(altitudeValue > 1){
+    starship.classList.add('rotating');
+    booster.classList.add('rotating');
+  } else {
+    starship.classList.remove('rotating');
+    booster.classList.remove('rotating');
+  }
+  
+  if(altitudeValue > 6500) {
+    starship.classList.remove('rotating');
+    booster.classList.remove('rotating');
+
+    landingPad.classList.add('expanded')
+  } else if(altitudeValue < 6000) {
+    landingPad.classList.remove('expanded');
+  }
+}
+
+window.addEventListener("scroll", starshipRotating);
+starshipRotating();
 
   // use localstorage to store a flag for the first time
   // if user opened website first time
