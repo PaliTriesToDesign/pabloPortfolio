@@ -4,6 +4,9 @@ const follower = document.querySelector('.follower');
 
 const project = document.getElementById('project');
 
+const scrollUp =document.getElementById('scrollUp');
+
+
 // Progress Bar=======================
 const progressBar = document.querySelector('.progress-inner');
 const altitude = document.querySelector('.altitude-value');
@@ -103,6 +106,14 @@ function starshipRotating() {
     landingPad.classList.add('expanded')
   } else if(altitudeValue < 6000) {
     landingPad.classList.remove('expanded');
+  }
+
+
+ //Adds or removes blinking scroll up arrow 
+  if(altitudeValue > 100){
+    scrollUp.style.display = 'none';
+  } else {
+    scrollUp.style.display = 'block';
   }
 }
 

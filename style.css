@@ -195,6 +195,15 @@ nav.navigation-bar {
   top: 0;
   z-index: 100;
 }
+nav.navigation-bar .logo-wrapper {
+  width: 5rem;
+  height: 5rem;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+nav.navigation-bar .logo-wrapper:hover {
+  scale: 1.2;
+  rotate: 5deg;
+}
 nav.navigation-bar li {
   display: flex;
   align-items: flex-end;
@@ -407,6 +416,12 @@ button, .launch-project-button, #submitButton {
 .project .launch-project-button:hover {
   background-color: #0A0A0A;
   color: #EC5663;
+}
+
+main.main-section .overview {
+  background-color: #101010;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .progress-bar-container {
@@ -902,18 +917,19 @@ section .section-title {
   color: #EC5663;
   padding: 0.25rem 0.5rem;
   border-radius: 10rem;
-  animation: fade 8s infinite;
+  animation: fade 1200ms steps(1) infinite;
   position: absolute;
   top: 18%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
+  z-index: -1;
 }
 @keyframes fade {
-  0%, 50%, 100% {
+  0% {
     opacity: 0;
   }
-  25%, 75% {
+  50% {
     opacity: 1;
   }
 }
@@ -998,6 +1014,45 @@ main.main-section .main-wrapper .project-content .project-content-wrapper .solut
 }
 main.main-section .main-wrapper .project-content .project-content-wrapper #challenges {
   justify-content: center;
+}
+
+body.about-me .main-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+}
+body.about-me .main-section .picture-container {
+  position: relative;
+  width: 20%;
+  justify-self: center;
+}
+body.about-me .main-section .picture-container img {
+  border-radius: 50%;
+}
+body.about-me .main-section .text {
+  max-width: 30%;
+  justify-self: center;
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  33% {
+    transform: translate(0%, -2%);
+  }
+  66% {
+    transform: translate(0%, 2%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
 }
 
 /*ACCESSIBILITY==================*/

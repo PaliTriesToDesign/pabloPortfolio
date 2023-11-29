@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pali's Portfolio - About Me</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/branding/LogoFill.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
    
     <script src="../app.js" defer></script>
 </head>
-<body>
+<body class="about-me">
     <audio id="roomTone" loop autoplay>
         <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
         Audio
@@ -21,18 +22,28 @@
     <nav class="navigation-bar">
         <div class="personal-logo">
             <a href="../index.html">
-                <div class="element"></div>
+                <div class="logo-wrapper">
+                    <img class="logo floating" src="../assets/branding/LogoFill.svg" alt="Logo">
+                </div>
             </a>
         </div>
 
 
         <ul>
-            <li><a href="#">+ Contact Me</a></li>
-            <li><a href="#">+ About Me</a></li>
-            <li><a href="projects.html">+ Projects</a></li>
+            <li><a href="about-me.html">+ About Me</a></li>
+            <li><a href="#">+ Projects</a></li>
         </ul>
     </nav>
 
-    <h1>About Me</h1>
+    
+    <main class="main-section">
+        <div class="picture-container">
+            <!-- <h1 class="page-title">About Me</h1> -->
+            <img class="floating" src="../assets/aboutMe/DSCF4511.jpg" alt="">
+        </div>
+        <div class="text">
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis maxime consequuntur, dignissimos laudantium totam laboriosam ratione, deserunt maiores mollitia necessitatibus labore quidem exercitationem odio deleniti, ab accusantium? Iste placeat excepturi accusantium ad blanditiis, incidunt necessitatibus ex explicabo error laboriosam perspiciatis.</p>
+        </div>
+    </main>
 </body>
 </html>

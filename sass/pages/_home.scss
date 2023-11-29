@@ -147,17 +147,20 @@ section {
     color: $accent-colour;
     padding: 0.25rem 0.5rem;
     border-radius: 10rem;
-    animation: fade 8s infinite;
+    animation: fade 1200ms steps(1) infinite;
 
     position: absolute;
     top: 18%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
+    z-index: -1;
     
     @keyframes fade {
-        0%, 50%, 100% { opacity: 0; }
-        25%, 75% { opacity: 1; }
+        // 0%, 50%, 100% { opacity: 0; }
+        // 25%, 75% { opacity: 1; }
+        0% { opacity: 0; }
+        50% { opacity: 1; }
     }
 
     p {

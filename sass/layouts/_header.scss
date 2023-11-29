@@ -12,6 +12,18 @@ nav.navigation-bar {
     top: 0;
     z-index: 100;
 
+    .logo-wrapper {
+        width: 5rem;
+        height: 5rem;
+        transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+
+        &:hover {
+            scale: 1.2;
+            rotate: 5deg;
+        }
+
+    }
+
     // z-index: 10;
 
     li {
