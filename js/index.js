@@ -51,14 +51,18 @@ function stageSeparation(){
     let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     let altitudeValue = maxScrollHeight - currentScrollPos;
 
-    if(altitudeValue > 4700){
-        starship.parentElement.classList.add('stage-separation');
-        booster.parentElement.classList.add('stage-separation');
+    setTimeout(function() {
+        if(altitudeValue > 4700){
+            starship.parentElement.classList.add('stage-separation');
+            booster.parentElement.classList.add('stage-separation');
+    
+            setTimeout(function() {
+                booster.parentElement.remove();
+            }, 8000);
+        }
+    }, 5000)
 
-        // setTimeout(function() {
-        //     booster.parentElement.remove();
-        // }, 8000);
-    }
+    
 }
 
 window.addEventListener("scroll", stageSeparation);
