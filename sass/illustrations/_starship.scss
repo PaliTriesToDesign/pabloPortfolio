@@ -1,5 +1,4 @@
 /*STARSHIP =======================*/
-
 .starship-system {
     display: flex;
     flex-flow: column;
@@ -109,5 +108,49 @@
     }
     to {
         transform: translateY(-30rem);
+    }
+}
+
+// STAGE SEPARATION===============
+.starship-system {
+
+    .starship-container.stage-separation {
+        transform: translate(0%, 100%);
+        animation: starshipSeparation 8000ms 1;
+
+        @keyframes starshipSeparation {
+            0% {
+                transform: translate(0%, 0%);
+                rotate: 0deg;
+            }
+            20% {
+                transform: translate(5%, 5%);
+                rotate: -2deg;
+            }
+            100% {
+                transform: translate(0%, 100%);
+                rotate: 0deg;
+            }
+        }
+    }
+
+    .booster-container.stage-separation {
+        transform: translate(-60%, 500%);
+        animation: boosterSeparation 8000ms 1;
+
+        @keyframes boosterSeparation {
+            0% {
+                transform: translate(0%, 0%);
+                rotate: 0deg;
+            }
+            20% {
+                transform: translate(-10%, 25%);
+                rotate: 10deg;
+            }
+            100% {
+                transform: translate(-100%, 350%);
+                rotate: 45deg;
+            }
+        }
     }
 }

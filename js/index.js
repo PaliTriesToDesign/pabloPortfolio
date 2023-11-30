@@ -11,6 +11,26 @@ let userName = "";
 
 // CONTACT ME=====================
 const contactMeTitle = document.getElementById('contactMeTitle');
+
+(function() {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init('service_gm1wdkd');
+})();
+
+window.onload = function() {
+    document.getElementById('contactMeForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('contact_service', 'contactMeForm', this)
+            .then(function() {
+                console.log('SUCCESS!');
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+    });
+}
 // END OF CONTACT ME=====================
 
 
@@ -23,6 +43,25 @@ const landingPad = document.getElementById('landingPad');
 // PROGRESS BAR==================
 const mute = document.getElementById('soundIcon');
 // const scrollUp = document.getElementById('scrollUp');
+
+
+// STAGE SEPARATION===============
+function stageSeparation(){
+    let currentScrollPos = window.scrollY;
+    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let altitudeValue = maxScrollHeight - currentScrollPos;
+
+    if(altitudeValue > 4700){
+        starship.parentElement.classList.add('stage-separation');
+        booster.parentElement.classList.add('stage-separation');
+
+        // setTimeout(function() {
+        //     booster.parentElement.remove();
+        // }, 8000);
+    }
+}
+
+window.addEventListener("scroll", stageSeparation);
 
 
 // STARSHIP ROTATING==============

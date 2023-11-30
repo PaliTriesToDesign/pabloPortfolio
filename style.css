@@ -403,31 +403,31 @@ body {
   color: #EC5663;
 }
 
-form#contactMe {
+form#contactMeForm {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5rem;
 }
-form#contactMe .input-wrapper {
+form#contactMeForm .input-wrapper {
   display: flex;
   gap: 1rem;
 }
-form#contactMe .input-group {
+form#contactMeForm .input-group {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.25rem;
 }
-form#contactMe .input-group label {
+form#contactMeForm .input-group label {
   opacity: 0.5;
 }
-form#contactMe .input-group input {
+form#contactMeForm .input-group input {
   color: #DEDEDE;
   background-color: #0A0A0A;
   border: 2px solid #DEDEDE;
   border-radius: 0.5rem;
   padding: 0.25rem 0.5rem;
 }
-form#contactMe .input-group #message {
+form#contactMeForm .input-group #message {
   background-color: #0A0A0A;
   border-radius: 0.5rem;
   border: 2px solid #DEDEDE;
@@ -435,7 +435,7 @@ form#contactMe .input-group #message {
   height: 5rem;
   resize: none;
 }
-form#contactMe #submitButton {
+form#contactMeForm #submitButton {
   background-color: #EC5663;
   border-radius: 0.5rem;
   font-weight: 700;
@@ -444,7 +444,7 @@ form#contactMe #submitButton {
   border: 2px solid #EC5663;
   align-self: flex-end;
 }
-form#contactMe #submitButton:hover {
+form#contactMeForm #submitButton:hover {
   background-color: #0A0A0A;
   color: #EC5663;
   border: 2px solid #EC5663;
@@ -961,6 +961,43 @@ body.project-body main.main-section .overview {
     transform: translateY(-30rem);
   }
 }
+.starship-system .starship-container.stage-separation {
+  transform: translate(0%, 100%);
+  animation: starshipSeparation 8000ms 1;
+}
+@keyframes starshipSeparation {
+  0% {
+    transform: translate(0%, 0%);
+    rotate: 0deg;
+  }
+  20% {
+    transform: translate(5%, 5%);
+    rotate: -2deg;
+  }
+  100% {
+    transform: translate(0%, 100%);
+    rotate: 0deg;
+  }
+}
+.starship-system .booster-container.stage-separation {
+  transform: translate(-60%, 500%);
+  animation: boosterSeparation 8000ms 1;
+}
+@keyframes boosterSeparation {
+  0% {
+    transform: translate(0%, 0%);
+    rotate: 0deg;
+  }
+  20% {
+    transform: translate(-10%, 25%);
+    rotate: 10deg;
+  }
+  100% {
+    transform: translate(-100%, 350%);
+    rotate: 45deg;
+  }
+}
+
 .launch-pad-container {
   position: relative;
 }
