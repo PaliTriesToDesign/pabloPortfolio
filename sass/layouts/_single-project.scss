@@ -1,8 +1,49 @@
-main.main-section {
+body.project-body {
 
-    .overview {
-        background-color: $bar-colour;
-        padding: 2rem;
-        border-radius: 1rem;
+    #projectTitle {
+
+        animation: 1000ms 1  titleFadeIn;
+
+        @keyframes titleFadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+
+    .starship-container {
+
+        animation: 4000ms cubic-bezier(.47,1.64,.41,.8)  0s 1 starshipSlideIn;
+
+        @keyframes starshipSlideIn {
+            0% {
+                transform: translateX(-700%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    main.main-section {
+
+        .overview {
+            background-color: $bar-colour;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
     }
 }
+

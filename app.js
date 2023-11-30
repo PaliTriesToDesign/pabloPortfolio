@@ -80,6 +80,10 @@ function updateCounter() {
   } else if(altitudeValue >= 1000) {
     altitude.textContent = `${Math.floor(altitudeValue) * 1}km`;
   }
+
+  if(altitudeValue < 0){
+    altitude.textContent = `0m`;
+  }
 }
 
   window.addEventListener("scroll", updateCounter);

@@ -191,9 +191,18 @@ nav.navigation-bar {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
+  animation: 1600ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s 1 slideInFromTop;
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 nav.navigation-bar .logo-wrapper {
   width: 5rem;
@@ -418,7 +427,35 @@ button, .launch-project-button, #submitButton {
   color: #EC5663;
 }
 
-main.main-section .overview {
+body.project-body #projectTitle {
+  animation: 1000ms 1 titleFadeIn;
+}
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body.project-body .starship-container {
+  animation: 4000ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s 1 starshipSlideIn;
+}
+@keyframes starshipSlideIn {
+  0% {
+    transform: translateX(-700%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+body.project-body main.main-section .overview {
   background-color: #101010;
   padding: 2rem;
   border-radius: 1rem;
@@ -432,6 +469,15 @@ main.main-section .overview {
   justify-content: space-between;
   flex-flow: row nowrap;
   padding: 0rem 2rem;
+  animation: 1600ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s 1 slideInFromBottom;
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 .progress-bar-container .altitude-container, .progress-bar-container .stage-container, .progress-bar-container .progress-icons {
   display: flex;
@@ -665,7 +711,7 @@ main.main-section .overview {
   justify-content: center;
   position: fixed;
   z-index: -1;
-  top: 33.5%;
+  bottom: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -919,7 +965,7 @@ section .section-title {
   border-radius: 10rem;
   animation: fade 1200ms steps(1) infinite;
   position: absolute;
-  top: 18%;
+  bottom: 85%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
