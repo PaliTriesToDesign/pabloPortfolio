@@ -11,13 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
    
-    <script src="app.js" defer></script>
+    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="js/functions.js"></script>
 </head>
-<body>
+<body class="home">
     <audio id="roomTone" loop autoplay>
         <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
         Audio
     </audio>
+    <audio id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
+    <audio id="wrongActionSound" src="/assets/soundFx/wrongAction2.wav"></audio>
+    <audio id="rocketLaunchSound" src="/assets/soundFx/rocketLaunch.wav" loop autoplay></audio>
 
     <nav class="navigation-bar">
         <div class="personal-logo">
@@ -36,22 +40,40 @@
     </nav>
 
     <!-- Loader Section -->
-    <section class="loader-section visually-hidden">
-        <div class="title-mask prevent-select">
-            <div class="bottom-element">
-                <h1 class="main-title">Pablo's Portfolio</h1>
-            </div>
+    <section id="loaderScreen" class="loader-section">
+        <div class="loader-logo">
+            <!-- <img src="/assets/branding/LogoFill.svg" alt=""> -->
         </div>
 
-        <div class="starship-system" >
-            <div class="quote">
-                <p>"Ad Astra Per Aspera"</p>
+        <div class="loader-content-wrapper">
+
+            <div class="inner-wrapper">
+                <div class="title-mask prevent-select">
+                    <div class="bottom-element">
+                        <div class="pali-tries-to-design">
+                            <h1>Pali</h1>
+                            <h1>Tries to</h1>
+                            <h1 class="floating">design</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="loader-starship-system" >
+                    <div id="loaderStarship" class="starship-container">
+                        <img class="starship " src="assets/starship/sprite.png" alt="" draggable="false">
+                    </div>
+                </div>
             </div>
-            <div class="starship-container">
-                <img class="starship rotating" src="assets/starship/sprite.png" alt="" draggable="false">
-            </div>
-            <div class="booster-container">
-                <img class="booster rotating" src="assets/starship/boostersprite_1.png" alt="" draggable="false">
+
+            <div class="input-wrapper">
+                <form id="nameForm" class="user-name-form" action="">
+                    <label id="nameLabel" class="alert" for="name">
+                        Please enter your name:
+                    </label>
+                    <div class="input-group">
+                        <input id="nameInput" name="name" type="text" placeholder="Your name" required>
+                        <button id="nameButton" type="submit">Go</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -88,7 +110,7 @@
                 </form>
                         </div>
                 
-                <h3 class="section-title">Contact Me</h3>
+                <h3 id="contactMeTitle" class="section-title">Contact Me</h3>
             </div>
     </section>
     <!-- End of Contact Section -->
@@ -291,7 +313,7 @@
     <section id="about-me" class="about-me-section">
         <div class="section-wrapper">
             <div class="section-content-wrapper">
-                <h1 class="about-me-title">Hey!</h1>
+                <h1 id="aboutMeGreeting" class="about-me-title">Hey!</h1>
                 <p class="about-me-text">I'm <strong>Pablo Montoya Varela</strong>.
                     <br>
                 I am passionate about <strong>web design</strong>, <strong>coding</strong> and <strong>illustration</strong>. When I'm not crafting digital art, you can find me exploring new design trends or sketching in my notebook.</p>
@@ -323,6 +345,9 @@
         </div>
         <div class="launch-pad-container">
             <img src="/assets/starship/launchPad.png" alt="Launch Pad">
+            <div class="launch-pad-ground">
+
+            </div>
         </div>
     </section>
     <!-- End Of Lift Off Section -->

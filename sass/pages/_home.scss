@@ -4,11 +4,12 @@
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
-body {
+body.home {
     background-color: $background-colour;
+    position: relative;
 }
 
-body:has(.starship-system:hover) .quote {
+body.home:has(.starship-system:hover) .quote {
     opacity: 1;
 }
 
@@ -157,8 +158,6 @@ section {
     z-index: -1;
     
     @keyframes fade {
-        // 0%, 50%, 100% { opacity: 0; }
-        // 25%, 75% { opacity: 1; }
         0% { opacity: 0; }
         50% { opacity: 1; }
     }

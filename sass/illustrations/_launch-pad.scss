@@ -1,0 +1,24 @@
+.launch-pad-container {
+    position: relative;
+
+    .launch-pad-ground {
+        height: 4px;
+        width: 800px;
+        border-radius: 16px;
+        background-color: $contrast-colour;
+
+        
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        animation: expandLaunchPad 2s infinite;
+
+        @keyframes expandLaunchPad {
+            0% {width: 800px;}
+            50% {width: 850px;}
+            100% {width: 800px;}
+        }
+    }
+}

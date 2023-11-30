@@ -183,6 +183,126 @@ body:has(.starship-system:hover) .follower {
   border: 2px dashed #EC5663;
 }
 
+.loader-section {
+  background-color: #0A0A0A;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: unset !important;
+  height: 100vh;
+  z-index: 100;
+}
+.loader-section .loader-logo {
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.loader-section .loader-logo img {
+  width: 5rem;
+}
+.loader-section .loader-content-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  height: 100%;
+}
+.loader-section .loader-content-wrapper .inner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+.loader-section .loader-content-wrapper .input-wrapper label {
+  animation: fade 1600ms steps(1) infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group {
+  display: flex;
+  flex-flow: row;
+  gap: 1rem;
+}
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group input#nameInput, .loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton {
+  background-color: #0A0A0A;
+  color: #DEDEDE;
+  border: 1px solid #DEDEDE;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton {
+  font-weight: 700;
+}
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton:hover {
+  background-color: #EC5663;
+  border: 1px solid #EC5663;
+  color: #0A0A0A;
+  cursor: pointer;
+}
+.loader-section .pali-tries-to-design {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+}
+.loader-section .pali-tries-to-design h1 {
+  line-height: 0.85;
+}
+.loader-section .pali-tries-to-design h1:hover {
+  scale: 1.1;
+}
+.loader-section .pali-tries-to-design h1:last-child {
+  color: #EC5663;
+}
+.loader-section .pali-tries-to-design h1:last-child:hover {
+  transform-origin: left bottom;
+  rotate: 5deg;
+}
+.loader-section .starship-container.loader-slide-out {
+  animation: 5s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s starshipLoaderSlideOut;
+}
+@keyframes starshipLoaderSlideOut {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-350%);
+  }
+}
+
+.loader-section.slided-out {
+  transform: translateY(100%);
+  animation: slideLoaderOut 2000ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+@keyframes slideLoaderOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
 /*NAV========================*/
 nav.navigation-bar {
   display: flex;
@@ -221,6 +341,16 @@ nav.navigation-bar li {
 
 html, body {
   scroll-behavior: smooth;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #0A0A0A;
+  background: #EC5663;
+}
+
+::selection {
+  color: #0A0A0A;
+  background: #EC5663;
 }
 
 body {
@@ -831,17 +961,44 @@ body.project-body main.main-section .overview {
     transform: translateY(-30rem);
   }
 }
+.launch-pad-container {
+  position: relative;
+}
+.launch-pad-container .launch-pad-ground {
+  height: 4px;
+  width: 800px;
+  border-radius: 16px;
+  background-color: #DEDEDE;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: expandLaunchPad 2s infinite;
+}
+@keyframes expandLaunchPad {
+  0% {
+    width: 800px;
+  }
+  50% {
+    width: 850px;
+  }
+  100% {
+    width: 800px;
+  }
+}
+
 /*HOME============================*/
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
-body {
+body.home {
   background-color: #0A0A0A;
+  position: relative;
 }
 
-body:has(.starship-system:hover) .quote {
+body.home:has(.starship-system:hover) .quote {
   opacity: 1;
 }
 
