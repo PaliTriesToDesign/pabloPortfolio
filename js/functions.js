@@ -45,8 +45,9 @@ export function updateCounter() {
 
 
 // MUTE ICON======================
-export function soundIcon() {
+export function toggleMute() {
   bleepSound();
+
   let roomTone = document.getElementById('roomTone');
   let soundIcon = document.getElementById("soundIcon");
   let rocketLaunchSound = document.getElementById('rocketLaunchSound');
@@ -63,6 +64,14 @@ export function soundIcon() {
     rocketLaunchSound.pause();
     rocketLaunchSound.currentTime = 0;
   }
+
+  // Get all audio elements on the page
+  const audioElements = document.querySelectorAll('audio');
+
+  // Iterate through each audio element and toggle the muted property
+  audioElements.forEach(audio => {
+      audio.muted = !audio.muted;
+  });
 }
 
 //END OF MUTE ICON======================
@@ -76,6 +85,11 @@ export function bleepSound(){
 export function wrongActionSound(){
   let wrongActionSound = document.getElementById('wrongActionSound');
   wrongActionSound.play();
+}
+
+export function secondStageSound(){
+  let secondStageSound = document.getElementById('secondStageSound');
+  secondStageSound.play();
 }
 
 export function rocketLaunchSound(){

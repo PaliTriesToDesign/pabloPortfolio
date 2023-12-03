@@ -1,4 +1,4 @@
-import { increaseProgressBar, updateCounter, soundIcon, bleepSound, wrongActionSound, rocketLaunchSound, pauseRocketLaunchSound} from "./functions.js";
+import { increaseProgressBar, updateCounter, bleepSound, wrongActionSound, rocketLaunchSound, secondStageSound, pauseRocketLaunchSound, toggleMute, roomTone} from "./functions.js";
 
 // Loader=========================
 const loaderScreen = document.getElementById('loaderScreen');
@@ -8,6 +8,7 @@ const nameInput = document.getElementById('nameInput');
 const nameButton = document.getElementById('nameButton');
 const loaderStarship = document.getElementById('loaderStarship');
 let userName = "";
+let isLoaderOnScreen = true;
 
 // CONTACT ME=====================
 const contactMeTitle = document.getElementById('contactMeTitle');
@@ -39,6 +40,9 @@ const starshipSystem = document.getElementById('starshipSystem');
 const starship = document.getElementById('starship');
 const booster = document.getElementById('booster');
 const landingPad = document.getElementById('landingPad');
+let canSeparate = false;
+let isFlying = false;
+let isSeparated = false;
 
 // PROGRESS BAR==================
 const mute = document.getElementById('soundIcon');
@@ -51,19 +55,24 @@ function stageSeparation(){
     let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     let altitudeValue = maxScrollHeight - currentScrollPos;
 
+    if(altitudeValue === 0){
+      canSeparate = true;
+    }
+    console.log(canSeparate);
+
     setTimeout(function() {
-        if(altitudeValue > 4700){
+        if(altitudeValue > 4600 && canSeparate === true && isLoaderOnScreen  === false){
+            secondStageSound();
             starship.parentElement.classList.add('stage-separation');
             booster.parentElement.classList.add('stage-separation');
     
             setTimeout(function() {
                 booster.parentElement.remove();
             }, 8000);
-        }
-    }, 5000)
+        };
+    }, 1000);
 
-    
-}
+};
 
 window.addEventListener("scroll", stageSeparation);
 
@@ -80,13 +89,23 @@ function starshipRotating() {
     } else {
       starship.classList.remove('rotating');
       booster.classList.remove('rotating');
-    }
+    };
+
+    if(altitudeValue === 0){
+      isFlying = true;
+    };
     
-    if(altitudeValue > 1) {
+    if(altitudeValue > 1 && isFlying === true && isLoaderOnScreen === false) {
         rocketLaunchSound();
     } else {
         pauseRocketLaunchSound();
-    }
+    };
+
+    if(isFlying === true){
+      setTimeout(function() {
+        isFlying = false;
+      }, 18000);
+    };
     
     if(altitudeValue > 6500) {
       starship.classList.remove('rotating');
@@ -95,7 +114,7 @@ function starshipRotating() {
       landingPad.classList.add('expanded')
     } else if(altitudeValue < 6000) {
       landingPad.classList.remove('expanded');
-    }
+    };
   
   
    //Adds or removes blinking scroll up arrow 
@@ -124,6 +143,9 @@ nameForm.addEventListener('submit', function(e) {
   });
 
   nameButton.addEventListener('click', function() {
+     let currentScrollPos = window.scrollY;
+    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let altitudeValue = maxScrollHeight - currentScrollPos;
     userName = nameInput.value;
   
     if(userName == ""){
@@ -135,9 +157,9 @@ nameForm.addEventListener('submit', function(e) {
         loaderStarship.children[0].classList.remove
         ('rotating');
 
-    } else {
-        bleepSound();
-        // setTimeout(rocketLaunchSound, 300);
+    } else if(userName.trim() !== "" && altitudeValue === 0) {
+      bleepSound();
+      // setTimeout(rocketLaunchSound, 300);
 
       // Updates elements in the loader div
       loaderStarship.classList.add('loader-slide-out');
@@ -146,6 +168,7 @@ nameForm.addEventListener('submit', function(e) {
       nameLabel.style.color = `#FFF`;
       setTimeout(slideLoaderOut, 2000);
       setTimeout(hideLoader, 3000);
+      isLoaderOnScreen = false;
     // ABOUT ME
         aboutMeGreeting.innerHTML = `Hey, ${userName}!`
 
@@ -157,14 +180,14 @@ nameForm.addEventListener('submit', function(e) {
 //END OF LOADER FORM==============
 
 // PROGRESS BAR=================
-document.addEventListener("scroll", increaseProgressBar);
+    document.addEventListener("scroll", increaseProgressBar);
 
     // ALTITUDE=====================
-window.addEventListener("scroll", updateCounter);
-updateCounter();
+    window.addEventListener("scroll", updateCounter);
+    updateCounter();
 
     // MUTE=======================
-    mute.addEventListener('click', soundIcon);
+     mute.addEventListener('click', toggleMute);
     document.addEventListener('load', roomTone);
 
 // END OF PROGRESS BAR=================
@@ -172,7 +195,9 @@ updateCounter();
 // SCROLL TO THE BOTTOM
 window.onbeforeunload = function () {
     window.scrollTo(0, document.body.scrollHeight);
-}
+};
+
+window.onload = roomTone();
 
 window.onload = function () {
     window.scrollTo(0, document.body.scrollHeight);
