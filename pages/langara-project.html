@@ -3,37 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pali's Portfolio - Projects</title>
+    <title>Pali's Portfolio - Langara WMDD</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/assets/branding/LogoFill.svg">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
    
-    <script src="../app.js" defer></script>
+    <script type="module" src="../js/langara-project.js"></script>
+    <script type="module" src="../js/functions.js"></script>
 </head>
-<body>
+<body class="project-body">
+    <!-- Room Tone -->
     <audio id="roomTone" loop autoplay>
-        <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
+        <source src="../assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
     </audio>
+    <audio class="bleep-audio" id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
+    <!-- End of Room Tone -->
 
+    <!-- Starship -->
+    <div class="starship-container">
+        <img class="starship descending" src="../assets/starship/sprite.png" alt="" draggable="false">
+    </div>
+    <!-- End of Starship -->
+
+    <!-- Navigation bar -->
     <nav class="navigation-bar">
         <div class="personal-logo">
             <a href="../index.html">
-                <div class="element"></div>
+                <div class="logo-wrapper">
+                    <img class="logo floating" src="../assets/branding/LogoFill.svg" alt="Logo">
+                </div>
             </a>
         </div>
 
 
         <ul>
-            <li><a href="#">+ Contact Me</a></li>
-            <li><a href="#">+ About Me</a></li>
-            <li><a href="projects.html">+ Projects</a></li>
+            <li><a href="about-me.html">+ About Me</a></li>
+            <li><a href="">+ Projects</a></li>
         </ul>
     </nav>
+    <!-- End of Navigation bar -->
 
-    <div class="follower"></div>
-    <h1>WMDD Website</h1>
+    <div class="project-intro">
+        <h1 id="projectTitle">Langara-app.ca: UI Project</h1>
+    </div>
+    <div class="project-final-results">
+        <div class="reult-wrapper"><img src="../assets/projectImages/langara-app/finalResult3.webp" alt=""></div>
+        <div class="result-wrapper"><img src="../assets/projectImages/langara-app/finalResult2.webp" alt=""></div>
+    </div>
+
+    <main class="main-section">
+        <div class="main-wrapper">
+
+            <!-- OVERVIEW -->
+            <div class="overview-bar">
+                <div class="overview">
+                    <h2>Overview</h2>
+                    <div class="overview-inner-group">
+                        <div class="overview-wrapper">
+                            <h3>Role</h3>
+                            <p>UI/UX Designer</p>
+                        </div>
+                        <div class="overview-wrapper">
+                            <h3>Timeline</h3>
+                            <p>8 weeks - 100 hours</p>
+                        </div>
+                        <div class="overview-wrapper">
+                            <h3>Tools</h3>
+                            <p>Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overview-stages">
+                <ul class="overview-list">
+                    <li><a href="#opportunity">Opportunity</a></li>
+                    <li><a href="#goals">Project Goals</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#takeAways">Take-aways</a></li>
+                </ul>
+            </div>
+            <!-- END OF OVERVIEW -->
+
+            <div class="project-content">
+                <div id="opportunity" class="project-content-wrapper">
+                    <h3>Opportunity</h3>
+                    <p>Langara-app.ca is the website for the Web and Mobile App Design and Development program (WMDD) at Langara. Although it has been live for a couple of years, the program and the college seemed to have 'abandoned' it. I was selected among all the students and hired, along with two developers, to update it.</p>
+                </div>
+                <div id="goals" class="project-content-wrapper">
+                    <h3>Project Goals</h3>
+                    <ul>
+                        <li>Revise and update the existing user flow.</li>
+                        <li>Update the UI kit in alignment with new pages and components.</li>
+                        <li>Preserve information and the main structure while introducing a fresh, implementable look.</li>
+                        <li>Update the homepage, program overview, student work, and events pages, considering time and budget constraints.</li>
+                        <li>Design a new page, 'New Student,' from scratch for implementation on the site.</li>
+                    </ul>
+                </div>
+                <div id="solution" class="project-content-wrapper">
+                    <h3>Solution</h3>
+                    <p> We streamlined the user flow, refreshed the UI kit, updated key pages, and seamlessly integrated a new 'New Student' page.</p>
+
+                    <p class="solution-part">Part I: User Flow</p>
+                    <img src="../assets/projectImages/langara-app/user-flow-langara.png" alt="">
+
+                    <p class="solution-part">Part II: Homepage</p>
+                    <img src="../assets/projectImages/langara-app/Homepage - Desktop.webp" alt="">
+
+                    <p class="solution-part">Part III: Program Overview Page</p>
+                    <img src="../assets/projectImages/langara-app/Program Overview - Desktop.webp" alt="">
+
+                    <p class="solution-part">Part IV: New Student Page</p>
+                    <img src="../assets/projectImages/langara-app/New Student - Desktop.webp" alt="">
+
+                    <p class="solution-part">Part V: Student Work Page</p>
+                    <img src="../assets/projectImages/langara-app/Student Work - Desktop OPTION 1.webp" alt="">
+
+                    <p class="solution-part">Part V: Events Page</p>
+                    <img src="../assets/projectImages/langara-app/Events & News - Desktop.webp" alt="">
+                </div>
+                
+                <div id="takeAways" class="project-content-wrapper">
+                    <h3>Reflections & Take-aways</h3>
+                    <p>My journey at Langara has prepared me well for professional challenges. This project, my first one, highlighted the similarity to what I've done during my college group projects—stand-up meetings, retrospective meetings, making design decisions, and collaborating with developers to complete tasks. It has equipped me for the next steps in my professional career.</p>
+                </div>
+            </div>
+            <!-- <a href="/pages/langara-project.html">
+                <div class="next-project">
+                    <p>Next Project</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </a> -->
+        </div>
+
+        <!-- Lift Off Section -->
+        <section id="lift-off" class="lift-off-section">
+            <div class="launch-pad-container">
+                <img src="../assets/starship/launchPad.png" alt="Launch Pad">
+            </div>
+        </section>
+        <!-- End Of Lift Off Section -->
+    </main>
+
+    
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="altitude-container">
+            <div class="element">
+                <i class="fa-solid fa-ruler-vertical"></i>
+            </div>
+            <div class="altitude">
+                <p class="altitude-title">Altitude</p>
+                <p class="altitude-value">0m</p>
+            </div>
+        </div>
+
+        <div class="stage-container">
+            <div class="stage-inner">
+                <div class="element">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div class="active-stage-container">
+                    <div class="prev-next-stage">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <p class="stage-title">UI/UX</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stages">
+                <a href="https://linkedin.com/in/palimv" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <!-- <ul class="stages-list">
+                    <li><a href="#lift-off">Lift Off!</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#max-q">Max Q</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#landing">Landing</a></li>
+                    <li><a href="#contact-me">Contact Me</a></li>
+                </ul> -->
+            </div>
+        </div>
+
+        <div class="progress-icons">
+            <div id="soundIcon" class="element">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+            <!-- <div class="element">
+                <a href="#projectTitle"><i class="fa-solid fa-arrow-up"></i></a>
+            </div> -->
+        </div>
+    </div>
+    <!-- End Of Progress Bar -->
 </body>
 </html>
