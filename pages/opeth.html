@@ -7,17 +7,29 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/assets/branding/LogoFill.svg">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
    
-    <script src="../app.js" defer></script>
+    <script type="module" src="../js/opeth.js"></script>
+    <script type="module" src="../js/functions.js"></script>
 </head>
-<body>
+<body class="project-body">
+    <!-- Room Tone -->
     <audio id="roomTone" loop autoplay>
-        <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
+        <source src="../assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
     </audio>
+    <audio class="bleep-audio" id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
+    <!-- End of Room Tone -->
 
+    <!-- Starship -->
+    <div class="starship-container">
+        <img class="starship descending" src="../assets/starship/sprite.png" alt="" draggable="false">
+    </div>
+    <!-- End of Starship -->
+
+    <!-- Navigation bar -->
     <nav class="navigation-bar">
         <div class="personal-logo">
             <a href="../index.html">
@@ -33,7 +45,163 @@
             <li><a href="">+ Projects</a></li>
         </ul>
     </nav>
+    <!-- End of Navigation bar -->
 
-    <h1>Opeth: Redesign Project</h1>
+    <div class="project-intro">
+        <h1 id="projectTitle">Opeth: UI Redesign</h1>
+    </div>
+    <div class="project-final-results">
+        <div class="reult-wrapper"><img src="../assets/projectImages/opeth/finalResult1.webp" alt=""></div>
+        <div class="result-wrapper"><img src="../assets/projectImages/opeth/finalResult2.webp" alt=""></div>
+    </div>
+
+    <main class="main-section">
+        <div class="main-wrapper">
+
+            <!-- OVERVIEW -->
+            <div class="overview-bar">
+                <div class="overview">
+                    <h2>Overview</h2>
+                    <div class="overview-inner-group">
+                        <div class="overview-wrapper">
+                            <h3>Role</h3>
+                            <p>UI/UX Designer</p>
+                        </div>
+                        <div class="overview-wrapper">
+                            <h3>Timeline</h3>
+                            <p>3 weeks - 25 hours</p>
+                        </div>
+                        <div class="overview-wrapper">
+                            <h3>Tools</h3>
+                            <p>Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overview-stages">
+                <ul class="overview-list">
+                    <li><a href="#background">Background</a></li>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#goals">Project Goals</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#takeAways">Take-aways</a></li>
+                </ul>
+            </div>
+            <!-- END OF OVERVIEW -->
+
+            <div class="project-content">
+                <div id="background" class="project-content-wrapper">
+                    <h3>Background</h3>
+                    <p>As part of the Web and Mobile App Design and Development (WMDD) program at Langara College, I took on the challenge of rejuvenating the online presence of the legendary band, Opeth. The existing website failed to capture the energy and power of the band's music, lacking both a cohesive concept and visual consistency.</p>
+                </div>
+                <div id="problem" class="project-content-wrapper">
+                    <h3>Problem</h3>
+                    <p>Opeth's current website suffered from outdated design, failing to convey the dynamic and powerful essence of the band's music. The absence of a unified concept and visual inconsistency further weakened the overall impact.</p>
+                </div>
+                <div id="goals" class="project-content-wrapper">
+                    <h3>Project Goals</h3>
+                    <ul>
+                        <li>UI Kit Overhaul: Implement a comprehensive update to the UI Kit to bring a modern and cohesive visual language to the website.</li>
+                        <li>Concept Development: Introduce a concept that effectively communicates the energy and power of Opeth's music, ensuring a consistent theme throughout the site.</li>
+                        <li>Homepage Redesign: Transform the homepage to be a captivating entry point that sets the tone for the band's musical identity.</li>
+                        <li>Stores Page Redesign: Revamp the stores page to provide an enhanced and seamless shopping experience for fans.</li>
+                        <li>Albums Page Redesign: Present the band's discography in a visually striking and user-friendly manner.</li>
+                        <li>Biography Page Redesign: Overhaul the biography page to tell the story of Opeth in a compelling and visually engaging way.</li>
+                    </ul>
+                </div>
+                <div id="solution" class="project-content-wrapper">
+                    <h3>Solution</h3>
+                    <p>A carefully crafted concept was introduced to convey the energy and power synonymous with Opeth's music.</p>
+
+                    <p class="solution-part">Part I: Understanding the current site.</p>
+                    <img src="../assets/projectImages/opeth/part-one.webp" alt="">
+                    <img src="../assets/projectImages/opeth/part-two.webp" alt="">
+
+                    <p class="solution-part">Part II: New vision for the site.</p>
+                    <img src="../assets/projectImages/opeth/part-three.webp" alt="">
+                    <img src="../assets/projectImages/opeth/part-four.webp" alt="">
+                    <img src="../assets/projectImages/opeth/part-five.webp" alt="">
+                </div>
+                
+                <div id="takeAways" class="project-content-wrapper">
+                    <h3>Reflections & Take-aways</h3>
+                    <p>Through exploration and application across various sections of the website, the redesign successfully communicated the essence of Opeth's music. The project reaffirmed the importance of idea exploration in the design process, resulting in a website that now resonates with the energy and power inherent in Opeth's musical legacy.</p>
+                </div>
+            </div>
+            <a href="/pages/langara-project.html">
+                <div class="next-project">
+                    <p>Next Project</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Lift Off Section -->
+        <section id="lift-off" class="lift-off-section">
+            <div class="launch-pad-container">
+                <img src="../assets/starship/launchPad.png" alt="Launch Pad">
+            </div>
+        </section>
+        <!-- End Of Lift Off Section -->
+    </main>
+
+    
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="altitude-container">
+            <div class="element">
+                <i class="fa-solid fa-ruler-vertical"></i>
+            </div>
+            <div class="altitude">
+                <p class="altitude-title">Altitude</p>
+                <p class="altitude-value">0m</p>
+            </div>
+        </div>
+
+        <div class="stage-container">
+            <div class="stage-inner">
+                <div class="element">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div class="active-stage-container">
+                    <div class="prev-next-stage">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <p class="stage-title">UI/UX</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stages">
+                <a href="https://linkedin.com/in/palimv" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <!-- <ul class="stages-list">
+                    <li><a href="#lift-off">Lift Off!</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#max-q">Max Q</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#landing">Landing</a></li>
+                    <li><a href="#contact-me">Contact Me</a></li>
+                </ul> -->
+            </div>
+        </div>
+
+        <div class="progress-icons">
+            <div id="soundIcon" class="element">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+            <!-- <div class="element">
+                <a href="#projectTitle"><i class="fa-solid fa-arrow-up"></i></a>
+            </div> -->
+        </div>
+    </div>
+    <!-- End Of Progress Bar -->
 </body>
 </html>
