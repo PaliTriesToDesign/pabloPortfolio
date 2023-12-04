@@ -1,7 +1,15 @@
+:root {
+    --margin-top: 2rem;
+    --max-width: 70%;
+}
+
 body.project-body {
 
-    #projectTitle {
+    img {
+        border-radius: 1rem;
+    }
 
+    #projectTitle {
         animation: 1000ms 1  titleFadeIn;
 
         @keyframes titleFadeIn {
@@ -23,7 +31,20 @@ body.project-body {
         }
     }
 
+    .project-intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh; 
+    }
+
     .starship-container {
+        position: fixed;
+        top: 50%;
+        rotate: 90deg;
+        opacity: 0.20;
+
+        z-index: -10;
 
         animation: 4000ms cubic-bezier(.47,1.64,.41,.8)  0s 1 starshipSlideIn;
 
@@ -37,12 +58,129 @@ body.project-body {
         }
     }
 
+    .project-final-results {
+        display: flex;
+        gap: 2rem;
+        margin: 4rem;
+    }
+
     main.main-section {
+        max-width: var(--max-width);
+        height: 200vh;
+
+        .main-wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .project-content {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 4rem;
+                max-width: var(--max-width);
+    
+                margin-top: var(--margin-top);
+
+                ul {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1rem;
+                    max-width: var(--max-width);
+                }
+
+                li {
+                    list-style: lower-greek;
+                    font-size: $fs-b-m;
+                    opacity: unset;
+                }
+    
+                .project-content-wrapper {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+    
+                    min-height: 100vh;
+    
+    
+                    &:hover > h3 {
+                        color: $accent-colour;
+                    }
+    
+                    .solution-part {
+                        color: $accent-colour;
+                    }
+    
+                    #challenges {
+                        justify-content: center;
+                    }
+
+                    p {
+                        max-width: var(--max-width);
+                    }
+                }
+            }
+        }
+
+        .overview-bar {
+            display: flex;
+            flex-flow: column;
+            gap: 1rem;
+        }
 
         .overview {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+
             background-color: $bar-colour;
-            padding: 2rem;
+            padding: 2rem 2.75rem;
             border-radius: 1rem;
+
+            .overview-inner-group {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+        }
+
+        .overview-stages {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+
+            position: sticky;
+            top: var(--margin-top);
+            z-index: 100;
+
+            background-color: $bar-colour;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+
+            .overview-list {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
+        .next-project {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: fade 800ms steps(1) infinite;
+            color: $accent-colour;
+
+            @keyframes fade {
+                0% { opacity: 0; }
+                50% { opacity: 1; }
+            }
+
+            &:hover > i {
+                transform: translateX(-50%);
+            }
         }
     }
 }

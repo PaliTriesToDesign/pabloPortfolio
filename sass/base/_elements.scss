@@ -32,7 +32,6 @@ ul {
 
     li {
         font-size: $fs-b-s;
-        transition: all 400ms ease-in-out;
         opacity: 0.5;
 
         &:hover {
@@ -41,6 +40,13 @@ ul {
         }
     }
 }
+
+/*ICONS========================*/
+i:hover {
+    scale: 1.2;
+}
+/*END OF ICONS========================*/
+
 
 
 
@@ -75,11 +81,9 @@ body:has(.starship-system:hover) .follower {
     background-color: $bar-colour;
     border-radius: 100%;
     border: 2px dashed $contrast-colour;
-    transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
 
     &:hover {
         scale: 1.1;
-        rotate: 15deg;
         border: 2px dashed $accent-colour;
     }
 }

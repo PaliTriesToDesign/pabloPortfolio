@@ -142,7 +142,6 @@ ul {
 }
 ul li {
   font-size: 1rem;
-  transition: all 400ms ease-in-out;
   opacity: 0.5;
 }
 ul li:hover {
@@ -150,6 +149,12 @@ ul li:hover {
   opacity: 1;
 }
 
+/*ICONS========================*/
+i:hover {
+  scale: 1.2;
+}
+
+/*END OF ICONS========================*/
 /*FOLLOWER========================*/
 .follower {
   width: 20px;
@@ -175,11 +180,9 @@ body:has(.starship-system:hover) .follower {
   background-color: #101010;
   border-radius: 100%;
   border: 2px dashed #DEDEDE;
-  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 .element:hover {
   scale: 1.1;
-  rotate: 15deg;
   border: 2px dashed #EC5663;
 }
 
@@ -564,6 +567,14 @@ button, .launch-project-button, #submitButton {
   color: #EC5663;
 }
 
+:root {
+  --margin-top: 2rem;
+  --max-width: 70%;
+}
+
+body.project-body img {
+  border-radius: 1rem;
+}
 body.project-body #projectTitle {
   animation: 1000ms 1 titleFadeIn;
 }
@@ -581,7 +592,18 @@ body.project-body #projectTitle {
     opacity: 1;
   }
 }
+body.project-body .project-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
 body.project-body .starship-container {
+  position: fixed;
+  top: 50%;
+  rotate: 90deg;
+  opacity: 0.2;
+  z-index: -10;
   animation: 4000ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s 1 starshipSlideIn;
 }
 @keyframes starshipSlideIn {
@@ -592,10 +614,110 @@ body.project-body .starship-container {
     transform: translateX(0);
   }
 }
+body.project-body .project-final-results {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem;
+}
+body.project-body main.main-section {
+  max-width: var(--max-width);
+  height: 200vh;
+}
+body.project-body main.main-section .main-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+body.project-body main.main-section .main-wrapper .project-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4rem;
+  max-width: var(--max-width);
+  margin-top: var(--margin-top);
+}
+body.project-body main.main-section .main-wrapper .project-content ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  max-width: var(--max-width);
+}
+body.project-body main.main-section .main-wrapper .project-content li {
+  list-style: lower-greek;
+  font-size: 1.25rem;
+  opacity: unset;
+}
+body.project-body main.main-section .main-wrapper .project-content .project-content-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 100vh;
+}
+body.project-body main.main-section .main-wrapper .project-content .project-content-wrapper:hover > h3 {
+  color: #EC5663;
+}
+body.project-body main.main-section .main-wrapper .project-content .project-content-wrapper .solution-part {
+  color: #EC5663;
+}
+body.project-body main.main-section .main-wrapper .project-content .project-content-wrapper #challenges {
+  justify-content: center;
+}
+body.project-body main.main-section .main-wrapper .project-content .project-content-wrapper p {
+  max-width: var(--max-width);
+}
+body.project-body main.main-section .overview-bar {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
 body.project-body main.main-section .overview {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
   background-color: #101010;
-  padding: 2rem;
+  padding: 2rem 2.75rem;
   border-radius: 1rem;
+}
+body.project-body main.main-section .overview .overview-inner-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+body.project-body main.main-section .overview-stages {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: var(--margin-top);
+  z-index: 100;
+  background-color: #101010;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+body.project-body main.main-section .overview-stages .overview-list {
+  display: flex;
+  gap: 1rem;
+}
+body.project-body main.main-section .next-project {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fade 800ms steps(1) infinite;
+  color: #EC5663;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+body.project-body main.main-section .next-project:hover > i {
+  transform: translateX(-50%);
 }
 
 .progress-bar-container {
@@ -1205,83 +1327,6 @@ section .section-title {
 }
 
 /*END OF LIFT OFF SECTION==========*/
-:root {
-  --margin-top: 2rem;
-}
-
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-
-body.project-body {
-  position: relative;
-}
-body.project-body .starship-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  rotate: 90deg;
-  z-index: -10;
-}
-body.project-body .project-intro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-}
-body.project-body .project-final-results {
-  display: flex;
-  gap: 2rem;
-  margin: 4rem;
-}
-
-main.main-section {
-  max-width: 80%;
-  height: 200vh;
-}
-main.main-section .main-wrapper {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  gap: 6rem;
-  position: relative;
-}
-main.main-section .main-wrapper .overview {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2rem;
-  position: sticky;
-  top: var(--margin-top);
-  left: 0;
-  margin-top: var(--margin-top);
-}
-main.main-section .main-wrapper .overview > h2 {
-  color: #EC5663;
-}
-main.main-section .main-wrapper .project-content {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 4rem;
-  max-width: 50%;
-  margin-top: var(--margin-top);
-}
-main.main-section .main-wrapper .project-content .project-content-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  min-height: 100vh;
-}
-main.main-section .main-wrapper .project-content .project-content-wrapper:hover > h3 {
-  color: #EC5663;
-}
-main.main-section .main-wrapper .project-content .project-content-wrapper .solution-part {
-  color: #EC5663;
-}
-main.main-section .main-wrapper .project-content .project-content-wrapper #challenges {
-  justify-content: center;
-}
-
 body.about-me .main-section {
   display: grid;
   grid-template-rows: auto 1fr;
