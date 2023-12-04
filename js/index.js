@@ -142,8 +142,8 @@ nameForm.addEventListener('submit', function(e) {
     e.preventDefault();
   });
 
-  nameButton.addEventListener('click', function() {
-     let currentScrollPos = window.scrollY;
+nameButton.addEventListener('click', function() {
+    let currentScrollPos = window.scrollY;
     let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     let altitudeValue = maxScrollHeight - currentScrollPos;
     userName = nameInput.value;
@@ -157,7 +157,7 @@ nameForm.addEventListener('submit', function(e) {
         loaderStarship.children[0].classList.remove
         ('rotating');
 
-    } else if(userName.trim() !== "" && altitudeValue === 0) {
+    } else if(userName.trim() !== "" && maxScrollHeight) {
       bleepSound();
       // setTimeout(rocketLaunchSound, 300);
 
