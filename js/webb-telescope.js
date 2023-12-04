@@ -1,4 +1,4 @@
-import { updateCounter, decreaseProgressBar, soundIcon } from "./functions.js";
+import { updateCounter, decreaseProgressBar, roomTone, toggleMute, bleepSound } from "./functions.js";
 
 const mute = document.getElementById('soundIcon');
 
@@ -8,4 +8,5 @@ document.addEventListener("scroll", decreaseProgressBar);
 
 window.onbeforeunload = decreaseProgressBar();
 
-mute.addEventListener('click', soundIcon);
+mute.addEventListener('click', toggleMute);
+document.addEventListener('load', roomTone);

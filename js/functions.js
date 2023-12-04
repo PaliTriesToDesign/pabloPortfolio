@@ -80,9 +80,6 @@ export function toggleMute() {
     roomTone.pause();
     soundIcon.innerHTML = `<i class="fa-solid fa-volume-xmark mute-icon"></i>`
     soundIcon.style.opacity = 0.5;
-
-    rocketLaunchSound.pause();
-    rocketLaunchSound.currentTime = 0;
   }
 
   // Get all audio elements on the page
