@@ -8,9 +8,9 @@
 
 .project {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     gap: 4rem;
 
     padding: 1rem 20%;
@@ -28,12 +28,12 @@
 
     .project-preview-images-wrapper {
         aspect-ratio: 16/9;
-        width: 15rem;
+        // width: 30rem;
 
-        position: absolute;
-        top: 50%;
-        right: 5%;
-        transform: translateY(-50%);
+        // position: absolute;
+        // top: 0%;
+        // right: 0%;
+        // transform: translateY(-5%);
         z-index: 1;
 
         opacity: 0;
@@ -45,22 +45,28 @@
         animation-timing-function: ease-in-out;
 
         @keyframes floating {
-            0% { transform: translate(0px,  -50%); }
-            50%  { transform: translate(0px, -45%); }
-            100%   { transform: translate(0, -50%); }    
+            0% { transform: translate(0px,  -5%); }
+            50%  { transform: translate(0px, 5%); }
+            100%   { transform: translate(0, -5%); }    
         }
         
+        &:hover .preview-image {
+            -webkit-box-shadow: -1px 12px 17px -10px rgba(236,86,99,0.25); 
+            box-shadow: -1px 12px 17px -10px rgba(236,86,99,0.25);
+        }
+
         .preview-image {
             width: 100%;
             height: 100%;
             background-color: $contrast-colour;
-            border-radius: 0.5rem;
+            border-radius: 1rem;
+            overflow: hidden;
 
             transition: all 400ms cubic-bezier(.47,1.64,.41,.8) 200ms;
         }
 
         & .preview-image:not(.preview-image:first-child){
-            background-color: tomato;
+            background-color: $background-colour;
             position: absolute;
             inset: 0;
             z-index: -1;
@@ -68,18 +74,26 @@
 
         &:hover .preview-image:last-child {
             transform-origin: bottom left;
-            transform: translate(2rem, -1rem) rotate(-15deg);
+            transform: translate(2rem, -5rem) rotate(-5deg);
         }
 
         &:hover .preview-image:nth-child(2) {
             transform-origin: top left;
-            transform: translate(2rem, 1rem) rotate(15deg);
+            transform: translate(2rem, 5rem) rotate(5deg);
         }
     }
 
+    .project-inner-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: start;
+
+        gap: 1rem;
+    }
+
     .project-text-container {
-        // min-width: 50%;
-        opacity: 0.5;
+        opacity: 0.2;
 
         .project-link:hover {
             text-decoration: underline;
@@ -89,16 +103,15 @@
     &:hover {
         color: $background-colour;
         background-color: $accent-colour;
-        padding-left: 22%;
 
         .launch-project-button {
             opacity: 1;
+            display: block;
         }
     }
 
     &:hover .project-text-container {
         opacity: 1;
-        transform: translateX(1rem);
     }
 
     .launch-project-button {
@@ -106,6 +119,7 @@
         border-radius: 10rem;
         border: 2px solid $background-colour;
         opacity: 0;
+        display: none;
 
         & > * {
             font-size: $fs-b-s;
