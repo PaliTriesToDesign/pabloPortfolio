@@ -1,4 +1,5 @@
-import { increaseProgressBar, updateCounter, bleepSound, wrongActionSound, rocketLaunchSound, secondStageSound, pauseRocketLaunchSound, toggleMute, roomTone} from "./functions.js";
+import { increaseProgressBar, updateCounter, bleepSound, wrongActionSound, toggleMute, roomTone, updateStageTitle} from "./functions.js";
+
 
 // Loader=========================
 const loaderScreen = document.getElementById('loaderScreen');
@@ -13,25 +14,25 @@ let isLoaderOnScreen = true;
 // CONTACT ME=====================
 const contactMeTitle = document.getElementById('contactMeTitle');
 
-(function() {
-    // https://dashboard.emailjs.com/admin/account
-    emailjs.init('service_gm1wdkd');
-})();
+// (function() {
+//     // https://dashboard.emailjs.com/admin/account
+//     emailjs.init('service_gm1wdkd');
+// })();
 
-window.onload = function() {
-    document.getElementById('contactMeForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // generate a five digit number for the contact_number variable
-        this.contact_number.value = Math.random() * 100000 | 0;
-        // these IDs from the previous steps
-        emailjs.sendForm('contact_service', 'contactMeForm', this)
-            .then(function() {
-                console.log('SUCCESS!');
-            }, function(error) {
-                console.log('FAILED...', error);
-            });
-    });
-}
+// window.onload = function() {
+//     document.getElementById('contactMeForm').addEventListener('submit', function(event) {
+//         event.preventDefault();
+//         // generate a five digit number for the contact_number variable
+//         this.contact_number.value = Math.random() * 100000 | 0;
+//         // these IDs from the previous steps
+//         emailjs.sendForm('contact_service', 'contactMeForm', this)
+//             .then(function() {
+//                 console.log('SUCCESS!');
+//             }, function(error) {
+//                 console.log('FAILED...', error);
+//             });
+//     });
+// }
 // END OF CONTACT ME=====================
 
 
@@ -58,11 +59,9 @@ function stageSeparation(){
     if(altitudeValue === 0){
       canSeparate = true;
     }
-    console.log(canSeparate);
 
     setTimeout(function() {
         if(altitudeValue > 4600 && canSeparate === true && isLoaderOnScreen  === false){
-            secondStageSound();
             starship.parentElement.classList.add('stage-separation');
             booster.parentElement.classList.add('stage-separation');
     
@@ -96,9 +95,9 @@ function starshipRotating() {
     };
     
     if(altitudeValue > 1 && isFlying === true && isLoaderOnScreen === false) {
-        rocketLaunchSound();
+        // rocketLaunchSound();
     } else {
-        pauseRocketLaunchSound();
+        // pauseRocketLaunchSound();
     };
 
     if(isFlying === true){
@@ -107,13 +106,17 @@ function starshipRotating() {
       }, 18000);
     };
     
-    if(altitudeValue > 6500) {
-      starship.classList.remove('rotating');
-      booster.classList.remove('rotating');
-  
-      landingPad.classList.add('expanded')
+    if(altitudeValue > 6500 && canSeparate === true && isLoaderOnScreen === false) {
+      starship.parentElement.classList.add('flying-out');
+      setTimeout(function() {
+        starship.parentElement.remove();
+      }, 2000)
+      // starship.classList.remove('rotating');
+      // booster.classList.remove('rotating');
+      // landingPad.classList.add('expanded')
+
     } else if(altitudeValue < 6000) {
-      landingPad.classList.remove('expanded');
+      // landingPad.classList.remove('expanded');
     };
   
   
@@ -182,9 +185,12 @@ nameButton.addEventListener('click', function() {
 // PROGRESS BAR=================
     document.addEventListener("scroll", increaseProgressBar);
 
-    // ALTITUDE=====================
+    // ALTITUDE===================
     window.addEventListener("scroll", updateCounter);
     updateCounter();
+
+    // STAGE TITLE================
+    window.addEventListener('scroll', updateStageTitle)
 
     // MUTE=======================
      mute.addEventListener('click', toggleMute);
@@ -197,7 +203,7 @@ window.onbeforeunload = function () {
     window.scrollTo(0, document.body.scrollHeight);
 };
 
-window.onload = roomTone();
+// window.onload = roomTone();
 
 window.onload = function () {
     window.scrollTo(0, document.body.scrollHeight);

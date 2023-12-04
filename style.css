@@ -1005,6 +1005,25 @@ body.project-body main.main-section .overview {
   }
 }
 
+.starship-system .starship-container.flying-out {
+  transform: translate(0%, 100%);
+  animation: stageTwoFlyingOut 2000ms 1;
+}
+@keyframes stageTwoFlyingOut {
+  0% {
+    transform: translate(0%, 100%);
+    rotate: 0deg;
+  }
+  40% {
+    transform: translate(-10%, 120%);
+    rotate: 5deg;
+  }
+  100% {
+    transform: translate(100%, -350%);
+    rotate: 15deg;
+  }
+}
+
 .launch-pad-container {
   position: relative;
 }

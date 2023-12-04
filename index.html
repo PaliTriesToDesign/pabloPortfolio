@@ -13,17 +13,15 @@
    
     <script type="module" src="/js/index.js"></script>
     <script type="module" src="js/functions.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 </head>
 <body class="home">
-    <audio class="audio" id="roomTone" loop autoplay>
+    <audio class="audio" id="roomTone" loop autoplay hidden>
         <source src="assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
     </audio>
     <audio class="bleep-audio" id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
     <audio class="audio" id="wrongActionSound" src="/assets/soundFx/wrongAction.wav"></audio>
-    <audio class="audio" id="rocketLaunchSound" src="/assets/soundFx/rocketLaunch.wav"></audio>
-    <audio class="audio" id="secondStageSound" src="/assets/soundFx/secondStageExplosion.wav"></audio>
 
     <nav class="navigation-bar">
         <div class="personal-logo">
@@ -119,8 +117,8 @@
 
     <!-- Landing Section -->
     <section id="landing" class="landing-section">
-        <div id="landingPad" class="landing-line">
-        </div>
+        <!-- <div id="landingPad" class="landing-line">
+        </div> -->
     </section>
     <!-- End of Landing Section -->
 
@@ -128,9 +126,9 @@
     <!-- Create this section after Dec 6th -->
 
     <section class="stars-section">
+        <!-- <div class="stars"></div>
         <div class="stars"></div>
-        <div class="stars"></div>
-        <div class="stars"></div>
+        <div class="stars"></div> -->
     </section>
     <!-- End of Stars Section -->
 
@@ -417,7 +415,7 @@
                 <div class="active-stage-container">
                     <div class="prev-next-stage">
                         <i class="fa-solid fa-chevron-left"></i>
-                        <p class="stage-title">Lift Off</p>
+                        <p id="stageTitle" class="stage-title">Lift Off</p>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <div class="progress">

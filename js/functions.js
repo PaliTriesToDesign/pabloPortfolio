@@ -1,6 +1,8 @@
 // Progress Bar=======================
 const altitude = document.querySelector('.altitude-value');
 const progressBar = document.querySelector('.progress-inner');
+let stagesNames = ['Lift Off', 'About', 'Projects', 'Staging','Contact'];
+const stageName = document.getElementById('stageTitle');
 
 
 // PROGRESS BAR===================
@@ -20,12 +22,12 @@ export function decreaseProgressBar() {
   
     progressBar.style.display = "block";
     progressBar.style.width = progress + "%";
-    console.log(progress);
+    // console.log(progress);
 }
 
 export function updateCounter() {
     let currentScrollPos = window.scrollY;
-    console.log(currentScrollPos)
+    // console.log(currentScrollPos)
     let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     let altitudeValue = maxScrollHeight - currentScrollPos;
   
@@ -38,8 +40,26 @@ export function updateCounter() {
     if(altitudeValue < 0){
       altitude.textContent = `0m`;
     }
-  }
+}
 
+
+export function updateStageTitle() {
+  let currentScrollPos = window.scrollY;
+    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let altitudeValue = maxScrollHeight - currentScrollPos;
+
+    if (altitudeValue < 1500) {
+      stageName.innerText = `${stagesNames[0]}`;
+    } else if (altitudeValue <= 3500) {
+      stageName.innerText = `${stagesNames[1]}`;
+    } else if (altitudeValue <= 4500) {
+      stageName.innerText = `${stagesNames[2]}`;
+    } else if (altitudeValue <= 6500) {
+      stageName.innerText = `${stagesNames[3]}`;
+    } else {
+      stageName.innerText = `${stagesNames[4]}`;
+    }
+}
 
 //END OF PROGRESS BAR===================
 
@@ -85,22 +105,6 @@ export function bleepSound(){
 export function wrongActionSound(){
   let wrongActionSound = document.getElementById('wrongActionSound');
   wrongActionSound.play();
-}
-
-export function secondStageSound(){
-  let secondStageSound = document.getElementById('secondStageSound');
-  secondStageSound.play();
-}
-
-export function rocketLaunchSound(){
-  let rocketLaunchSound = document.getElementById('rocketLaunchSound');
-  rocketLaunchSound.play();
-}
-
-export function pauseRocketLaunchSound(){
-  let rocketLaunchSound = document.getElementById('rocketLaunchSound');
-  rocketLaunchSound.pause();
-  rocketLaunchSound.currentTime = 0;
 }
 
 export function roomTone() {
