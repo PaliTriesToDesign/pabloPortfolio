@@ -1,4 +1,4 @@
-import { increaseProgressBar, updateCounter, bleepSound, wrongActionSound, toggleMute, roomTone, updateStageTitle} from "./functions.js";
+import {getScrollPercentage, increaseProgressBar, updateCounter, bleepSound, wrongActionSound, toggleMute, roomTone, updateStageTitle, disableScroll, enableScroll} from "./functions.js";
 
 
 // Loader=========================
@@ -45,32 +45,67 @@ let canSeparate = false;
 let isFlying = false;
 let isSeparated = false;
 
+
+// SCROLL TO THE BOTTOM
+window.onbeforeunload = function () {
+  window.scrollTo(0, document.body.scrollHeight);
+};
+
+// window.onload = roomTone();
+
+window.onload = function () {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+// END OF SCROLL TO THE BOTTOM
+
+
 // PROGRESS BAR==================
 const mute = document.getElementById('soundIcon');
 // const scrollUp = document.getElementById('scrollUp');
 
+// GET SCROLL PERCENTAGE==========
+window.addEventListener('scroll', getScrollPercentage);
+let scrollPercentage = getScrollPercentage();
 
 // STAGE SEPARATION===============
 function stageSeparation(){
     let currentScrollPos = window.scrollY;
     let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     let altitudeValue = maxScrollHeight - currentScrollPos;
+    scrollPercentage  = getScrollPercentage();
 
-    if(altitudeValue === 0){
+    if(scrollPercentage > 95){
       canSeparate = true;
     }
 
-    setTimeout(function() {
-        if(altitudeValue > 4600 && canSeparate === true && isLoaderOnScreen  === false){
-            starship.parentElement.classList.add('stage-separation');
-            booster.parentElement.classList.add('stage-separation');
-    
-            setTimeout(function() {
-                booster.parentElement.remove();
-            }, 8000);
-        };
-    }, 1000);
+    // if(altitudeValue < 30){
+    //   canSeparate = true;
+    // }
 
+    console.log(canSeparate)
+
+    if(scrollPercentage < 30 && canSeparate === true){
+      console.log('Staging...');
+      starship.parentElement.classList.add('stage-separation');
+      booster.parentElement.classList.add('stage-separation');
+
+        setTimeout(function() {
+            booster.parentElement.remove();
+        }, 8000);
+    };
+
+    
+    // if(altitudeValue > 4600 && canSeparate === true && isLoaderOnScreen  === false){
+    //   console.log('Staging...');
+    //   starship.parentElement.classList.add('stage-separation');
+    //   booster.parentElement.classList.add('stage-separation');
+
+    //     setTimeout(function() {
+    //         booster.parentElement.remove();
+    //     }, 8000);
+    // };
+
+    
 };
 
 window.addEventListener("scroll", stageSeparation);
@@ -106,7 +141,7 @@ function starshipRotating() {
       }, 18000);
     };
     
-    if(altitudeValue > 6500 && canSeparate === true && isLoaderOnScreen === false) {
+    if(scrollPercentage <= 5 && canSeparate === true && isLoaderOnScreen === false) {
       starship.parentElement.classList.add('flying-out');
       setTimeout(function() {
         starship.parentElement.remove();
@@ -161,25 +196,26 @@ nameButton.addEventListener('click', function() {
         ('rotating');
 
     } else if(userName.trim() !== "" && maxScrollHeight) {
-      bleepSound();
-      // setTimeout(rocketLaunchSound, 300);
+        bleepSound();
+        // setTimeout(rocketLaunchSound, 300);
 
-      // Updates elements in the loader div
-      loaderStarship.classList.add('loader-slide-out');
-      loaderStarship.children[0].classList.add('rotating');
-      nameLabel.innerText = `Welcome, ${userName}!`;
-      nameLabel.style.color = `#FFF`;
-      setTimeout(slideLoaderOut, 2000);
-      setTimeout(hideLoader, 3000);
-      isLoaderOnScreen = false;
-    // ABOUT ME
+        // Updates elements in the loader div
+        loaderStarship.classList.add('loader-slide-out');
+        loaderStarship.children[0].classList.add('rotating');
+        nameLabel.innerText = `Welcome, ${userName}!`;
+        nameLabel.style.color = `#FFF`;
+        setTimeout(slideLoaderOut, 2000);
+        setTimeout(hideLoader, 3000);
+        isLoaderOnScreen = false;
+        enableScroll();
+
+        // ABOUT ME
         aboutMeGreeting.innerHTML = `Hey, ${userName}!`
 
-    // CONTACT ME=====================
+        // CONTACT ME=====================
         contactMeTitle.innerText = `Let's talk about more projects, ${userName}! c:`;
     }
   });
-
 //END OF LOADER FORM==============
 
 // PROGRESS BAR=================
@@ -198,14 +234,10 @@ nameButton.addEventListener('click', function() {
 
 // END OF PROGRESS BAR=================
 
-// SCROLL TO THE BOTTOM
-window.onbeforeunload = function () {
-    window.scrollTo(0, document.body.scrollHeight);
-};
 
-// window.onload = roomTone();
-
-window.onload = function () {
-    window.scrollTo(0, document.body.scrollHeight);
+// DISABLE SCROLL=================
+if(scrollPercentage > 90){
+  disableScroll();
+} else {
+  enableScroll();
 }
-// END OF SCROLL TO THE BOTTOM

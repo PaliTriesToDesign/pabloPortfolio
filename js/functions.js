@@ -4,6 +4,20 @@ const progressBar = document.querySelector('.progress-inner');
 let stagesNames = ['Lift Off', 'About', 'Projects', 'Staging','Contact'];
 const stageName = document.getElementById('stageTitle');
 
+// GET SCROLL PERCENTAGE
+export function getScrollPercentage(){
+  let h = document.documentElement, 
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight';
+
+  let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+
+  console.log(Math.floor(percent) + `%`);
+  return Math.floor(percent)
+}
+// END OF GET SCROLL PERCENTAGE
+
 
 // PROGRESS BAR===================
 export function increaseProgressBar() {
@@ -90,8 +104,8 @@ export function toggleMute() {
       audio.muted = !audio.muted;
   });
 }
-
 //END OF MUTE ICON======================
+
 
 // SOUND FX
 export function bleepSound(){
@@ -109,3 +123,25 @@ export function roomTone() {
   roomTone.play();
 }
 // END OF SOUND FX
+
+
+// DISABLE SCROLL=================
+export function disableScroll() {
+  // Get the current page scroll position
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+  let scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+      // if any scroll is attempted, set this to the previous value
+      window.onscroll = function() {
+          window.scrollTo(scrollLeft, scrollTop);
+      };
+
+      console.log("Scroll Disabled");
+}
+
+export function enableScroll() {
+  window.onscroll = function() {
+    
+  };
+}
+// END OF DISABLE SCROLL==========
