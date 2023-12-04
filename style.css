@@ -183,7 +183,6 @@ body:has(.starship-system:hover) .follower {
 }
 .element:hover {
   scale: 1.1;
-  border: 2px dashed #EC5663;
 }
 
 .loader-section {
