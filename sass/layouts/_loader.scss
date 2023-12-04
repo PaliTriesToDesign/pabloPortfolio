@@ -63,16 +63,20 @@
                 flex-flow: row;
                 gap: 1rem;
 
+                input#nameInput {
+                    padding: 0.5rem 1rem;
+                }
+
                 input#nameInput, button#nameButton {
                     background-color: $background-colour;
                     color: $contrast-colour;
                     border: 1px solid $contrast-colour;
-                    padding: 0.5rem;
-                    border-radius: 0.5rem;
+                    border-radius: 5rem;
                 }
 
                 button#nameButton {
                     font-weight: $fw-bold;
+                    padding: 0.5rem 1rem;
 
                     &:hover {
                         background-color: $accent-colour;

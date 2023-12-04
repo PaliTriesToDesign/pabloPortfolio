@@ -242,15 +242,18 @@ body:has(.starship-system:hover) .follower {
   flex-flow: row;
   gap: 1rem;
 }
+.loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group input#nameInput {
+  padding: 0.5rem 1rem;
+}
 .loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group input#nameInput, .loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton {
   background-color: #0A0A0A;
   color: #DEDEDE;
   border: 1px solid #DEDEDE;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 5rem;
 }
 .loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton {
   font-weight: 700;
+  padding: 0.5rem 1rem;
 }
 .loader-section .loader-content-wrapper .input-wrapper .user-name-form .input-group button#nameButton:hover {
   background-color: #EC5663;
@@ -723,6 +726,7 @@ body.project-body main.main-section .next-project:hover > i {
   position: fixed;
   width: 100%;
   bottom: 2rem;
+  z-index: 101;
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
