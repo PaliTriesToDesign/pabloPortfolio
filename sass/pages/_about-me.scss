@@ -50,6 +50,7 @@ body.about-me .main-section {
         .picture-container {
             width: 50%;
             bottom: -120%;
+            filter: grayscale(70%);
 
             &::after {
                 content: '';
@@ -130,14 +131,34 @@ body.about-me p {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    gap: 2rem;
     padding: 1rem;
+    width: 60%;
 }
 
-.text-wrapper {
+body.about-me .text-wrapper {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+}
+
+body.about-me .text-wrapper p {
+
+    background-color: $bar-colour;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    a {
+        display: inline;
+        color: $accent-colour;
+    }
+
+    i {
+        display: inline;
+    }
+
+    span {
+        font-size: 0.85rem;
+    }
 }

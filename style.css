@@ -1380,6 +1380,7 @@ body.about-me .main-section .portrait-wrapper {
 body.about-me .main-section .portrait-wrapper .picture-container {
   width: 50%;
   bottom: -120%;
+  filter: grayscale(70%);
 }
 body.about-me .main-section .portrait-wrapper .picture-container::after {
   content: "";
@@ -1457,16 +1458,32 @@ body.about-me p {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 2rem;
   padding: 1rem;
+  width: 60%;
 }
 
-.text-wrapper {
+body.about-me .text-wrapper {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+body.about-me .text-wrapper p {
+  background-color: #101010;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+body.about-me .text-wrapper p a {
+  display: inline;
+  color: #EC5663;
+}
+body.about-me .text-wrapper p i {
+  display: inline;
+}
+body.about-me .text-wrapper p span {
+  font-size: 0.85rem;
 }
 
 /*ACCESSIBILITY==================*/
