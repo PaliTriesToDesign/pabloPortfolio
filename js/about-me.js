@@ -23,7 +23,7 @@ function aboutMe(){
 }
 
 function honestMe(){
-    aboutMeContent.innerHTML = `<p>Hey there! Sometimes, I feel like I have no f*** clue what I'm doing. When that happens, I just hit the climbing wall or head out for a hike.</p>`
+    aboutMeContent.innerHTML = `<p>Hey there! Sometimes, I feel like I have no f*** clue what I'm doing. When that happens, I just hit the climbing wall, head out for a hike or just grab my guitar.</p>`
     honestMeButton.parentElement.style.opacity = `1`;
     resetOpacity(aboutMeButton, jokeButton);
     contentOpacity();

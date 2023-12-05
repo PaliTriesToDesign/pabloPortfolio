@@ -1428,27 +1428,6 @@ body.about-me .main-section .dot-wrapper.one-joke {
   transform: translateX(-50%);
 }
 
-.floating {
-  animation-name: floating;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  33% {
-    transform: translate(0%, -2%);
-  }
-  66% {
-    transform: translate(0%, 2%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-
 .main-wrapper {
   display: flex;
   flex-flow: column;
