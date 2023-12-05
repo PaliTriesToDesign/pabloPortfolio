@@ -21,6 +21,11 @@
         .section-title {
             text-align: center;
         }
+
+        &:hover .pali-tries-to-design h1:last-child {
+            transform-origin: bottom left;
+            rotate: 5deg;
+        }
     }
 
     .pali-tries-to-design {
@@ -35,6 +40,7 @@
 
         h1:last-child {
             color: $accent-colour;
+            transition: 400ms cubic-bezier(.47,1.64,.41,.8);
         }
     }
 }

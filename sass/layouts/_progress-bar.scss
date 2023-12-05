@@ -8,6 +8,7 @@
     justify-content: space-between;
     flex-flow: row nowrap;
     padding: 0rem 2rem;
+    gap: 1rem;
 
     animation: 1600ms cubic-bezier(.47,1.64,.41,.8)  0s 1 slideInFromBottom;
 
@@ -32,6 +33,10 @@
 
         background-color: $bar-colour;
 
+    }
+
+    .progress-icons {
+        padding: 1.25rem;
     }
 
     .altitude-container .altitude .altitude-value {

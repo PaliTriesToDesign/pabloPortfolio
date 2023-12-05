@@ -227,7 +227,7 @@ body:has(.starship-system:hover) .follower {
   gap: 0.5rem;
 }
 .loader-section .loader-content-wrapper .input-wrapper label {
-  animation: fade 1600ms steps(1) infinite;
+  animation: fade 1200ms steps(1) infinite;
 }
 @keyframes fade {
   0% {
@@ -270,15 +270,8 @@ body:has(.starship-system:hover) .follower {
 .loader-section .pali-tries-to-design h1 {
   line-height: 0.85;
 }
-.loader-section .pali-tries-to-design h1:hover {
-  scale: 1.1;
-}
 .loader-section .pali-tries-to-design h1:last-child {
   color: #EC5663;
-}
-.loader-section .pali-tries-to-design h1:last-child:hover {
-  transform-origin: left bottom;
-  rotate: 5deg;
 }
 .loader-section .starship-container.loader-slide-out {
   animation: 5s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s starshipLoaderSlideOut;
@@ -395,6 +388,10 @@ body {
 .contact-section .contact-me-wrapper .section-title {
   text-align: center;
 }
+.contact-section .contact-me-wrapper:hover .pali-tries-to-design h1:last-child {
+  transform-origin: bottom left;
+  rotate: 5deg;
+}
 .contact-section .pali-tries-to-design {
   display: flex;
   flex-flow: column nowrap;
@@ -406,6 +403,7 @@ body {
 }
 .contact-section .pali-tries-to-design h1:last-child {
   color: #EC5663;
+  transition: 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
 form#contactMeForm {
@@ -731,6 +729,7 @@ body.project-body main.main-section .next-project:hover > i {
   justify-content: space-between;
   flex-flow: row nowrap;
   padding: 0rem 2rem;
+  gap: 1rem;
   animation: 1600ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s 1 slideInFromBottom;
 }
 @keyframes slideInFromBottom {
@@ -749,6 +748,9 @@ body.project-body main.main-section .next-project:hover > i {
   padding: 0.5rem 2rem;
   border-radius: 10rem;
   background-color: #101010;
+}
+.progress-bar-container .progress-icons {
+  padding: 1.25rem;
 }
 .progress-bar-container .altitude-container .altitude .altitude-value {
   font-weight: 700;
@@ -1331,21 +1333,98 @@ section .section-title {
 
 /*END OF LIFT OFF SECTION==========*/
 body.about-me .main-section {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
-}
-body.about-me .main-section .picture-container {
   position: relative;
-  width: 20%;
-  justify-self: center;
 }
-body.about-me .main-section .picture-container img {
+body.about-me .main-section .about-me-title {
+  position: absolute;
+  z-index: -1;
+  font-size: 12rem;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+  letter-spacing: 1rem;
+  opacity: 0.25;
+  animation-name: myName;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transform-origin: center left;
+}
+@keyframes myName {
+  0% {
+    top: 80%;
+    opacity: 0;
+    scale: 0.8;
+  }
+  50% {
+    top: 5%;
+    opacity: 0.2;
+    scale: 1;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.25;
+  }
+}
+body.about-me .main-section .portrait-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.about-me .main-section .portrait-wrapper .picture-container {
+  width: 50%;
+  bottom: -120%;
+}
+body.about-me .main-section .portrait-wrapper .picture-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0) 60%, #0A0A0A 100%);
+  z-index: 2;
+}
+body.about-me .main-section .dot-wrapper {
+  position: absolute;
+  left: 15%;
+  z-index: 10;
+}
+body.about-me .main-section .dot-wrapper:hover .dot {
+  background-color: #EC5663;
+  cursor: pointer;
+}
+body.about-me .main-section .dot-wrapper:hover .dot::after {
+  opacity: 1;
+}
+body.about-me .main-section .dot-wrapper .dot {
+  width: 2rem;
+  height: 2rem;
+  border: #EC5663 2px solid;
   border-radius: 50%;
 }
-body.about-me .main-section .text {
-  max-width: 30%;
-  justify-self: center;
+body.about-me .main-section .dot-wrapper.honest-me {
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+body.about-me .main-section .dot-wrapper.honest-me::after {
+  content: "Honest Me";
+  position: absolute;
+  color: #EC5663;
+  bottom: -120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+body.about-me .main-section .dot-wrapper.one-joke {
+  left: 85%;
+  transform: translateX(-50%);
 }
 
 .floating {
@@ -1367,6 +1446,27 @@ body.about-me .main-section .text {
   100% {
     transform: translate(0%, 0%);
   }
+}
+
+body.about-me p {
+  width: 50%;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 1rem;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 /*ACCESSIBILITY==================*/
