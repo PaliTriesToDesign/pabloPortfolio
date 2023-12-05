@@ -11,6 +11,8 @@ const honestMeButton = document.getElementById('honestMeButton');
 const jokeButton = document.getElementById('jokeButton');
 const aboutMeContent = document.getElementById('aboutMeContent');
 
+const jokesArr = ['How do you comfort a JavaScript bug? You console it.', 'I only have one joke and it is really bad, sorry.'];
+
 function aboutMe(){
     aboutMeContent.innerHTML = `<p>Hey there! I'm just a guy who loves designing, coding, bouldering, and playing frisbee. I enjoy taking inspiring ideas and bringing them to life in my projects.</p>`
     aboutMeButton.parentElement.style.opacity = `1`;
@@ -30,7 +32,8 @@ function honestMe(){
 }
 
 function joke(){
-    aboutMeContent.innerHTML = `<p>Hey there! I'm just a guy who loves designing, coding, bouldering, and playing frisbee. I enjoy taking inspiring ideas and bringing them to life in my projects.</p>`
+    let randomNum = Math.floor(Math.random()*jokesArr.length);
+    aboutMeContent.innerHTML = `<p>${jokesArr[randomNum]}</p>`
     jokeButton.parentElement.style.opacity = `1`;
     contentOpacity();
     resetOpacity(aboutMeButton, honestMeButton);
