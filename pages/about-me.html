@@ -11,13 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
    
-    <script src="../app.js" defer></script>
+    <script type="module" src="../js/about-me.js"></script>
+    <script type="module" src="../js/functions.js"></script>
 </head>
 <body class="about-me">
     <audio id="roomTone" loop autoplay>
-        <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
+        <source src="../assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
     </audio>
+    <audio class="bleep-audio" id="bleepSound" src="../assets/soundFx/gameBleep.wav"></audio>
 
     <nav class="navigation-bar">
         <div class="personal-logo">
@@ -57,19 +59,54 @@
             </div> -->
         </main>
         <div class="about-me-grid">
-            <div class="about-me-cell"></div>
-            <div class="about-me-cell"></div>
-            <div class="about-me-cell"></div>
-            <div class="about-me-cell content"></div>
+            <div class="about-me-cell about-me">
+                <button id="aboutMeButton" class="pushable">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">
+                    <p>About Me</p>
+                    </span>
+              </button>
+            </div>
+            <div class="about-me-cell honest-me">
+                <button id="honestMeButton" class="pushable">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">
+                    <p>Honest Me</p>
+                    </span>
+              </button>
+            </div>
+            <div class="about-me-cell joke">
+                <button id="jokeButton" class="pushable">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">
+                      <p>Want a Joke?</p>
+                    </span>
+                  </button>
+            </div>
+            <div id="aboutMeContent" class="about-me-cell content"><p>Choose an option</p></div>
         </div>
         <div class="text-wrapper">
-            <p class="floating">
+            <!-- <p class="floating">
                 Hey there! I'm just a guy who loves designing, coding, bouldering, and playing frisbee. I enjoy taking inspiring ideas and bringing them to life in my projects.
-            </p>
+            </p> -->
             <p>
                 Please, feel free to connect with me on <a href="https://linkedin.com/in/palimv" target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a> or contact me via email: pablo@palitriestodesign.com
             </p>
         </div>
     </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-icons">
+            <div id="soundIcon" class="element">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Progress Bar -->
+    
 </body>
 </html>

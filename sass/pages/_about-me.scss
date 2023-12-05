@@ -122,16 +122,12 @@ body.about-me .main-section {
     }     
 }
 
-body.about-me p {
-    width: 50%;
-}
-
 .main-wrapper{
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
     width: 60%;
 }
@@ -141,6 +137,7 @@ body.about-me .text-wrapper {
     flex-flow: column;
     align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 
 body.about-me .text-wrapper p {
@@ -162,3 +159,140 @@ body.about-me .text-wrapper p {
         font-size: 0.85rem;
     }
 }
+
+.about-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .about-me-cell {
+        border-radius: 0.5rem;
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .about-me-cell.about-me, .about-me-cell.honest-me, .about-me-cell.joke {
+        grid-column: 1/2;
+        opacity: 0.5;
+        white-space: nowrap;
+
+         p {
+            text-align: center;
+         }
+    }
+
+    .about-me-cell.content {
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+        background-color: #101010;
+        padding: 2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            width: fit-content;
+            opacity: 0.5;
+        }
+    }
+}
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    width: 100%;
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(0, 0%, 16%) 0%,
+      #070707 8%,
+      #070707 92%,
+      hsl(0, 0%, 16%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: white;
+    background: $bar-colour;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+
+  .pushable:hover p {
+    opacity: 1;
+  }
+
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  body.about-me {
+
+    .progress-bar-container {
+        justify-content: end;
+    }
+  }

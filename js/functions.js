@@ -84,7 +84,6 @@ export function toggleMute() {
 
   let roomTone = document.getElementById('roomTone');
   let soundIcon = document.getElementById("soundIcon");
-  let rocketLaunchSound = document.getElementById('rocketLaunchSound');
   
   if (roomTone.paused) {
     roomTone.play();
