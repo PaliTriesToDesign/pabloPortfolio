@@ -61,51 +61,6 @@ body.about-me .main-section {
             }
         }
     }
-
-    .dot-wrapper {
-        position: absolute;
-        left: 15%;
-        z-index: 10;
-
-        &:hover .dot {
-            background-color: $accent-colour;
-            cursor: pointer;
-        }
-
-        &:hover .dot::after {
-            opacity: 1;
-        }
-
-        .dot {
-            width: 2rem;
-            height: 2rem;
-            border: $accent-colour 2px solid;
-            border-radius: 50%;
-        }
-    }
-
-    .dot-wrapper.honest-me {
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%);
-
-        &::after {
-            content: 'Honest Me';
-            position: absolute;
-            color: $accent-colour;
-            bottom: -120%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-        }
-    }
-
-    .dot-wrapper.one-joke {
-        left: 85%;
-        transform: translateX(-50%);
-    }
 }
 
 body.about-me {
@@ -119,14 +74,14 @@ body.about-me {
         padding: 1rem;
         width: 40%;
     }
-}
 
-body.about-me .text-wrapper {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
+    .text-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
 body.about-me .text-wrapper p {
@@ -150,10 +105,15 @@ body.about-me .text-wrapper p {
 }
 
 .about-me-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    width: 100%;
     gap: 1rem;
+
+    .buttons-wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+    }
 
     .about-me-cell {
         border-radius: 0.5rem;
@@ -164,7 +124,6 @@ body.about-me .text-wrapper p {
     }
 
     .about-me-cell.about-me, .about-me-cell.honest-me, .about-me-cell.joke {
-        grid-column: 1/2;
         opacity: 0.5;
         white-space: nowrap;
 
@@ -174,14 +133,13 @@ body.about-me .text-wrapper p {
     }
 
     .about-me-cell.content {
-        grid-column: 2/-1;
-        grid-row: 1/-1;
-        background-color: #101010;
+        background-color: $bar-colour;
         padding: 2rem;
 
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-grow: 2;
 
         p {
             width: fit-content;
