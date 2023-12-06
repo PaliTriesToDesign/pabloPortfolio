@@ -11,7 +11,7 @@ const honestMeButton = document.getElementById('honestMeButton');
 const jokeButton = document.getElementById('jokeButton');
 const aboutMeContent = document.getElementById('aboutMeContent');
 
-const jokesArr = ['How do you comfort a JavaScript bug? You console it. <br> (It is terrible, I know)', 'I only have one joke and it is really bad, sorry.'];
+const jokesArr = [`I only have one joke and it is really bad. Are you ready? <br> (Press again)`, `How do you comfort a JavaScript bug? You console it. <br> (Press again)`, 'I told you it was bad.'];
 
 function aboutMe(){
     aboutMeContent.innerHTML = `<p>Hey there! I'm just a guy who loves designing, coding, bouldering, and playing frisbee. I enjoy taking inspiring ideas and bringing them to life in my projects.</p>`
@@ -31,9 +31,9 @@ function honestMe(){
 
 }
 
-function joke(){
-    let randomNum = Math.floor(Math.random()*jokesArr.length);
-    aboutMeContent.innerHTML = `<p>${jokesArr[randomNum]}</p>`
+function joke(joke){
+    aboutMeContent.innerHTML = `<p>${jokesArr[joke]}</p>`;
+
     jokeButton.parentElement.style.opacity = `1`;
     bleepSound();
     contentOpacity();
@@ -51,7 +51,16 @@ function resetOpacity(buttonOne, buttonTwo){
 
 aboutMeButton.addEventListener('click', aboutMe);
 honestMeButton.addEventListener('click', honestMe);
-jokeButton.addEventListener('click', joke);
+
+let index = 0;
+jokeButton.addEventListener('click', function() {
+    console.log(index)
+    joke(index);
+    index++;
+    if(index === jokesArr.length){
+        index = 0;
+    }
+});
 //END OF BUTTONS=========================
 
 

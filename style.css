@@ -1444,6 +1444,7 @@ body.about-me .text-wrapper p span {
 .about-me-grid .about-me-cell.content p {
   width: fit-content;
   opacity: 0.5;
+  text-align: center;
 }
 
 .pushable {
