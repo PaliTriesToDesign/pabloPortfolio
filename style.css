@@ -1415,7 +1415,7 @@ body.about-me .main-section .dot-wrapper.one-joke {
   transform: translateX(-50%);
 }
 
-.main-wrapper {
+body.about-me .main-wrapper {
   display: flex;
   flex-flow: column;
   align-items: center;

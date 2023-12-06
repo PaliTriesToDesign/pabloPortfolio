@@ -108,14 +108,17 @@ body.about-me .main-section {
     }
 }
 
-.main-wrapper{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    width: 40%;
+body.about-me {
+
+    .main-wrapper{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        width: 40%;
+    }
 }
 
 body.about-me .text-wrapper {
