@@ -483,24 +483,11 @@ button, .launch-project-button, #submitButton {
 }
 .project .project-preview-images-wrapper {
   aspect-ratio: 16/9;
+  width: 100%;
+  position: relative;
   z-index: 1;
   opacity: 0;
   display: none;
-  animation-name: floating;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating {
-  0% {
-    transform: translate(0px, -5%);
-  }
-  50% {
-    transform: translate(0px, 5%);
-  }
-  100% {
-    transform: translate(0, -5%);
-  }
 }
 .project .project-preview-images-wrapper:hover .preview-image {
   -webkit-box-shadow: -1px 12px 17px -10px rgba(236, 86, 99, 0.25);
