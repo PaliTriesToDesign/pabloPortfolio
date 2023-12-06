@@ -1,0 +1,120 @@
+:root {
+    --starship-width: 65px;
+}
+
+ .flames-wrapper {
+    display: flex;
+    position: absolute;
+    bottom: -195px;
+    left: calc(var(--starship-width)/2);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+ .flames-wrapper-starship {
+    display: flex;
+    position: absolute;
+    bottom: -85px;
+    left: calc(var(--starship-width)/2);
+    transform: translateX(-50%);
+    z-index: -1;
+    transform-origin: top center;
+}
+
+.flames-wrapper.booster-flames {
+    animation: boosterSeparation 8000ms infinite;
+
+    @keyframes boosterSeparation {
+        0% {
+            transform: translate(0%, 0%);
+            rotate: 0deg;
+        }
+        20% {
+            transform: translate(-10%, 25%);
+            rotate: 10deg;
+        }
+        100% {
+            transform: translate(-100%, 350%);
+            rotate: 45deg;
+        }
+    }
+}
+
+
+  
+.container{
+    rotate: 180deg;
+    margin:80px auto;
+    width: 60px;
+    height: 100px;
+    position:relative;
+    transform-origin:center bottom;
+    animation-name: flicker;
+    animation-duration:3ms;
+    animation-delay:200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+  .flame{
+    bottom:0;
+    position:absolute;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  
+  .red{
+    left:5px;
+    width: 50px;
+    height: 850px;
+    background: linear-gradient(rgba(236, 86, 99, 0) 5%
+  , rgba(236, 86, 99, 1));
+    box-shadow: 0px 40px 10px 5px rgba(236, 86, 99, 1);
+  }
+  
+
+  .white{
+    left:15px; 
+    bottom:-4px;
+    width: 30px;
+    height: 450px;
+    background:linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 1));
+  }
+
+  .flames-wrapper-starship .white {
+    height: 1200px;
+  }
+  
+  .circle{
+    border-radius: 50%;
+    position:absolute;  
+  }
+  
+  .blue{
+    width: 10px;
+    height: 10px;
+    left:25px;
+    bottom:-25px; 
+    background: SlateBlue;
+    box-shadow: 0px 0px 15px 10px SlateBlue;
+  }
+  
+  .black{
+    border-radius: 0 0 50% 50%;
+    width: 25px;
+    height: 30px;
+    left: 17px;
+    bottom:-50px;  
+    background: black;
+    box-shadow: 0px 0px 15px 10px black;
+  }
+  
+  @keyframes flicker{
+    0%   {transform: rotate(-1deg);}
+    20%  {transform: rotate(1deg);}
+    40%  {transform: rotate(-1deg);}
+    60%  {transform: rotate(1deg) scaleY(1.04);}
+    80%  {transform: rotate(-2deg) scaleY(0.92);}
+    100% {transform: rotate(1deg);}
+  }

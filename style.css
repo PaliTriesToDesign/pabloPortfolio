@@ -967,65 +967,6 @@ body.project-body main.main-section .next-project:hover > i {
   transform: translate(-50%, -50%);
 }
 
-.starship-system.floating {
-  animation-name: floating;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating {
-  0% {
-    transform: translate(-54%, -50%);
-  }
-  50% {
-    transform: translate(-46%, -48%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-
-.starship-system.shaking {
-  animation-name: shaking;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-}
-@keyframes shaking {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
 .starship-container, .booster-container {
   width: 65px;
   overflow: hidden;
@@ -1034,14 +975,18 @@ body.project-body main.main-section .next-project:hover > i {
   max-width: unset;
 }
 
-.starship-container {
+.starship-and-flames, .booster-and-flames {
+  width: 65px;
+}
+
+.starship-and-flames, .starship-container {
   height: 195px;
 }
 
-.booster-container {
+.booster-and-flames, .booster-container {
   height: 255px;
   position: absolute;
-  top: 95%;
+  top: 41%;
 }
 
 .rotating {
@@ -1082,9 +1027,9 @@ body.project-body main.main-section .next-project:hover > i {
     transform: translateY(-30rem);
   }
 }
-.starship-system .starship-container.stage-separation {
+.starship-system .starship-and-flames.stage-separation {
   transform: translate(0%, 100%);
-  animation: starshipSeparation 8000ms 1;
+  animation: starshipSeparation 6000ms 1;
 }
 @keyframes starshipSeparation {
   0% {
@@ -1100,7 +1045,7 @@ body.project-body main.main-section .next-project:hover > i {
     rotate: 0deg;
   }
 }
-.starship-system .booster-container.stage-separation {
+.starship-system .booster-and-flames.stage-separation {
   transform: translate(-60%, 500%);
   animation: boosterSeparation 8000ms 1;
 }
@@ -1119,25 +1064,156 @@ body.project-body main.main-section .next-project:hover > i {
   }
 }
 
-.starship-system .starship-container.flying-out {
-  transform: translate(0%, 100%);
-  animation: stageTwoFlyingOut 2000ms 1;
+.starship-system.flying-out {
+  transform: translate(0%, 0%);
+  animation: stageTwoFlyingOut 4000ms 1;
 }
 @keyframes stageTwoFlyingOut {
   0% {
-    transform: translate(0%, 100%);
+    transform: translate(-50%, -50%);
     rotate: 0deg;
   }
   40% {
-    transform: translate(-10%, 120%);
+    transform: translate(-50%, 150%);
     rotate: 5deg;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
   }
   100% {
-    transform: translate(100%, -350%);
-    rotate: 15deg;
+    transform: translate(-50%, -850%);
+    rotate: 0deg;
   }
 }
 
+:root {
+  --starship-width: 65px;
+}
+
+.flames-wrapper {
+  display: flex;
+  position: absolute;
+  bottom: -195px;
+  left: calc(var(--starship-width) / 2);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.flames-wrapper-starship {
+  display: flex;
+  position: absolute;
+  bottom: -85px;
+  left: calc(var(--starship-width) / 2);
+  transform: translateX(-50%);
+  z-index: -1;
+  transform-origin: top center;
+}
+
+.flames-wrapper.booster-flames {
+  animation: boosterSeparation 8000ms infinite;
+}
+@keyframes boosterSeparation {
+  0% {
+    transform: translate(0%, 0%);
+    rotate: 0deg;
+  }
+  20% {
+    transform: translate(-10%, 25%);
+    rotate: 10deg;
+  }
+  100% {
+    transform: translate(-100%, 350%);
+    rotate: 45deg;
+  }
+}
+
+.container {
+  rotate: 180deg;
+  margin: 80px auto;
+  width: 60px;
+  height: 100px;
+  position: relative;
+  transform-origin: center bottom;
+  animation-name: flicker;
+  animation-duration: 3ms;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.flame {
+  bottom: 0;
+  position: absolute;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.red {
+  left: 5px;
+  width: 50px;
+  height: 850px;
+  background: linear-gradient(rgba(236, 86, 99, 0) 5%, rgb(236, 86, 99));
+  box-shadow: 0px 40px 10px 5px rgb(236, 86, 99);
+}
+
+.white {
+  left: 15px;
+  bottom: -4px;
+  width: 30px;
+  height: 450px;
+  background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgb(255, 255, 255));
+}
+
+.flames-wrapper-starship .white {
+  height: 1200px;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.blue {
+  width: 10px;
+  height: 10px;
+  left: 25px;
+  bottom: -25px;
+  background: SlateBlue;
+  box-shadow: 0px 0px 15px 10px SlateBlue;
+}
+
+.black {
+  border-radius: 0 0 50% 50%;
+  width: 25px;
+  height: 30px;
+  left: 17px;
+  bottom: -50px;
+  background: black;
+  box-shadow: 0px 0px 15px 10px black;
+}
+
+@keyframes flicker {
+  0% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(1deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg) scaleY(1.04);
+  }
+  80% {
+    transform: rotate(-2deg) scaleY(0.92);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
 .launch-pad-container {
   position: relative;
 }

@@ -16,13 +16,16 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 </head>
 <body class="home">
+    <!-- Audio FXs -->
     <audio class="audio" id="roomTone" loop autoplay hidden>
         <source src="assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
     </audio>
     <audio class="bleep-audio" id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
     <audio class="audio" id="wrongActionSound" src="/assets/soundFx/wrongAction.wav"></audio>
+    <!-- End Of Audio FXs -->
 
+    <!-- Navigation Bar -->
     <nav class="navigation-bar">
         <div class="personal-logo">
             <a href="index.html">
@@ -38,15 +41,13 @@
             <li><a href="#">+ Projects</a></li>
         </ul>
     </nav>
+    <!-- End Of Navigation Bar -->
+
 
     <!-- Loader Section -->
     <section id="loaderScreen" class="loader-section">
-        <div class="loader-logo">
-            <!-- <img src="/assets/branding/LogoFill.svg" alt=""> -->
-        </div>
 
         <div class="loader-content-wrapper">
-
             <div class="inner-wrapper">
                 <div class="title-mask prevent-select">
                     <div class="bottom-element">
@@ -118,30 +119,13 @@
 
     <!-- Landing Section -->
     <section id="landing" class="landing-section">
-        <!-- <div id="landingPad" class="landing-line">
-        </div> -->
     </section>
     <!-- End of Landing Section -->
 
     <!--  Stars Section -->
-    <!-- Create this section after Dec 6th -->
-
     <section class="stars-section">
-        <!-- <div class="stars"></div>
-        <div class="stars"></div>
-        <div class="stars"></div> -->
     </section>
     <!-- End of Stars Section -->
-
-    <!--  Satellites Section -->
-    <!-- Create this section after Dec 6th -->
-
-    <!-- <section class="satellites-section">
-        <div class="satellites"></div>
-        <div class="satellites"></div>
-        <div class="satellites"></div>
-    </section> -->
-    <!-- End of Satellites Section -->
     
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
@@ -245,11 +229,7 @@
                     </div>
                 </div> -->
                 <!-- End of Project -->
-
-                    <!-- Project -->
-                    <!-- Plasticos Prolosa -->
-                    <!-- End of Project -->
-                    
+            
                     <!-- Project -->
                     <div id="project" class="project">
                         <a href="/pages/langara-project.html" target="_blank" rel="noopener no-referrer">
@@ -290,57 +270,10 @@
 
 
     <!--  Earth Curvature Section -->
-    <!-- Create this section after Dec 6th -->
-
     <section class="earth-curvature-section">
         <div class="earth"></div>
     </section>
     <!-- End of Earth Curvature Section -->
-
-
-    <!-- Max Q Section -->
-    <!-- Create this section after Dec 6th -->
-    <!-- <section id="max-q" class="test">
-        <h1>Max Q</h1>
-    </section> -->
-    <!-- End of Max Q Section -->
-
-
-    <!--  Planes Section -->
-    <!-- Create this section after Dec 6th -->
-
-    <!-- <section class="planes-section">
-        <div class="plane"></div>
-        <div class="plane"></div>
-        <div class="plane"></div>
-    </section> -->
-    <!-- End of Clouds Section -->
-
-    
-    <!--  Clouds Section -->
-    <!-- Create this section after Dec 6th -->
-
-    <!-- <section class="clouds-section">
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-    </section> -->
-    <!-- End of Clouds Section -->
-
-    <!-- What I Do Section -->
-    <!-- Create this section after Dec 6th -->
-
-    <!-- <section class="what-i-do-section">
-        <ul class="what-i-do-list">
-            <li class="what-i-do-item">UX</li>
-            <li class="what-i-do-item">UI</li>
-            <li class="what-i-do-item">Coding</li>
-            <li class="what-i-do-item">Illustrating</li>
-        </ul>
-        <h2>What I Do</h2>
-    </section> -->
-    <!-- End of What I Do Section -->
-
 
     <!-- Intro Section -->
     <section id="about-me" class="about-me-section">
@@ -351,10 +284,6 @@
                     <br>
                 I am passionate about <strong>web design</strong>, <strong>coding</strong> and <strong>illustration</strong>. When I'm not crafting digital art, you can find me exploring new design trends or sketching in my notebook.</p>
             </div>
-            <!-- <div class="section-name-wrapper">
-                <p class="section-name active">Professional Version</p>
-                <p class="section-name">Honest Version</p>
-            </div> -->
             <h3 class="section-title"><a href="/pages/about-me.html">About Me</a></h3>
         </div>
 
@@ -362,11 +291,7 @@
     <!-- End of Intro Section -->
 
     <!--  Birds Section -->
-    <!-- Create this section after Dec 6th -->
     <section class="birds-section">
-            <div class="birdz"></div>
-            <div class="birdz"></div>
-            <div class="birdz"></div>
     </section>
     <!-- End of Birds Section -->
 
@@ -387,11 +312,16 @@
 
     <!-- Starship -->
     <div id="starshipSystem" class="starship-system" >
-        <div class="starship-container">
-            <img id="starship" class="starship" src="assets/starship/sprite.png" alt="" draggable="false">
+        <div id="starshipAndFlames" class="starship-and-flames">
+            <div class="starship-container">
+                <img id="starship" class="starship" src="assets/starship/sprite.png" alt="" draggable="false">
+            </div>
+            <!-- flames here -->
         </div>
-        <div class="booster-container">
-            <img id="booster" class="booster" src="assets/starship/booster_sprite.png" alt="" draggable="false">
+        <div id="boosterAndFlames" class="booster-and-flames">
+            <div class="booster-container">
+                <img id="booster" class="booster" src="assets/starship/booster_sprite.png" alt="" draggable="false">
+            </div>
         </div>
     </div>
     <!-- End Of Starship -->
@@ -431,19 +361,6 @@
                 <a href="https://github.com/PaliTriesToDesign" target="_blank">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                
-                <!-- <a href="https://twitter.com/PT2DS" target="_blank">
-                    <i class="fa-brands fa-twitter"></i>
-                </a> -->
-
-                <!-- <ul class="stages-list">
-                    <li><a href="#lift-off">Lift Off!</a></li>
-                    <li><a href="#about-me">About Me</a></li>
-                    <li><a href="#max-q">Max Q</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#landing">Landing</a></li>
-                    <li><a href="#contact-me">Contact Me</a></li>
-                </ul> -->
             </div>
         </div>
 
@@ -451,9 +368,6 @@
             <div id="soundIcon" class="element">
                 <i class="fa-solid fa-volume-high"></i>
             </div>
-            <!-- <div class="element">
-                <a href="#contactMe"><i class="fa-solid fa-arrow-up"></i></a>
-            </div> -->
         </div>
     </div>
     <!-- End Of Progress Bar -->

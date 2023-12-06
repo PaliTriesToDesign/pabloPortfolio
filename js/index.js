@@ -67,49 +67,72 @@ const mute = document.getElementById('soundIcon');
 window.addEventListener('scroll', getScrollPercentage);
 let scrollPercentage = getScrollPercentage();
 
+// CREATE FIRE ELEMENT============
+let starshipFire = document.createElement('div');
+starshipFire.classList.add('flames-wrapper-starship')
+starshipFire.innerHTML = `<div class="container">
+  <div class="red flame"></div>
+  <div class="white flame"></div>
+  <div class="blue circle"></div>
+  <div class="black circle"></div>
+</div>`;
+
+let boosterFire = document.createElement('div');
+boosterFire.classList.add('flames-wrapper')
+boosterFire.innerHTML = `<div class="container">
+  <div class="red flame"></div>
+  <div class="white flame"></div>
+  <div class="blue circle"></div>
+  <div class="black circle"></div>
+</div>`;
+
+let boosterAndFlames = document.getElementById('boosterAndFlames');
+let starshipAndFlames = document.getElementById('starshipAndFlames');
+
+function appendStarshipFire(){
+  starshipAndFlames.appendChild(starshipFire);
+}
+
+function appendBoosterFire(){
+  boosterAndFlames.appendChild(boosterFire);
+}
+
+function removeBoosterFire(){
+  boosterAndFlames.remove();
+}
+//END OF CREATE FIRE ELEMENT======
+
+
+
 // STAGE SEPARATION===============
+
 function stageSeparation(){
-    let currentScrollPos = window.scrollY;
-    let maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    let altitudeValue = maxScrollHeight - currentScrollPos;
+
     scrollPercentage  = getScrollPercentage();
 
     if(scrollPercentage > 95){
       canSeparate = true;
     }
 
-    // if(altitudeValue < 30){
-    //   canSeparate = true;
-    // }
-
-    console.log(canSeparate)
-
     if(scrollPercentage < 30 && canSeparate === true){
-      console.log('Staging...');
       starship.parentElement.classList.add('stage-separation');
-      booster.parentElement.classList.add('stage-separation');
+      boosterAndFlames.classList.add('stage-separation');
+
+      isSeparated = true;
 
         setTimeout(function() {
-            booster.parentElement.remove();
-        }, 8000);
-    };
+            boosterAndFlames.remove();
+        }, 6000);
 
-    
-    // if(altitudeValue > 4600 && canSeparate === true && isLoaderOnScreen  === false){
-    //   console.log('Staging...');
-    //   starship.parentElement.classList.add('stage-separation');
-    //   booster.parentElement.classList.add('stage-separation');
-
-    //     setTimeout(function() {
-    //         booster.parentElement.remove();
-    //     }, 8000);
-    // };
-
-    
+        setTimeout(function() {
+          appendStarshipFire();
+        }, 2450);
+    }; 
 };
 
 window.addEventListener("scroll", stageSeparation);
 
+let isStarshipOn = false;
 
 // STARSHIP ROTATING==============
 function starshipRotating() {
@@ -120,42 +143,29 @@ function starshipRotating() {
     if(altitudeValue > 1){
       starship.classList.add('rotating');
       booster.classList.add('rotating');
+      
+      isStarshipOn = true;
+      if(isSeparated === false && isStarshipOn === true && isLoaderOnScreen === false) {
+        appendBoosterFire();
+      }
     } else {
       starship.classList.remove('rotating');
       booster.classList.remove('rotating');
+      boosterFire.remove();
     };
 
     if(altitudeValue === 0){
       isFlying = true;
     };
     
-    if(altitudeValue > 1 && isFlying === true && isLoaderOnScreen === false) {
-        // rocketLaunchSound();
-    } else {
-        // pauseRocketLaunchSound();
-    };
-
-    if(isFlying === true){
-      setTimeout(function() {
-        isFlying = false;
-      }, 18000);
-    };
-    
     if(scrollPercentage <= 5 && canSeparate === true && isLoaderOnScreen === false) {
-      starship.parentElement.classList.add('flying-out');
+      starshipSystem.classList.add('flying-out');
+      
       setTimeout(function() {
-        starship.parentElement.remove();
-      }, 2000)
-      // starship.classList.remove('rotating');
-      // booster.classList.remove('rotating');
-      // landingPad.classList.add('expanded')
-
-    } else if(altitudeValue < 6000) {
-      // landingPad.classList.remove('expanded');
-    };
-  
-  
-   //Adds or removes blinking scroll up arrow 
+        starshipAndFlames.remove();
+      }, 4000)
+    } 
+    
     if(altitudeValue > 100){
       scrollUp.style.display = 'none';
     } else {
