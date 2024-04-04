@@ -1,0 +1,60 @@
+@include for-size(phone-only) {
+    .earth-curvature-section {
+        @include display-flex(column, center, center);
+        position: fixed;
+        bottom: 0%;
+        max-width: unset;
+        color: $background-colour;
+    
+        z-index: -1;
+    
+        .earth-container {
+            height: 100vh;
+            width: 250vw;
+            overflow: hidden;
+            position: relative;
+    
+            img {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+@include for-size(tablet-portrait-up) {
+    .earth-curvature-section {
+        @include display-flex(column, center, center);
+        position: fixed;
+        bottom: 0%;
+        max-width: unset;
+        color: $background-colour;
+    
+        z-index: -1;
+    
+        .earth-container {
+            height: 100vh;
+            width: 200vw;
+            overflow: hidden;
+            position: relative;
+    
+            img {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+@include for-size(tablet-landscape-up) {
+    .earth-curvature-section {
+    
+        .earth-container {
+            width: 70vw;
+        }
+    }
+}

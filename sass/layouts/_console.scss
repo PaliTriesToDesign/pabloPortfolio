@@ -1,0 +1,177 @@
+.console-container {
+    @include display-flex;
+    @include drop-shadow;
+    gap: 1rem;
+    background-color: $background-colour;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-width: 24rem;
+    max-width: 24rem;
+
+    .images-container {
+        position: relative;
+        border-radius: 0.5rem;
+        border: 2px solid $contrast-colour;
+        overflow: hidden;
+        height: 20rem;
+        width: 100%;
+
+        .depth {
+            background-color: $drop-shadow-colour;
+            height: 16px;
+            
+        }
+
+        .image-container {
+            border-radius: 0.5rem;
+            background-color: $background-colour;
+            background-image: url(../../assets/aboutMe/pablo.webp);
+            filter: grayscale(90%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 25rem;
+            position: absolute;
+            top: 6px;
+            left: 0%;
+            z-index: 1;
+        }
+
+        .door {
+            background-color: $background-colour;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .left-door {
+            top: 0%;
+            left: -50%;
+            border-right: 2px solid $contrast-colour;
+        }
+
+        .right-door {
+            top: 0%;
+            right: -50%;
+            border-left: 2px solid $contrast-colour;
+        }
+    }
+
+    .bolts {
+        @include display-flex(row, space-between, center);
+        gap: 0.5rem;
+        width: 100%;
+
+        .bolt {
+            border: 2px solid $contrast-colour;
+            border-radius: 100%;
+            height: 1rem;
+            width: 1rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid $contrast-colour;
+                height: 0.9rem;
+                width: 2px;
+            
+            }
+        }
+
+        p {
+            opacity: 0.4;
+            font-size: 1rem;
+        }
+    }
+
+    .bolts-top {
+
+        .bolt:first-child {
+            transform: rotate(15deg)
+        }
+
+        .bolt:last-child {
+            transform: rotate(-45deg)
+        }
+    }
+
+    .bolts-bottom {
+
+        .bolt:first-child {
+            transform: rotate(-30deg)
+        }
+
+        .bolt:last-child {
+            transform: rotate(60deg)
+        }
+    }
+
+    .bottom-container {
+        @include display-flex;
+        gap: 0.5rem;
+        width: 100%;
+
+
+        .text-container {
+            background-color: $dark-drop-shadow-colour;
+            border-radius: 0.5rem;
+            border: 2px solid $contrast-colour;
+            padding: 1rem;
+            color: #10462c;
+            min-height: 9rem;
+            min-width: 100%;
+            position: relative;
+
+            p {
+            font-size: 1.1rem;
+            }
+        }
+
+        .buttons-container {
+            @include display-flex(row, space-between, center);
+            gap: 1rem;
+            width: 100%;
+
+            .power-button, .prev-arrow, .next-arrow {
+                border-radius: 0.5rem;
+                border: 2px solid $contrast-colour;
+                color: $contrast-colour;
+                padding: 0.5rem 0.75rem;
+                font-size: 1.2rem;
+                @include drop-shadow;
+
+                &:hover {
+                    transform: translateY(4px);
+                    box-shadow: unset;
+                }
+
+                i {
+                    &:hover {
+                        scale: unset;
+                        color: unset;
+                    }
+                }
+            }
+
+            .power-button {
+                background-color: $green-accent-colour;
+            
+            }
+
+            .prev-arrow, .next-arrow {
+                background-color: #F5F5F5;
+            }
+
+            .arrow-buttons-container {
+                @include display-flex(row, center, center);
+                gap: 1rem;
+            }
+        }
+    }
+}

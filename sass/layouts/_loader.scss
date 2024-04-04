@@ -1,28 +1,22 @@
-.loader-section {
+section.loader-section {
     background-color: $background-colour;
+    filter: drop-shadow(0px 4px 0px $drop-shadow-colour);
 
-    display: flex;
+    display: none;
+    // display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
 
     position: fixed;
-    inset: 0;
-    width: 100vw;
-    max-width: unset !important;
-    height: 100vh;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 1rem;
+
+    height: unset;
     z-index: 100;
-
-    .loader-logo {
-        padding: 2rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-
-        img {
-            width: 5rem;
-        }
-    }
 
     .loader-content-wrapper {
         display: flex;
@@ -31,7 +25,7 @@
         justify-content: center;
 
         gap: 4rem;
-        height: 100%;
+        height: fit-content;
 
         .inner-wrapper {
             display: flex;
@@ -50,7 +44,10 @@
             }
 
             label {
-                animation: fade 1200ms steps(1) infinite;
+                color: $contrast-colour;
+                font-weight: $fw-bold;
+                text-align: center;
+                animation: fade 800ms steps(1) infinite;
 
                 @keyframes fade {
                     0% { opacity: 0; }
@@ -70,8 +67,8 @@
                 input#nameInput, button#nameButton {
                     background-color: $background-colour;
                     color: $contrast-colour;
-                    border: 1px solid $contrast-colour;
-                    border-radius: 5rem;
+                    border: 2px solid $contrast-colour;
+                    border-radius: 0.5rem;
                 }
 
                 button#nameButton {
@@ -79,8 +76,8 @@
                     padding: 0.5rem 1rem;
 
                     &:hover {
-                        background-color: $accent-colour;
-                        border: 1px solid $accent-colour;
+                        background-color: $purple-accent-colour;
+                        border: 2px solid $purple-accent-colour;
                         color: $background-colour;
                         cursor: pointer;
                     }
@@ -100,7 +97,7 @@
         }
 
         h1:last-child {
-            color: $accent-colour;
+            color: $yellow-accent-colour;
         }
     }
 
@@ -135,3 +132,4 @@
         }
     }
 }
+

@@ -107,11 +107,11 @@ body.project-body {
     
     
                     &:hover > h3 {
-                        color: $accent-colour;
+                        color: $yellow-accent-colour;
                     }
     
                     .solution-part {
-                        color: $accent-colour;
+                        color: $yellow-accent-colour;
                     }
     
                     #challenges {
@@ -171,7 +171,7 @@ body.project-body {
             align-items: center;
             gap: 1rem;
             animation: fade 800ms steps(1) infinite;
-            color: $accent-colour;
+            color: $yellow-accent-colour;
 
             @keyframes fade {
                 0% { opacity: 0; }

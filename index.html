@@ -17,12 +17,8 @@
 </head>
 <body class="home">
     <!-- Audio FXs -->
-    <audio class="audio" id="roomTone" loop autoplay hidden>
-        <source src="assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
-        Audio
-    </audio>
     <audio class="bleep-audio" id="bleepSound" src="/assets/soundFx/gameBleep.wav"></audio>
-    <audio class="audio" id="wrongActionSound" src="/assets/soundFx/wrongAction.wav"></audio>
+    <audio class="audio" id="wrongActionSound" src="/assets/soundFx/wrongAction2.wav"></audio>
     <!-- End Of Audio FXs -->
 
     <!-- Navigation Bar -->
@@ -34,12 +30,6 @@
                 </div>
             </a>
         </div>
-
-
-        <ul>
-            <li><a href="pages/about-me.html">+ About Me</a></li>
-            <li><a href="#">+ Projects</a></li>
-        </ul>
     </nav>
     <!-- End Of Navigation Bar -->
 
@@ -48,23 +38,6 @@
     <section id="loaderScreen" class="loader-section">
 
         <div class="loader-content-wrapper">
-            <div class="inner-wrapper">
-                <div class="title-mask prevent-select">
-                    <div class="bottom-element">
-                        <div class="pali-tries-to-design">
-                            <h1>Pali</h1>
-                            <h1>Tries to</h1>
-                            <h1 class="floating">design</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="loader-starship-system" >
-                    <div id="loaderStarship" class="starship-container">
-                        <img class="starship " src="assets/starship/sprite.png" alt="" draggable="false">
-                    </div>
-                </div>
-            </div>
-
             <div class="input-wrapper">
                 <form id="nameForm" class="user-name-form" action="">
                     <label id="nameLabel" class="alert" for="name">
@@ -83,228 +56,143 @@
 
     <!-- Contact Section -->
     <section id="contactMe" class="contact-section">
+        <h1 id="paliTriesTo">Pali tries <br> to <b>design</b></h1>
         
-        <div class="section-wrapper">
-            <div class="contact-me-wrapper">
-                <div class="pali-tries-to-design">
-                    <h1>Pali</h1>
-                    <h1>Tries to</h1>
-                    <h1>design</h1>
-                </div>
-                
-                <form id="contactMeForm">
-                    <div class="input-wrapper">
-                        <div class="input-group">
-                            <label for="username">Name:</label>
-                            <input type="text" id="username" name="name" placeholder="Your Full Name" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="username">Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                        </div>
-                    </div>
-                    <input type="hidden" name="_next" value="https://palitriestodesign.com/pages/thank-you.html">
-                    <div class="input-group">
-                        <label for="message">Message:</label>
-                        <textarea type="text" id="message" name="message" placeholder="Write your message here..." required rows="5"></textarea>
-                    </div>
-                    <button id="submitButton" type="submit">Send</button>
-                </form>
-                        </div>
-                
-                <h3 id="contactMeTitle" class="section-title">Contact Me</h3>
+        <div class="home-card-wrapper">
+            <div class="learn-more home-card-row home-card">
+                <p class="contact-me-title">Curious to learn more?</p>
             </div>
+            <div class="home-card-inner-wrapper">
+                <div class="home-card-description home-card">
+                    <p>Shoot me an email at <b>palitriestodesign<br>@gmail.com</b> or connect with me on LinkedIn.</p>
+                </div>
+                <div class="home-card-column home-card">
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="https://linkedin.com/in/palimv" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mask">
+                <p class="copyright">Illustrated, designed and coded by <b>Pablo Montoya Varela</b>, 2024 &copy;</p>
+            </div>
+        </div>
+
     </section>
     <!-- End of Contact Section -->
-
-    <!-- Landing Section -->
-    <section id="landing" class="landing-section">
-    </section>
-    <!-- End of Landing Section -->
-
-    <!--  Stars Section -->
-    <section class="stars-section">
-    </section>
-    <!-- End of Stars Section -->
     
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="section-wrapper">
-            <div class="section-content-wrapper">
-                <!-- Project -->
-                <div id="project" class="project">
-                    <a href="/pages/webb-telescope.html" target="_blank" rel="noopener no-referrer">
-                        <div id="previewImages" class="project-preview-images-wrapper">
-                            <div class="preview-image preview-image-1">
-                            <img src="/assets/projectImages/webbTelescope/finalResult1.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-2">
-                            <img src="/assets/projectImages/webbTelescope/finalResult2.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-3">
-                            <img src="/assets/projectImages/webbTelescope/finalResult3.webp" alt="Preview image" loading="lazy">
-                            </div>
-                        </a>
+    <section id="projects" class="projects-section">         
+        <!-- Project -->
+        <div id="project" class="project magneto">
+            <a href="pages/capstone-project.html" target="_blank">
+            <div class="main-mask">
+                <div class="project-container">
+                    <div class="open-icon">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </div>
                     <div class="project-inner-wrapper">
-                        <div class="project-text-container">
-                            <h3 class="project-title">
-                                <a class="project-link" href="/pages/webb-telescope.html" target="_blank">
-                                James Webb Telescope: UI Redesign
-                                </a>
-                            </h3>
-                            <p class="project-description">Redesigned the Webb Telescope's website as part of Langara College's Web and Mobile App Design and Development (WMDD) program.</p>
-                        </div>
-                        <a href="https://webbtelescope.org/home" target="_blank" rel="noopener no-referrer">
-                            <div class="launch-project-button">
-                                <p class="button-text">Launch Site</p>
+                        <div class="project-title">
+                            <div class="mask">
+                                    <h3>Learnium</h3>
                             </div>
-                        </a>
+                        </div>
+                        <div class="mask">
+                            <div class="project-tags">
+                                <p>UX</p>
+                                <p>UI</p>
+                                <p>Design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <div class="project-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo ipsa ab voluptates, quasi corrupti modi?
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <img src="assets/projectImages/learnium/ui/feature01/03studyReviewContent.png" alt="">
+                        <img src="assets/projectImages/learnium/ui/feature02/03results.png" alt="">
+                        <img src="assets/projectImages/learnium/ui/feature02/01keyTopic.png" alt="">
+                        <img src="assets/projectImages/learnium/ui/feature02/01keyTopic.png" alt="">
+                        <img src="assets/projectImages/learnium/ui/feature02/01keyTopic.png" alt="">
+                        <img src="assets/projectImages/learnium/ui/feautre05/01dailyChallenge.png" alt="">
                     </div>
                 </div>
-                <!-- End of Project -->
-
-                <!-- Project -->
-                <div id="project" class="project">
-                    <a href="/pages/opeth.html" target="_blank" rel="noopener no-referrer">
-                        <div id="previewImages" class="project-preview-images-wrapper">
-                            <div class="preview-image preview-image-1">
-                            <img src="/assets/projectImages/opeth/finalResult1.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-2">
-                            <img src="/assets/projectImages/opeth/finalResult2.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-3">
-                            <img src="/assets/projectImages/opeth/finalResult3.webp" alt="Preview image" loading="lazy">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-inner-wrapper">
-                        <div class="project-text-container">
-                            <h3 class="project-title">
-                                <a class="project-link" href="/pages/opeth.html" target="_blank">
-                                Opeth Band: UI Redesign
-                                </a>
-                            </h3>
-                            <p class="project-description">Revamped Opeth band's website through Langara College's Web and Mobile App Design and Development (WMDD) program.</p>
-                        </div>
-                        <a href="https://opeth.com" target="_blank" rel="noopener no-referrer">
-                            <div class="launch-project-button">
-                                <p class="button-text">Launch Site</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- End of Project -->
-
-                <!-- Project -->
-                <!-- <div id="project" class="project">
-                    <a href="/pages/learnium.html" target="_blank" rel="noopener no-referrer">
-                        <div id="previewImages" class="project-preview-images-wrapper">
-                            <div class="preview-image preview-image-1">
-                            <img src="/assets/projectImages/opeth/finalResult1.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-2">
-                            <img src="/assets/projectImages/opeth/finalResult2.webp" alt="Preview image" loading="lazy">
-                            </div>
-                            <div class="preview-image preview-image-3">
-                            <img src="/assets/projectImages/opeth/finalResult3.webp" alt="Preview image" loading="lazy">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-inner-wrapper">
-                        <div class="project-text-container">
-                            <h3 class="project-title">
-                                <a class="project-link" href="/pages/learnium.html" target="_blank">
-                                Learnium: Learning App
-                                </a>
-                            </h3>
-                            <p class="project-description">In a collaborative team effort with 4 designers and 4 developers at Langara, I contributed to crafting an app that transforms text into interactive study sessions</p>
-                        </div>
-                        <a href="https://learnium.app" target="_blank" rel="noopener no-referrer">
-                            <div class="launch-project-button">
-                                <p class="button-text">Launch Site</p>
-                            </div>
-                        </a>
-                    </div>
-                </div> -->
-                <!-- End of Project -->
-            
-                    <!-- Project -->
-                    <div id="project" class="project">
-                        <a href="/pages/langara-project.html" target="_blank" rel="noopener no-referrer">
-                            <div id="previewImages" class="project-preview-images-wrapper">
-                                <div class="preview-image preview-image-1">
-                                <img src="/assets/projectImages/langara-app/finalResult3.webp" alt="Preview image" loading="lazy">
-                                </div>
-                                <div class="preview-image preview-image-2">
-                                <img src="/assets/projectImages/langara-app/finalResult2.webp" alt="Preview image" loading="lazy">
-                                </div>
-                                <div class="preview-image preview-image-3">
-                                <img src="/assets/projectImages/langara-app/finalResult1.webp" alt="Preview image" loading="lazy">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="project-inner-wrapper">
-                            <div class="project-text-container">
-                                <h3 class="project-title">
-                                    <a class="project-link" href="/pages/langara-project.html" target="_blank">
-                                    Langara's Website: UI Redesign
-                                    </a>
-                                </h3>
-                                <p class="project-description">As the UI designer, I contributed to renewing Langara's WMDD program website, focusing on an intuitive and visually appealing interface aligned with program directives.</p>
-                            </div>
-                            <a href="https://langara-app.ca" target="_blank" rel="noopener no-referrer">
-                                <div class="launch-project-button">
-                                    <p class="button-text">Launch Site</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End of Project -->
             </div>
-            <h3 class="section-title">Projects</h3>
+            </a>
         </div>
+        <!-- End of Project -->
+
+        
     </section>
     <!-- End of Projects Section -->
+
+    <div class="projects-mask">
+        <div class="text-mask">
+            <h1>Projects</h1>
+        </div>
+        <div class="projects-line"></div>
+    </div>
 
 
     <!--  Earth Curvature Section -->
     <section class="earth-curvature-section">
-        <div class="earth"></div>
+        <div class="earth-container">
+            <img src="assets/world/earth.png" alt="Earth's curvature">
+        </div>
     </section>
     <!-- End of Earth Curvature Section -->
 
     <!-- Intro Section -->
     <section id="about-me" class="about-me-section">
-        <div class="section-wrapper">
-            <div class="section-content-wrapper">
-                <h1 id="aboutMeGreeting" class="about-me-title">Hey!</h1>
-                <p class="about-me-text">I'm <strong>Pablo Montoya Varela</strong>.
-                    <br>
-                I am passionate about <strong>web design</strong>, <strong>coding</strong> and <strong>illustration</strong>. When I'm not crafting digital art, you can find me exploring new design trends or sketching in my notebook.</p>
+        <div class="home-card-wrapper">
+            <div class="home-card-inner-wrapper">
+                <div class="home-card-column home-card">
+                    <p>I'm <b>Pablo</b></p>
+                    <a class="home-button" href="/pages/about-me.html" target="_blank">About Me</a>
+                </div>
+                <div class="home-card-description home-card">
+                    <p>I mix my love for <b>design</b> and <b>coding</b> to create interactive experiences and share compelling stories.</p>
+                </div>
             </div>
-            <h3 class="section-title"><a href="/pages/about-me.html">About Me</a></h3>
+            <div class="home-card-row home-card">
+                <p id="aboutMeGreeting" class="about-me-title">Hey, <b>visitor</b>!</p>
+            </div>
         </div>
-
     </section>
     <!-- End of Intro Section -->
 
-    <!--  Birds Section -->
-    <section class="birds-section">
-    </section>
-    <!-- End of Birds Section -->
+    <!-- Launchpad -->
+    <div class="launchpad">
+        <img src="assets/world/launchpad.png" alt="Launchpad">
+    </div>
+    <!-- End of Launchpad -->
 
     <!-- Lift Off Section -->
     <section id="lift-off" class="lift-off-section">
         <div id="scrollUp" class="scroll-up-section" data-scroll-up>
             <i class="fa-solid fa-chevron-up"></i>
-            <!-- <p>Scroll up to explore...</p> -->
         </div>
-        <div class="launch-pad-container">
-            <img src="/assets/starship/launchPad.png" alt="Launch Pad">
-            <div class="launch-pad-ground">
+        <div class="city-container">
 
+                <div class="city-inner-container">
+                    <div class="top-city-container">
+                        <img src="assets/world/cityTopLayer.png" alt="city layer">
+                    </div>
+                    <div class="train-container">
+                        <img class="skytrain" src="assets/world/skytrain.png" alt="Skytrain">
+                    </div>
+        
+                    <div class="asteroid asteroid-left">
+                        <img src="assets/world/asteroid1.png" alt="">
+                    </div>
+                    <div class="asteroid asteroid-right">
+                        <img src="assets/world/asteroid2.png" alt="">
+                    </div>
+                </div>
+        
             </div>
         </div>
     </section>
@@ -327,51 +215,44 @@
     <!-- End Of Starship -->
 
     <!-- Progress Bar -->
-    <div class="progress-bar-container">
-        <div class="altitude-container">
-            <div class="element">
-                <i class="fa-solid fa-ruler-vertical"></i>
-            </div>
+    <div class="progress">
+        <div class="progress-inner"></div>
+    </div>
+
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-bar-container">
+        <div class="stage-container">
             <div class="altitude">
-                <p class="altitude-title">Altitude</p>
                 <p class="altitude-value">0m</p>
             </div>
-        </div>
-
-        <div class="stage-container">
+            
             <div class="stage-inner">
-                <div class="element">
-                    <i class="fa-solid fa-fire"></i>
-                </div>
-                <div class="active-stage-container">
-                    <div class="prev-next-stage">
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <p id="stageTitle" class="stage-title">Lift Off</p>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-inner"></div>
-                    </div>
-                </div>
+                <p id="stageTitle" class="stage-title">Lift Off</p>
             </div>
-            <div class="stages">
-                <a href="https://linkedin.com/in/palimv" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/PaliTriesToDesign" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </div>
+
+            <a class="about-me-icon" href="pages/about-me.html" target="_blank">
+                <i class="fa-regular fa-user"></i>
+            </a>
         </div>
 
-        <div class="progress-icons">
+        <div class="social">
+            <a href="https://linkedin.com/in/palimv" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <div class="bar-icons">
             <div id="soundIcon" class="element">
                 <i class="fa-solid fa-volume-high"></i>
             </div>
         </div>
     </div>
-    <!-- End Of Progress Bar -->
+    <!-- End Of Bottom Bar -->
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

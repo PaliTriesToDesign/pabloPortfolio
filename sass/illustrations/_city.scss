@@ -1,0 +1,94 @@
+body.home {
+    background-image: url(../../assets/world/finalBg.png);
+    background-position: center;
+    background-size: cover;
+    height: 8000px;
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+.city-container {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+
+    img {
+        max-width: unset;
+    }
+}
+
+.train-container {
+    position: absolute;
+    width: 430px;
+    bottom: 34.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    z-index: -1;
+
+    overflow: hidden;
+    
+    img {
+        max-width: unset;
+    }
+}
+
+.skytrain {
+    transform: translateX(0%);
+    animation: skytrainAnimation 10s infinite linear forwards;
+}
+
+@keyframes skytrainAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(400%);
+    }
+    75% {
+        transform: translateX(400%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.launchpad-container {
+    position: absolute;
+    bottom: 18.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.asteroid {
+    position: absolute;
+    bottom: 30%;
+    transform: translateX(-50%);
+    animation: asteroidAnimation 8s infinite ease-in-out forwards;
+}
+
+.asteroid-left {
+    left: 8%;
+    bottom: 25%;
+    animation-delay: 2s;
+}
+
+.asteroid-right {
+    right: 10%;
+}
+
+@keyframes asteroidAnimation {
+    0%, 100% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+}

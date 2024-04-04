@@ -2,3 +2,13 @@ button, .launch-project-button, #submitButton {
     border: $background-colour;
     font-weight: $fs-pb-s;
 }
+
+.home-button {
+    border: 2px solid $yellow-accent-colour;
+    border-radius: 2rem;
+    font-weight: bold;
+    width: 100%;
+
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}

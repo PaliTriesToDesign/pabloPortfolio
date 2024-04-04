@@ -1,122 +1,16 @@
-.progress-bar-container {
+.progress {
     position: fixed;
-    width: 100%;
-    bottom: 2rem;
-    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 8px;
+    background-color: $contrast-colour;
 
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    padding: 0rem 2rem;
-    gap: 1rem;
-
-    animation: 1600ms cubic-bezier(.47,1.64,.41,.8)  0s 1 slideInFromBottom;
-
-    @keyframes slideInFromBottom {
-        0% {
-            transform: translateY(150%);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-
-    .altitude-container, .stage-container, .progress-icons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-
-        padding: 0.5rem 2rem;
-        border-radius: 10rem;
-
-        background-color: $bar-colour;
-
-    }
-
-    .progress-icons {
-        padding: 1.25rem;
-    }
-
-    .altitude-container .altitude .altitude-value {
-        font-weight: $fw-bold;
-    }
-
-    .stage-inner {
-        display: flex;
-        gap: 1rem;
-
-        .active-stage-container {
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 0.5rem;
-        }
-    }
-
-    .stage-container {
-        gap: 2rem;
-
-        .stage-title {
-            font-weight: $fw-regular;
-            font-size: 1rem;
-        }
-
-        .prev-next-stage {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.125rem 0.5rem;
-
-            background-color: $background-colour;
-            border-radius: 2rem;
-
-            i:hover {
-                color: $accent-colour;
-            }
-        }
-    }
-
-    .stage-container .progress {
-        width: 10vw;
-        height: 4px;
-        border-radius: 4px;
-        background-color: $contrast-colour;
-
-        .progress-inner {
-            height: 4px;
-            width: 0px;
-            border-radius: 4px;
-            background-color: $accent-colour;
-        }
-    }
-
-    .stage-container .stages-list {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 1rem;
-
-        li {
-            font-size: $fs-pb-s;
-        }
-    }
-
-    .stages {
-        display: flex;
-        gap: 1rem;
-        font-size: 1.5rem;
-
-        a:hover i {
-            color: $accent-colour;
-        }
-    }
-
-    .altitude-container, .stage-container, .progress-icons {
-        
-        .element {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .progress-inner {
+        height: 8px;
+        width: 0px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: $yellow-accent-colour;
     }
 }

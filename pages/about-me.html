@@ -15,92 +15,79 @@
     <script type="module" src="../js/functions.js"></script>
 </head>
 <body class="about-me">
-    <audio id="roomTone" loop autoplay>
+    <!-- <audio id="roomTone" loop autoplay>
         <source src="../assets/soundFx/floatingInSpaceLoop.wav" type="audio/wav">
         Audio
-    </audio>
-    <audio class="bleep-audio" id="bleepSound" src="../assets/soundFx/gameBleep.wav"></audio>
+    </audio> -->
+    <audio class="bleep-audio" id="bleepSound" src="../assets/soundFx/gameBleep.wav"></audio>    
 
-    <nav class="navigation-bar">
-        <div class="personal-logo">
-            <a href="../index.html">
-                <div class="logo-wrapper">
-                    <img class="logo floating" src="../assets/branding/LogoFill.svg" alt="Logo">
+    <section class="console-section">
+        <div class="console-container">
+            <div class="images-container">
+                <div class="depth"></div>
+                <div id="consoleImage" class="image-container">
+                    <!-- <img src="../assets/aboutMe/pablo.webp" alt=""> -->
                 </div>
+                <div id="leftDoor" class="door left-door"></div>
+                <div id="rightDoor" class="door right-door"></div>
+            </div>
+            <div class="bolts-top bolts">
+                <div class="bolt"></div>
+                <div class="bolt"></div>
+            </div>
+
+            <!-- bottom -->
+            <div class="bottom-container">
+                <div id="consoleText" class="text-container ">
+                    
+                </div>
+                <div class="buttons-container">
+                    <div id="powerButton" class="power-button">
+                        <i class="fa-solid fa-power-off"></i>
+                    </div>
+
+                    <div class="arrow-buttons-container">
+                        <div id="prevButton" class="prev-arrow">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div id="nextButton" class="next-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bolts-bottom bolts">
+                <div class="bolt"></div>
+                <p>Pablo Montoya Varela, 2024 &copy;</p>
+                <div class="bolt"></div>
+            </div>
+            <!-- end of bottom -->
+        </div>
+    </section>
+
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-bar-container">
+        <div class="stage-container">            
+            
+            <a class="about-me-icon" href="../index.html">
+                <i class="fa-solid fa-house"></i>
             </a>
         </div>
 
-
-        <ul>
-            <li><a href="about-me.html">+ About Me</a></li>
-            <li><a href="#">+ Projects</a></li>
-        </ul>
-    </nav>
-
-    
-    <div class="main-wrapper">
-        <main class="main-section">
-            <!-- <h1 class="about-me-title">Pablo</h1> -->
-            <div class="portrait-wrapper">
-                <div class="picture-container">
-                    <img id="portraitImage" class="portrait" src="../assets/aboutMe/pablo.webp" alt="">
-                </div>
-            </div>
-        </main>
-
-        <div class="about-me-grid">
-
-            <!-- Buttons Wrapper -->
-            <div class="buttons-wrapper">
-                <div class="about-me-cell about-me">
-                    <button id="aboutMeButton" class="pushable">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">
-                        <p>About Me</p>
-                        </span>
-                  </button>
-                </div>
-                <div class="about-me-cell honest-me">
-                    <button id="honestMeButton" class="pushable">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">
-                        <p>Honest Me</p>
-                        </span>
-                  </button>
-                </div>
-                <div class="about-me-cell joke">
-                    <button id="jokeButton" class="pushable">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">
-                          <p>Want a Joke?</p>
-                        </span>
-                      </button>
-                </div>
-            </div>
-            <!-- End of Buttons Wrapper -->
-
-
-            <div id="aboutMeContent" class="about-me-cell content"><p>Choose an option</p></div>
-        </div>
-        <div class="text-wrapper">
-            <p>
-                Please, feel free to connect with me on <a href="https://linkedin.com/in/palimv" target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a> or contact me via email: pablo@palitriestodesign.com
-            </p>
+        <div class="social">
+            <a href="https://linkedin.com/in/palimv" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
     </div>
+    <!-- End Of Bottom Bar -->
 
-    <!-- Progress Bar -->
-    <div class="progress-bar-container">
-        <div class="progress-icons">
-            <div id="soundIcon" class="element">
-                <i class="fa-solid fa-volume-high"></i>
-            </div>
-        </div>
-    </div>
-    <!-- End Of Progress Bar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
 </body>
 </html>

@@ -3,25 +3,23 @@ html, body {
 }
 
 ::-moz-selection { /* Code for Firefox */
-    color: $background-colour;
-    background: $accent-colour;
+    color: $purple-accent-colour;
+    background: $green-accent-colour;
   }
   
   ::selection {
-    color: $background-colour;
-    background: $accent-colour;
+    color: $purple-accent-colour;
+    background: $green-accent-colour;
   }
 
-body {
-    background-color: #0a0a0a;
-    color: #fff;
+body.home {
+    color: $contrast-colour;
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     min-height: 100vh;
-    // cursor: none; 
     overflow-x: hidden;
     scrollbar-color: transparent;
     position: relative;

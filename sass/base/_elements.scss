@@ -1,5 +1,5 @@
 /*SECTIONS===========================*/
-section {
+section.home {
     height: 100vh;
     max-width: 75vw;
 }
@@ -35,7 +35,7 @@ ul {
         opacity: 0.5;
 
         &:hover {
-            color: $accent-colour;
+            color: $yellow-accent-colour;
             opacity: 1;
         }
     }
@@ -43,15 +43,11 @@ ul {
 
 /*ICONS========================*/
 i:hover {
-    scale: 1.2;
+    color: $purple-accent-colour;
 }
 /*END OF ICONS========================*/
 
-
-
-
 /*FOLLOWER========================*/
-
 .follower {
     width: 20px;
     height: 20px;
@@ -68,21 +64,4 @@ body:has(.starship-system:hover) .follower {
     background-color: $background-colour;
 
 }
-
-
 /*MASKS===========================*/
-
-
-/*ELEMENT===========================*/
-
-.element {
-    width: 2.75rem;
-    height: 2.75rem;
-    background-color: $bar-colour;
-    border-radius: 100%;
-    border: 2px dashed $contrast-colour;
-
-    &:hover {
-        scale: 1.1;
-    }
-}

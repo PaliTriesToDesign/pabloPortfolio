@@ -1,0 +1,101 @@
+@include for-size(phone-only) {
+    .bottom-bar-container {
+
+        .stage-container {
+
+            .stage-inner {
+                display: none;
+            }
+        }
+    }
+}
+
+.bottom-bar-container {
+    position: fixed;
+    width: 100%;
+    bottom: 2rem;
+    z-index: 101;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    color: $contrast-colour;
+    filter: drop-shadow(0px 4px 0px $drop-shadow-colour);
+
+
+    animation: 1600ms cubic-bezier(.47,1.64,.41,.8)  0s 1 slideInFromBottom;
+
+    @keyframes slideInFromBottom {
+        0% {
+            transform: translateY(150%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+    .stage-container, .social, .bar-icons, .back-to-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        padding: 0.5rem 0.5rem;
+        border-radius: 0.5rem;
+
+        background-color: $bar-colour;
+
+    }
+
+    .altitude, .stage-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $background-colour;
+        font-weight: $fw-bold;
+        background-color: $contrast-colour;
+        border-radius: 4px;
+        padding: 0.25rem 1rem;
+
+        min-width: 104px;
+    }
+
+    .about-me-icon, .bar-icons {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+
+        &:hover {
+            color: $purple-accent-colour;
+        }
+    }
+
+    .social {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+
+        a:hover i {
+            color: $purple-accent-colour;
+        }
+    }
+
+    .back-to-top {
+        padding: 1rem;
+
+        &:hover {
+            background-color: $green-accent-colour;
+
+            i {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    & i:hover {
+        transform: translateY(-2px);
+    }
+}

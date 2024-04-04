@@ -9,31 +9,622 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
-   
-    <script src="../app.js" defer></script>
+    <script src="../js/learnium.js" defer></script>
 </head>
-<body>
-    <audio id="roomTone" loop autoplay>
-        <source src="assets/soundFx/spaceVoidLoop.wav" type="audio/wav">
-        Audio
-    </audio>
 
-    <nav class="navigation-bar">
-        <div class="personal-logo">
-            <a href="../index.html">
-                <div class="element"></div>
+<body class="capstone-project">
+    <section id="intro" class="capstone-intro">
+        <div class="mask">
+            <h1 class="card-title card">Intro</h1>
+        </div>
+        <div class="mask">
+            <p class="intro-paragraph">As part of the <b>Langara Web and Mobile App Design and Development Program</b> (WMDD), this is our final project where students <b>design</b> and <b>develop</b> an application to address real-world problems or needs.</p>
+        </div>
+        <div class="mask">
+            <!-- <p class="best-project">Our Capstone Project was selected as the <span class="best-container"><b class="best-card card">best</b></span> of the night.</p> -->
+
+            <div class="best-project console-container">    
+                <div class="bottom-container">
+                    <div class="text-container ">
+                        <p class="best-project">Our Capstone Project was selected as the <strong>best</strong> of the night.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="capstone-problem">
+        <div class="mask">
+            <h1 class="card-title card">The Problem</h1>
+        </div>
+        <div class="mask">
+            <p class="problem-paragraph">Passive learning, the common approach through <b>reading</b>, <b>videos</b>, or <b>podcasts</b>, fails to provide optimal <b>understanding</b> and memorization of key information on new subjects.</p>
+        </div>
+    </section>
+
+    <section class="main-question">
+        <p>How might we create a product that makes learning <b>easier</b> and <b>more engaging</b> through <b>interactive methods</b>?</p>
+    </section>
+
+    <section class="begin-journey">
+        <div class="mask">
+            <h2>Let's begin the journey</h2>
+        </div>
+        <div class="black-hole">
+        </div>
+    </section>
+
+    <div class="section-wrapper">
+        <section class="capstone-solution">
+            <div class="mask">
+                <h1 class="card-title card">The Solution</h1>
+            </div>
+            <div class="solution-inner-container">
+                <div class="mask">
+                    <p class="solution-paragraph"><b>A five-feature</b> mobile app, using Generative AI to turn textbooks interactive. </p>
+                </div>
+                <div class="mask">
+                    <p class="solution-paragraph">Simplifying learning, it offers a <b>responsive study plan</b> and keeps learners engaged with <b>practice</b> and <b>tests</b>, rewarding progress.</p>
+                </div>
+            </div>
+            <div class="study-icon feature-icon">
+                <img src="../assets/projectImages/learnium/ui/icons/studyIcon.svg" alt="">
+            </div>
+            <div class="progress-icon feature-icon">
+                <img src="../assets/projectImages/learnium/ui/icons/progressIcon.svg" alt="">
+            </div>
+            <div class="daily-icon feature-icon">
+                <img src="../assets/projectImages/learnium/ui/icons/dailyIcon.svg" alt="">
+            </div>
+            <div class="account-icon feature-icon">
+                <img src="../assets/projectImages/learnium/ui/icons/accountIcon.svg" alt="">
+            </div>
+            <div class="sheet-icon feature-icon">
+                <img src="../assets/projectImages/learnium/ui/icons/sheet.svg" alt="Sheet Icon">
+            </div>
+        </section>
+
+        <section class="capstone-features">
+            <!-- FEATURE 1 -->
+            <div class="feature1 feature">
+                <div class="feature-number-container">
+                    <div class="mask">
+                        <div class="feature-number card">
+                            <h1>01</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-container">
+                    <div class="mask">
+                        <h2 class="feature-title">Dynamic Study Planner</h2>
+                    </div>
+                    <div class="feature-screens-container">
+                        <div class="mask">
+                            <img src="../assets/projectImages/learnium/ui/feature01/01studyMissedContent.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature01/02studyTodaysContent.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature01/03studyReviewContent.png" alt="Feature Screen">
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <p>Learnium tailors <b>study sessions</b> to user preferences and exam dates, adjusting <b>based on progress and quiz results</b> to cover essential practice areas for desired outcomes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FEATURE 1 -->
+
+            <!-- FEATURE 2 -->
+            <div class="feature2 feature">
+                <div class="feature-number-container">
+                    <div class="mask">
+                        <div class="feature-number card">
+                            <h1>02</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-container">
+                    <div class="mask">
+                        <h2 class="feature-title">Interactive Content</h2>
+                    </div>
+                    <div class="feature-screens-container">
+                        <div class="mask">
+                            <img src="../assets/projectImages/learnium/ui/feature02/01keyTopic.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature02/02flashcard2.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature02/03results.png" alt="Feature Screen">
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <p>Learnium simplifies content creation by enabling <b>PDF uploads, text pasting, and OCR-based book page capture</b>. It generates key topics for focused learning, including <b>quizzes</b>, <b>flashcards</b>, and <b>summaries</b>.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FEATURE 2 -->
+
+            <!-- FEATURE 3 -->
+            <div class="feature3 feature">
+                <div class="feature-number-container">
+                    <div class="mask">
+                        <div class="feature-number card">
+                            <h1>03</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-container">
+                    <div class="mask">
+                        <h2 class="feature-title">Progress Tracker</h2>
+                    </div>
+                    <div class="feature-screens-container">
+                        <div class="mask">
+                            <img src="../assets/projectImages/learnium/ui/feature03/01progressScreen.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature03/02progressScreen.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature03/03progressScreen.png" alt="Feature Screen">
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <p>Learnium analyzes quiz results, <b>highlighting strengths and areas for improvement</b>. It tracks learning progress in specific courses and key topics.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FEATURE 3 -->
+
+            <!-- FEATURE 4 -->
+            <div class="feature4 feature">
+                <div class="feature-number-container">
+                    <div class="mask">
+                        <div class="feature-number card">
+                            <h1>04</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-container">
+                    <div class="mask">
+                        <h2 class="feature-title">AI Assistant</h2>
+                    </div>
+                    <div class="feature-screens-container">
+                        <div class="mask">
+                            <img src="../assets/projectImages/learnium/ui/feature04/askAI1.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature04/askAI2.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feature04/askAI3.png" alt="Feature Screen">
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <p>Dr. Lumi provides reliable and detailed answers sourced from imported materials, <b>enhancing understanding</b> through insightful examples.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FEATURE 4 -->
+
+            <!-- COMPULSION LOOP -->
+            <section class="compulsion-loop">
+
+                <div class="console-container">
+                    <div class="bolts-top bolts">
+                        <div class="bolt"></div>
+                        <div class="bolt"></div>
+                    </div>
+        
+                    <!-- bottom -->
+                    <div class="bottom-container">
+                        <div id="consoleText" class="text-container ">
+                            <p>These four features seemed nice and cool, but I felt like <b>we were missing something really important</b>:</p>
+                        </div>
+                        <div class="buttons-container">
+                            <div class="arrow-buttons-container">
+                                <div id="prevButton" class="prev-arrow">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                                <div id="nextButton" class="next-arrow">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="bolts-bottom bolts">
+                        <div class="bolt"></div>
+                        <div class="bolt"></div>
+                    </div>
+                    <!-- end of bottom -->
+                </div>
+
+            </section>
+            <!-- END OF COMPULSION LOOP -->
+
+            <!-- FEATURE 5 -->
+            <div class="feature5 feature">
+                <div class="feature-number-container">
+                    <div class="mask">
+                        <div class="feature-number card">
+                            <h1>05</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-container">
+                    <div class="mask">
+                        <h2 class="feature-title">Daily Challenge</h2>
+                    </div>
+                    <div class="feature-screens-container">
+                        <div class="mask">
+                            <img src="../assets/projectImages/learnium/ui/feautre05/01dailyChallenge.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feautre05/02dailyChallengeTodaysQuestion.png" alt="Feature Screen">
+                            <img src="../assets/projectImages/learnium/ui/feautre05/03dailyChallenge-CorrectAnswer.png" alt="Feature Screen">
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <p>Learnium's daily challenge feature enhances knowledge retention and <b>encourages consistent app use</b>. It transforms free moments into <b>opportunities</b> for productive learning.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF FEATURE 5 -->
+
+            <!-- THOUGHT PROCESS -->
+            <section class="thought-process">
+                <div class="console-container">
+                    <div class="bolts-top bolts">
+                        <div class="bolt"></div>
+                        <div class="bolt"></div>
+                    </div>
+        
+                    <!-- bottom -->
+                    <div class="bottom-container">
+                        <div class="text-container ">
+                            <div class="mask">
+                                <h2>But how did we do all of it?</h2>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="bolts-bottom bolts">
+                        <div class="bolt"></div>
+                        <div class="bolt"></div>
+                    </div>
+                    <!-- end of bottom -->
+                </div>
+
+                <div class="mask">
+                    <p>Keep scrolling to see my thought process...</p>
+                </div>
+
+            </section>
+            <!-- END OF THOUGHT PROCESS -->
+
+            <!-- INTERVIEWS -->
+            <section class="interviews-intro">
+                <h2>We conducted user interviews to identify our <b>user personas</b>, their <b>stories</b>, <b>pain points</b> and <b>goals</b>.</h2>
+                <div class="interviews-intro-wrapper">
+                    <p class="card">Participants faced challenges such as procrastination and sought tools that offered <b>interactivity</b>, <b>organization</b> and <b>motivation</b>.</p>
+                    <p class="card">Participants found features like <b>summarized content</b>, <b>quizzes</b>, and <b>interactive elements</b> valuable in learning apps.</p>
+                </div>
+            </section>
+            <!-- END OF INTERVIEWS -->
+
+            <!-- INTERVIEWS TRANSITION -->
+            <section class="interviews-transition">
+                <h2>With this information we knew we needed to implement a <b class="bold-important">quiz feature</b> but we were not sure about the right number of questions for a single session. <b class="bold-important">We asked 49 students and these were the results:</b></h2>
+            </section>    
+            <!-- END OF INTERVIEWS TRANSITION -->
+
+            <!-- INTERVIEW QUESTIONS -->
+            <section class="interview-questions">
+
+                <!-- QUESTION ONE -->
+                <div class="question-wrapper">
+                    <div class="question">
+                        <h3 class="card">01</h3>
+                        <p class="card">When using a learning app for exam preparation, what is the <b>ideal number of questions</b> for a quiz session to help you feel adequately prepared?</p>
+                    </div>
+                    <div class="answer">
+                        <div class="first-answer card">
+                            <div class="answer-container">
+                                <h3>20 questions</h3>
+                                <p>34,7 %</p>
+                            </div>
+                            <div class="answer-bar"></div>
+                        </div>
+                        <div class="second-answer card">
+                            <div class="answer-container">
+                                <h3>15 questions</h3>
+                                <p>28,6 %</p>
+                            </div>
+                            <div class="answer-bar"></div>
+                        </div>
+                        <div class="third-answer card">
+                            <div class="answer-container">
+                                <h3>10 questions</h3>
+                                <p>14,3 %</p>
+                            </div>
+                            <div class="answer-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF QUESTION ONE -->
+
+                <!-- QUESTION TWO -->
+                <div class="question-wrapper">
+                    <div class="question">
+                        <h3 class="card">02</h3>
+                        <p class="card">How <b>confident</b> do you generally feel after completing a quiz or practice session on a learning app?</p>
+                    </div>
+                    <div class="answer">
+                        <div class="first-answer card">
+                            <div class="answer-container">
+                                <h3>Somewhat Confident</h3>
+                                <p>65,3 %</p>
+                            </div>
+                            <div class="answer-bar"></div>
+                        </div>
+                        <div class="second-answer card">
+                            <div class="answer-container">
+                                <h3>Very Confident</h3>
+                                <p>18,4 %</p>
+                            </div>
+                            <div class="answer-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF QUESTION TWO -->
+
+            </section>
+            <!-- END OF INTERVIEW QUESTIONS -->
+        </section>
+    </div>
+
+    <!-- ITERATIVE PROCESS -->
+    <section class="iterative-process">
+        <div class="mask">
+            <div class="text-mask">
+                <h1>Now, let's check our iterative design process</h1>
+            </div>
+        </div>
+    </section>
+    <!--END OF ITERATIVE PROCESS -->
+
+    <!-- WIREFRAMES -->
+    <section class="wireframes">
+        <div class="text-container">
+            <div class="mask">
+                <h1>From wireframes</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="mask">
+            <div class="images-container">
+                    <img src="../assets/projectImages/learnium/ux/Study1-state2.png" alt="">
+                    <img src="../assets/projectImages/learnium/ux/Key Topic Page.png" alt="">
+                    <img src="../assets/projectImages/learnium/ux/Quiz History.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- END OF WIREFRAMES -->
+
+    <!-- ARTBOARDS -->
+    <section class="artboards">
+        <div class="text-container">
+            <div class="mask">
+                <h1>to messy artboards</h1>
+            </div>
+            <div class="mask">
+                <p>(A synonym of exploration,  something fundamental for great ideas)</p>
+            </div>
+        </div>
+        <div class="mask">
+            <div class="images-container">
+                    <img src="../assets/projectImages/learnium/ui/messyBoard.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/messyBoard2.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- END OF ARTBOARDS -->
+
+    <!-- MOCKUPS -->
+    <section class="mockups">
+        <div class="text-container">
+            <div class="mask">
+                <h1>To mockups</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="mask">
+            <div class="images-container">
+                    <img src="../assets/projectImages/learnium/ui/feature01/03studyReviewContent.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/01keyTopic.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/flashcardsTutorial.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/flashcard1.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/02flashcard2.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/03results.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature04/askAI2.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feautre05/01dailyChallenge.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/feature02/grade.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- END OF MOCKUPS -->
+
+    <!-- UI STYLE -->
+    <section class="ui-style-intro">
+        <div class="mask">
+            <h1>UI Style</h1>
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <section class="ui-style">
+        <div class="inner-wrapper micro-interactions">
+            <div class="text-container">
+                <div class="mask">
+                    <p>We implemented <b>micro-interactions</b> to provide feedback to the user. </p>
+                </div>
+                <div class="mask">
+                    <p>This also increases <b>user engagement</b></p>
+                </div>
+            </div>
+            <div class="images-container">
+                <div class="mask">
+                    <video height="225" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/studyIcon.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="mask">
+                    <video height="225" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/dailyIcon.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="mask">
+                    <video height="225" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/progressIcon.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="mask">
+                    <video height="225" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/profileIcon.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="inner-wrapper animations">
+            <div class="text-container">
+                <div class="mask">
+                    <p>We added animations to make the app more <b>fun</b> and <b>dynamic</b></p>
+                </div>
+            </div>
+            <div class="images-container">
+                <div class="mask">
+                    <video height="500" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/splash.mp4" type="video/mp4">
+                    </video>
+                    <video height="500" autoplay loop>
+                        <source  src="../assets/projectImages/learnium/ui/videos/flashcardTutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="inner-wrapper lumi-intro">
+            <div class="text-container">
+                <div class="mask">
+                    <p>...and we created a <b>character</b></p>
+                </div>
+            </div>
+            <div class="images-container">
+                <div class="mask">
+                    <video height="500" autoplay loop>
+                        <source src="../assets/projectImages/learnium/ui/videos/lumiIntro.mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lumi-transition">
+        <div class="mask">
+            <p>Dr. Lumi was created to be a <b>guide</b> and <b>companion</b> for the users. We wanted to make it <b>smart, friendly, but also honest and relatable.</b></p>
+        </div>
+    </section>
+
+    <section class="lumi-sketches">
+        <div class="sketch-one">
+            <div class="mask">
+                <p>We went for an octopus. I needed to understand its form and parts in order to be able to create a simple but octopus-looking character.</p>
+            </div>
+            <div class="mask">
+                <img src="../assets/projectImages/learnium/ui/lumi/lumiSketch1.webp" alt="">
+            </div>
+        </div>
+        <div class="sketch-two">
+            <div class="mask-wrapper">
+                <div class="mask">
+                    <p><b>After a few iterations, the team and I decided to go for version #4.</b></p>
+                </div>
+                <div class="mask">
+                    <p>(Tbh, I am not sure why Dr. Lumi is grumpy on the sketches. Maybe that was my mood on that day)</p>
+                </div>
+            </div>
+            <div class="mask">
+                <img src="../assets/projectImages/learnium/ui/lumi/lumiSketch2.webp" alt="">
+            </div>
+        </div>
+        <div class="sketch-three">
+            <div class="mask">
+                <p>I went ahead and sketched different poses and emotions for our character.</p>
+            </div>
+            <div class="mask">
+                <img src="../assets/projectImages/learnium/ui/lumi/lumiSketch3.webp" alt="">
+            </div>
+        </div>
+        <div class="lumi-vectorized">
+            <div class="mask">
+                <p>When the team was happy with the result, I vectorized Dr. Lumi so we could use it across our app.</p>
+            </div>
+            <div class="images-container">
+                <div class="mask">
+                    <img src="../assets/projectImages/learnium/ui/lumi/missed content.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/lumi/lumi.png" alt="">
+                    <img src="../assets/projectImages/learnium/ui/lumi/lumi-review.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF UI STYLE -->
+
+    <!-- LUMI ANIMATION -->
+    <section class="lumi-animation">
+        <video controls>
+            <source src="../assets/projectImages/learnium/ui/videos/learniumMotion.mp4" type="video/mp4">
+        </video>
+    </section>
+    <!-- END OF LUMI ANIMATION -->
+
+    <!-- LEARNIUM OUTRO -->
+    <section class="learnium-outro">
+        <div class="mask">
+            <img src="../assets/projectImages/learnium/logo.svg" alt="">
+        </div>
+        <div class="mask">
+            <div class="visit-website">
+                <a href="https://learnium.app" target="_blank">
+                    <div class="mask">
+                        <p><b>Visit Website</b></p>
+                        <p><b>Visit Website</b></p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END OF LEARNIUM OUTRO -->
+
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-bar-container">
+        <div class="stage-container">   
+            <a class="about-me-icon" href="../index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>         
+            <div class="stage-inner">
+                <a href="https://www.learnium.app" target="_blank">
+                    <p id="stageTitle" class="stage-title">learnium.app</p>
+                </a>
+            </div>
+
+            <a class="about-me-icon" href="about-me.html" target="_blank">
+                <i class="fa-solid fa-user"></i>
             </a>
         </div>
 
+        <div class="social">
+            <a href="https://linkedin.com/in/palimv" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
 
-        <ul>
-            <li><a href="#">+ Contact Me</a></li>
-            <li><a href="#">+ About Me</a></li>
-            <li><a href="projects.html">+ Projects</a></li>
-        </ul>
-    </nav>
+        <a class="back-to-top" href="#intro">
+                <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </div>
+    <!-- End Of Bottom Bar -->
 
-    <div class="follower"></div>
-    <h1>Capstone</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 </body>
 </html>

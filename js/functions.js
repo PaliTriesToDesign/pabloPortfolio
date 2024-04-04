@@ -13,7 +13,7 @@ export function getScrollPercentage(){
 
   let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 
-  console.log(Math.floor(percent) + `%`);
+  // console.log(Math.floor(percent) + `%`);
   return Math.floor(percent)
 }
 // END OF GET SCROLL PERCENTAGE
@@ -144,3 +144,45 @@ export function enableScroll() {
   };
 }
 // END OF DISABLE SCROLL==========
+
+// MAGNETO=========================
+const magneto = document.querySelectorAll('.magneto');
+
+// Mouse Move event
+const activateMagneto = (e) => {
+  let boundBox;
+  let newX;
+  let newY;
+    magneto.forEach(magneto => {
+      boundBox = magneto.getBoundingClientRect();
+      newX = ((e.clientX - boundBox.left) / magneto.offsetWidth) - 0.5;
+      newY = ((e.clientY - boundBox.top) / magneto.offsetHeight) - 0.5;
+    });
+    let magnetoStrength = 40;
+
+    // Move button to new position
+    gsap.to(magneto, {
+        duration: 1,
+        x: newX * magnetoStrength,
+        y: newY * magnetoStrength,
+        ease: Power4.easeOut
+    })
+}
+
+// Mouse Leave event
+const resetMagneto = (e) => {
+
+    // Move button to original position
+    gsap.to(magneto, {
+        duration: 1,
+        x: 0,
+        y: 0,
+        ease: Elastic.easeOut
+    })
+}
+
+// Add Event Listeners
+magneto.forEach(magneto => {
+    magneto.addEventListener('mousemove', activateMagneto);
+    magneto.addEventListener('mouseleave', resetMagneto);
+})
