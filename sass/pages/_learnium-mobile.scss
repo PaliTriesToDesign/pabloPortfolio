@@ -1,0 +1,40 @@
+@include for-size(phone-only) {
+  body.capstone-project {
+    .mask {
+        padding: 0 0 1rem 0;
+    }
+
+    // INTRO =====================
+    section.intro {
+        gap: 1rem;
+    }
+
+    .capstone-features {
+
+        .feature {
+            flex-flow: column;
+            align-items: start;
+            gap: 0rem;
+
+            .feature-screens-container {
+
+                .mask {
+                    display: flex;
+                    overflow-x: visible;
+
+                    img {
+                        width: 50vw;
+                    }
+                }
+            }
+        }
+
+        .section.capstone-features section .compulsion-lopp {
+
+            .console-container {
+                min-width: 100%;
+            }
+        }
+    }
+  }
+}

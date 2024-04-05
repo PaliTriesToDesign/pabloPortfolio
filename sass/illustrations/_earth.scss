@@ -3,7 +3,9 @@
         @include display-flex(column, center, center);
         position: fixed;
         bottom: 0%;
-        max-width: unset;
+        // max-width: unset;
+        width: 100vw;
+        overflow-x: hidden;
         color: $background-colour;
     
         z-index: -1;

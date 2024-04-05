@@ -264,7 +264,7 @@ const earthSlideOutTl = gsap.timeline({
       earthSlideOutTl.timeScale(30.0);
     },
 
-    markers: false
+    markers: true
     // toggleActions: 'reset reset reverse play',
     // toggleActions: 'none none play play',
     // toggleActions: 'none none reverse play',

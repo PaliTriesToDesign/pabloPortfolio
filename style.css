@@ -156,18 +156,6 @@ i:hover {
 }
 
 /*END OF ICONS========================*/
-/*FOLLOWER========================*/
-.follower {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 11;
-  border: 1px solid #fff;
-  background-color: #111111;
-  border-radius: 50%;
-  opacity: 0.75;
-}
-
 body:has(.starship-system:hover) .follower {
   scale: 1.5;
   background-color: #FFFFFF;
@@ -506,7 +494,6 @@ body.home {
   background-color: #FFFFFF;
   border-radius: 1rem;
   padding: 1rem;
-  min-width: 24rem;
   max-width: 24rem;
 }
 .console-container .images-container {
@@ -667,93 +654,182 @@ button, .launch-project-button, #submitButton {
   white-space: nowrap;
 }
 
-#projects {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  min-height: 100vh;
-  z-index: 1;
+@media screen and (max-width: 450px) {
+  #projects {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1;
+  }
+  #projects #project {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  #projects #project .main-mask {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+  }
+  #projects #project .project-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 350vw;
+    height: 40vh;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  #projects #project .project-container .open-icon {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+  #projects #project .project-container .project-inner-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  #projects #project .project-container .project-inner-wrapper .project-tags {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #projects #project .project-container .project-inner-wrapper .project-tags p {
+    padding: 0.25rem 1rem;
+    border-radius: 5rem;
+    border: 2px solid #383838;
+    color: #383838;
+  }
+  #projects #project .project-container .project-inner-wrapper + .mask {
+    padding: 0 1rem;
+  }
+  #projects #project .project-container .project-images {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+  }
+  #projects #project .project-container .project-images img {
+    width: 30%;
+  }
 }
-#projects #project {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 10rem;
-  gap: 1rem;
+@media screen and (min-width: 451px) {
+  #projects {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1;
+  }
+  #projects #project {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  #projects #project .main-mask {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+  }
+  #projects #project .project-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 30vw;
+    height: 40vh;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  #projects #project .project-container .open-icon {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+  #projects #project .project-container .project-inner-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  #projects #project .project-container .project-inner-wrapper .project-tags {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #projects #project .project-container .project-inner-wrapper .project-tags p {
+    padding: 0.25rem 1rem;
+    border-radius: 5rem;
+    border: 2px solid #383838;
+    color: #383838;
+  }
+  #projects #project .project-container .project-inner-wrapper + .mask {
+    padding: 0 1rem;
+  }
+  #projects #project .project-container .project-images {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+  }
+  #projects #project .project-container .project-images img {
+    width: 30%;
+  }
 }
-#projects #project .main-mask {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 100%;
-  overflow: hidden;
-  transition: all 0.25s ease-in-out;
-}
-#projects #project .project-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #FFFFFF;
-  width: 30vw;
-  height: 40vh;
-  border-radius: 1rem;
-  padding: 1rem;
-  overflow: hidden;
-}
-#projects #project .project-container .open-icon {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-}
-#projects #project .project-container .project-inner-wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 1rem;
-  padding: 0 1rem;
-}
-#projects #project .project-container .project-inner-wrapper .project-tags {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-#projects #project .project-container .project-inner-wrapper .project-tags p {
-  padding: 0.25rem 1rem;
-  border-radius: 5rem;
-  border: 2px solid #383838;
-  color: #383838;
-}
-#projects #project .project-container .project-inner-wrapper + .mask {
-  padding: 0 1rem;
-}
-#projects #project .project-container .project-images {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  position: absolute;
-  top: 100%;
-}
-#projects #project .project-container .project-images img {
-  width: 30%;
-}
-
 .iterative-process .mask {
   position: relative;
   display: flex;
@@ -1049,7 +1125,8 @@ body.project-body main.main-section .next-project:hover > i {
     align-items: center;
     position: fixed;
     bottom: 0%;
-    max-width: unset;
+    width: 100vw;
+    overflow-x: hidden;
     color: #FFFFFF;
     z-index: -1;
   }
@@ -1101,7 +1178,6 @@ body.home {
   background-position: center;
   background-size: cover;
   height: 8000px;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -1114,6 +1190,9 @@ body.home {
 }
 .city-container img {
   max-width: unset;
+}
+.city-container .city-inner-container {
+  overflow-x: hidden;
 }
 
 .train-container {
@@ -1618,6 +1697,10 @@ section .section-title {
 
 /*END OF ABOUT ME SECTION================*/
 /*LIFT OFF SECTION=================*/
+body.home {
+  width: 100%;
+}
+
 .lift-off-section {
   display: flex;
   align-items: center;
@@ -1626,6 +1709,7 @@ section .section-title {
   width: 100%;
   height: 100vh;
   min-width: unset;
+  overflow-x: hidden;
 }
 
 .scroll-up-section {
@@ -1681,10 +1765,16 @@ body.capstone-project section {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  max-width: 50%;
-  min-height: 100vh;
+  max-width: 80%;
+  min-height: 70vh;
 }
 
+@media screen and (min-width: 451px) {
+  body.capstone-project section {
+    max-width: 50%;
+    min-height: 100vh;
+  }
+}
 .mask {
   overflow: hidden;
   padding-bottom: 1rem;
@@ -1772,6 +1862,11 @@ body.capstone-project section {
   left: 50%;
 }
 
+@media screen and (max-width: 450px) {
+  body.capstone-project section.begin-journey {
+    display: none;
+  }
+}
 .begin-journey {
   position: relative;
 }
@@ -1900,6 +1995,9 @@ section.capstone-features .compulsion-loop .console-container .bottom-container 
   align-items: center;
   gap: 2rem;
 }
+.interviews-intro .mask {
+  padding: 1rem 0;
+}
 .interviews-intro .interviews-intro-wrapper {
   display: flex;
   flex-flow: row nowrap;
@@ -1908,7 +2006,7 @@ section.capstone-features .compulsion-loop .console-container .bottom-container 
   gap: 2rem;
 }
 .interviews-intro .interviews-intro-wrapper .card {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 .interviews-transition {
@@ -1927,25 +2025,33 @@ section.capstone-features .compulsion-loop .console-container .bottom-container 
   align-items: center;
   gap: 8rem;
 }
+.interview-questions .mask {
+  width: fit-content;
+  padding: 0 0 1rem 0;
+}
 
 .question-wrapper {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 .question-wrapper .question {
   display: flex;
   gap: 1rem;
 }
-.question-wrapper .question h3.card {
-  height: fit-content;
+.question-wrapper .question .card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 .question-wrapper .answer {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
   width: 100%;
@@ -1953,7 +2059,7 @@ section.capstone-features .compulsion-loop .console-container .bottom-container 
 .question-wrapper .answer .first-answer, .question-wrapper .answer .second-answer, .question-wrapper .answer .third-answer {
   display: flex;
   flex-flow: row;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.5rem;
 }
 .question-wrapper .answer .first-answer .answer-container, .question-wrapper .answer .second-answer .answer-container, .question-wrapper .answer .third-answer .answer-container {
@@ -1962,8 +2068,9 @@ section.capstone-features .compulsion-loop .console-container .bottom-container 
 }
 .question-wrapper .answer .first-answer .answer-bar, .question-wrapper .answer .second-answer .answer-bar, .question-wrapper .answer .third-answer .answer-bar {
   width: 0.5rem;
-  height: 4rem;
-  background-color: #FFED8C;
+  height: 0px;
+  border-radius: 0.15rem;
+  background-color: #FFE13F;
 }
 
 .iterative-process, .wireframes, .artboards, .mockups, .ui-style-intro, .ui-style {
@@ -2258,13 +2365,34 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
   color: #383838;
 }
 
+@media screen and (max-width: 450px) {
+  body.capstone-project .mask {
+    padding: 0 0 1rem 0;
+  }
+  body.capstone-project section.intro {
+    gap: 1rem;
+  }
+  body.capstone-project .capstone-features .feature {
+    flex-flow: column;
+    align-items: start;
+    gap: 0rem;
+  }
+  body.capstone-project .capstone-features .feature .feature-screens-container .mask {
+    display: flex;
+    overflow-x: visible;
+  }
+  body.capstone-project .capstone-features .feature .feature-screens-container .mask img {
+    width: 50vw;
+  }
+  body.capstone-project .capstone-features .section.capstone-features section .compulsion-lopp .console-container {
+    min-width: 100%;
+  }
+}
 body.about-me {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  gap: 2rem;
   position: relative;
   background-color: #0b001c;
   background-image: url(../../assets/world/bgRepeat-caseStudy.svg);
@@ -2281,8 +2409,8 @@ body.about-me .console-container {
   background-color: #FFFFFF;
   border-radius: 1rem;
   padding: 1rem;
-  min-width: 24rem;
-  max-width: 24rem;
+  min-width: 22rem;
+  max-width: 22rem;
 }
 body.about-me .console-container .images-container {
   position: relative;

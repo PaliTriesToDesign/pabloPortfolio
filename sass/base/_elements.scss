@@ -47,18 +47,6 @@ i:hover {
 }
 /*END OF ICONS========================*/
 
-/*FOLLOWER========================*/
-.follower {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    z-index: 11;
-    border: 1px solid #fff;
-    background-color: $contrast-colour;
-    border-radius: 50%;
-    opacity: 0.75;
-}
-
 body:has(.starship-system:hover) .follower {
     scale: 1.5;
     background-color: $background-colour;

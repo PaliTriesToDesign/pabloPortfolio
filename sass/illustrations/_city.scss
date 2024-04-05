@@ -3,7 +3,6 @@ body.home {
     background-position: center;
     background-size: cover;
     height: 8000px;
-    overflow-x: hidden;
 
     position: relative;
 }
@@ -17,6 +16,11 @@ body.home {
 
     img {
         max-width: unset;
+    }
+
+    .city-inner-container {
+        // width: 100vw;
+        overflow-x: hidden;
     }
 }
 

@@ -1,7 +1,6 @@
 body.about-me {
     @include display-flex;
-    padding: 1rem;
-    gap: 2rem;
+    // max-width: 100vw;
 
     position: relative;
 
@@ -17,8 +16,8 @@ body.about-me {
         background-color: $background-colour;
         border-radius: 1rem;
         padding: 1rem;
-        min-width: 24rem;
-        max-width: 24rem;
+        min-width: 22rem;
+        max-width: 22rem;
 
         .images-container {
             position: relative;
@@ -187,6 +186,8 @@ body.about-me {
             }
         }
     }
+
+
 }
 
 // @include crt;

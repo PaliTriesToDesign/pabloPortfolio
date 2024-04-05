@@ -8,6 +8,8 @@
 
 // requestAnimationFrame(raf)
 
+let mm = gsap.matchMedia();
+
 // INTRO SECTION =================
 const introTl = gsap.timeline({})
 
@@ -62,7 +64,7 @@ const questionTl = gsap.timeline({
         start: '30% center',
         end: '80% center',
         toggleActions: 'play none none none',
-        markers: false
+        markers: true
     }
 })
 
@@ -104,8 +106,10 @@ blackHoleTl
         yPercent: -300,
     }, '-=0.2')
     .to('.begin-journey .black-hole', {
-        scale: 2.5,
-        rotate: 0
+        scale: 3.5,
+        rotate: 0,
+        position: 'sticky',
+        inset: '0 100% 0 0',
     })
 
 // SOLUTION SECTION ==============
@@ -118,19 +122,6 @@ const solutionTl = gsap.timeline({
         markers: false,
     }
 })
-
-solutionTl
-    .to('.black-hole', {
-        rotation: '5',
-        duration: 4,
-        repeat: -1,
-        yoyo: true
-    })
-
-// solutionTl
-//     .to('.section-wrapper', {
-//         y: -800
-//     }, '<')
 
 solutionTl
     .to(['.capstone-solution h1', '.solution-paragraph'], {
@@ -195,7 +186,7 @@ const featureOneTl = gsap.timeline({
         start: 'top center',
         end: '0% center',
         toggleActions: 'play none none none',
-        markers: true
+        markers: false
     }
 })
 
@@ -375,7 +366,7 @@ featureFiveTl
 // END OF FEATURE SECTION ========
 
 // THOUGHT PROCESS SECTION =======
-const thoughtProcessTl = createProjectTl('.thought-process', '20% center', '30% center', true)
+const thoughtProcessTl = createProjectTl('.thought-process', '20% center', '30% center', false)
 
 thoughtProcessTl
     .to(['.thought-process .mask h2', '.thought-process .mask p'], {
@@ -384,6 +375,65 @@ thoughtProcessTl
         stagger: 0.2,
     })
 // END OF THOUGHT PROCESS SECTION =
+
+// INTERVIEWS SECTION ============
+const interviewsIntroTl = createProjectTl('.interviews-intro', '10% center', '50% center', false)
+
+interviewsIntroTl
+    .to('.interviews-intro .mask > *', {
+        y: 0,
+        stagger: 0.2,
+    })
+    .to('.interviews-intro .mask h2 b', {
+        color: '#FFED8C',
+        stagger: 0.1
+    }, '-=.2')
+
+const interviewsTransitionTl = createProjectTl('.interviews-transition', '10% center', '50% center', false)
+
+interviewsTransitionTl
+    .to('.interviews-transition .mask h2', {
+        y: 0,
+        ease: 'power4.out',
+    })
+    .to('.interviews-transition .mask h2 b', {
+        color: '#FFED8C',
+        stagger: 0.1
+    }, '-=.2')
+
+const questionOneTl = createProjectTl('.interview-questions', '0% center', '20% center', false)
+
+questionOneTl
+    .to(['.interview-questions .first-question .mask > *'], {
+        y: 0,
+        ease: 'power4.out',
+        stagger: 0.1,
+    })
+    .to('.interview-questions .first-question .answer .first-answer .answer-bar', {
+        height: 50,
+    })
+    .to('.interview-questions .first-question .answer .second-answer .answer-bar', {
+        height: 35,
+    })
+    .to('.interview-questions .answer .third-answer .answer-bar', {
+        height: 25,
+    })
+
+const questionTwoTl = createProjectTl('.interview-questions', '20% center', '40% center', false)
+
+questionTwoTl
+    .to(['.interview-questions .second-question .mask > *'], {
+        y: 0,
+        ease: 'power4.out',
+        stagger: 0.1,
+    })
+    .to('.interview-questions .second-question .answer .first-answer .answer-bar', {
+        height: 50,
+    })
+    .to('.interview-questions .second-question .answer .second-answer .answer-bar', {
+        height: 35,
+    })
+// END OF INTERVIEWS SECTION =====
 
 // ITERATIVE PROCESS SECTION =====
 // const iterativeTl = gsap.timeline({

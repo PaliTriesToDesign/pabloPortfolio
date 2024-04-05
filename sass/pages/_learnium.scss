@@ -24,8 +24,16 @@ body.capstone-project section {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    max-width: 50%;
-    min-height: 100vh;
+    max-width: 80%;
+    min-height: 70vh;
+}
+
+
+@include for-size(tablet-portrait-up) {
+    body.capstone-project section {
+        max-width: 50%;
+        min-height: 100vh;
+    }
 }
 
 .mask {
@@ -159,6 +167,12 @@ body.capstone-project section {
 
 
 // BLACK HOLE SECTION=============
+@include for-size(phone-only) {
+    body.capstone-project section.begin-journey {
+        display: none;
+    }
+}
+
 .begin-journey {
     position: relative;
 
@@ -303,12 +317,16 @@ section.capstone-features {
     @include display-flex;
     gap: 2rem;
 
+    .mask {
+        padding: 1rem 0;
+    }
+
     .interviews-intro-wrapper {
         @include display-flex(row, center, center);
         gap: 2rem;
 
         .card {
-            max-width: 60%;
+            max-width: 100%;
         }
     }
 }
@@ -324,30 +342,36 @@ section.capstone-features {
 .interview-questions {
     @include display-flex;
     gap: 8rem;
+
+    .mask {
+        width: fit-content;
+        padding: 0 0 1rem 0;
+    }
 }
 
 .question-wrapper {
     @include display-flex(column, center, center);
-    gap: 2rem;
+    gap: 0.5rem;
 
     .question {
         display: flex;
         gap: 1rem;
-    
-        h3.card {
-            height: fit-content;
+
+        .card {
+            @include display-flex(row);
+            gap: 2rem;
         }
     }
 
     .answer {
-        @include display-flex(row, flex-end, center);
+        @include display-flex(row, center, center);
         gap: 2rem;
         width: 100%;
 
         .first-answer, .second-answer, .third-answer {
             display: flex;
             flex-flow: row;
-            align-items: center;
+            align-items: flex-end;
             gap: 0.5rem;
     
             .answer-container {
@@ -357,8 +381,9 @@ section.capstone-features {
     
             .answer-bar {
                 width: 0.5rem;
-                height: 4rem;
-                background-color: #FFED8C;
+                height: 0px;
+                border-radius: 0.15rem;
+                background-color: $darker-yellow-accent-colour;
             }
         }
     }

@@ -1,87 +1,165 @@
-#projects {
-    @include display-flex(column, center, center);
-    gap: 4rem;
-
-    min-height: 100vh;
-    z-index: 1;
-
-    #project {
-        @include display-flex(row, center, center);
-        padding: 10rem;
-        gap: 1rem;
-
-        .main-mask {
-            position: relative;
-            width: 10rem;
-            height: 10rem;
-            border-radius: 100%;
-            overflow: hidden;
-            transition: all 0.25s ease-in-out;
-
-            // &:hover {
-            //     width: 40vw;
-            //     height: 40vh;
-            //     border-radius: 1rem;
-
-            // }
-        }
-
-        .project-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            @include display-flex(column, flex-start, center);
-            background-color: $background-colour;
-            width: 30vw;
-            height: 40vh;
-            border-radius: 1rem;
-            padding: 1rem;
-            overflow: hidden;
-
-            .open-icon {
-                @include display-flex(row, flex-end, center);
-                width: 100%;
+@include for-size(phone-only) {
+    #projects {
+        @include display-flex(column, center, center);
+        gap: 4rem;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 1;
+    
+        #project {
+            @include display-flex(row, center, center);
+            // padding: 10rem;
+            gap: 1rem;
+    
+            .main-mask {
+                position: relative;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 100%;
+                overflow: hidden;
+                transition: all 0.25s ease-in-out;
             }
-
-            .project-inner-wrapper {
-                @include display-flex(row, space-between, center);
-                flex-wrap: wrap;
-                width: 100%;
-                gap: 1rem;
-                padding: 0 1rem;
-
-                .project-tags {
-                    @include display-flex(row, center, center);
-                    gap: 0.5rem;
-
-                    p {
-                        padding:  0.25rem 1rem;
-                        border-radius: 5rem;
-                        border: 2px solid $dark-text-colour;
-                        color: $dark-text-colour;
+    
+            .project-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+    
+                @include display-flex(column, flex-start, center);
+                background-color: $background-colour;
+                width: 350vw;
+                height: 40vh;
+                border-radius: 1rem;
+                padding: 1rem;
+                overflow: hidden;
+    
+                .open-icon {
+                    @include display-flex(row, flex-end, center);
+                    width: 100%;
+                }
+    
+                .project-inner-wrapper {
+                    @include display-flex(row, space-between, center);
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 1rem;
+                    padding: 0 1rem;
+    
+                    .project-tags {
+                        @include display-flex(row, center, center);
+                        gap: 0.5rem;
+    
+                        p {
+                            padding:  0.25rem 1rem;
+                            border-radius: 5rem;
+                            border: 2px solid $dark-text-colour;
+                            color: $dark-text-colour;
+                        }
                     }
                 }
-            }
-
-            .project-inner-wrapper + .mask {
-                padding: 0 1rem;
-            }
-
-            .project-images {
-                @include display-flex(row, center, center);
-                gap: 1rem;
-                position: absolute;
-                top: 100%;
-
-                img {
-                    // width: 9vw;
-                    width: 30%;
+    
+                .project-inner-wrapper + .mask {
+                    padding: 0 1rem;
                 }
-            
+    
+                .project-images {
+                    @include display-flex(row, center, center);
+                    gap: 1rem;
+                    position: absolute;
+                    top: 100%;
+    
+                    img {
+                        // width: 9vw;
+                        width: 30%;
+                    }
+                
+                }
+                
             }
-            
+        }
+    }
+}
+
+@include for-size(tablet-portrait-up) {
+    #projects {
+        @include display-flex(column, center, center);
+        gap: 4rem;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 1;
+    
+        #project {
+            @include display-flex(row, center, center);
+            // padding: 10rem;
+            gap: 1rem;
+    
+            .main-mask {
+                position: relative;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 100%;
+                overflow: hidden;
+                transition: all 0.25s ease-in-out;
+            }
+    
+            .project-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+    
+                @include display-flex(column, flex-start, center);
+                background-color: $background-colour;
+                width: 30vw;
+                height: 40vh;
+                border-radius: 1rem;
+                padding: 1rem;
+                overflow: hidden;
+    
+                .open-icon {
+                    @include display-flex(row, flex-end, center);
+                    width: 100%;
+                }
+    
+                .project-inner-wrapper {
+                    @include display-flex(row, space-between, center);
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 1rem;
+                    padding: 0 1rem;
+    
+                    .project-tags {
+                        @include display-flex(row, center, center);
+                        gap: 0.5rem;
+    
+                        p {
+                            padding:  0.25rem 1rem;
+                            border-radius: 5rem;
+                            border: 2px solid $dark-text-colour;
+                            color: $dark-text-colour;
+                        }
+                    }
+                }
+    
+                .project-inner-wrapper + .mask {
+                    padding: 0 1rem;
+                }
+    
+                .project-images {
+                    @include display-flex(row, center, center);
+                    gap: 1rem;
+                    position: absolute;
+                    top: 100%;
+    
+                    img {
+                        // width: 9vw;
+                        width: 30%;
+                    }
+                
+                }
+                
+            }
         }
     }
 }
