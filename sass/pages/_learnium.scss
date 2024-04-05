@@ -594,12 +594,20 @@ body.capstone-project section.ui-style-intro {
     color: $dark-text-colour;
     min-width: 100%;
     padding: 2rem;
+
+    .mask {
+        width: fit-content;
+    }
+
+    p {
+        max-width: 30vw;
+    }
 }
 
 body.capstone-project section.lumi-transition {
     min-height: 50vh;
     p {
-        max-width: 50vw;
+        text-align: center;
     }
 }
 

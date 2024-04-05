@@ -1,13 +1,31 @@
 @include for-size(phone-only) {
   body.capstone-project {
+    overflow-x: hidden;
+    max-width: 100%;
+
     .mask {
         padding: 0 0 1rem 0;
+    }
+
+    .intro-paragraph, .problem-paragraph, .solution-paragraph {
+        font-size: 1.25rem;
     }
 
     // INTRO =====================
     section.intro {
         gap: 1rem;
     }
+
+    .section-wrapper {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    // .capstone-solution {
+    //     .feature-icon {
+    //         display: none;
+    //     }
+    // }
 
     .capstone-features {
 
@@ -29,11 +47,126 @@
             }
         }
 
-        .section.capstone-features section .compulsion-lopp {
+        .section.capstone-features section .compulsion-loop {
 
             .console-container {
                 min-width: 100%;
             }
+        }
+    }
+
+    .interviews-intro {
+        .interviews-intro-wrapper {
+            flex-flow: column;
+        }
+    }
+
+    .interviews-transition {
+        h2 {
+            text-align: left;
+            font-size: 1.75rem;
+        }
+    }
+
+    .interview-questions {
+        .question-wrapper {
+            max-width: 100%;
+
+            .question {
+                .card {
+                    align-items: self-start;
+                }
+            }
+
+            .answer {
+                align-items: flex-end;
+                flex-flow: column;
+            }
+        }
+    }
+
+    // ITERATIVE PROCESS =========
+    .iterative-process {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    // WIREFRAMES
+    .wireframes {
+        .text-container {
+            gap: 0.5rem;
+
+            .line {
+                max-width: 150px;
+            }
+        }
+    }
+
+    // ARTBOARDS
+    .artboards {
+        .text-container {
+            text-align: center;
+        }
+    }
+
+    // MOCKUPS
+    .mockups {
+        gap: 1rem;
+
+        .text-container {
+            gap: 0.5rem;
+
+            .mask {
+                padding: 0;
+            }
+
+            .line {
+                max-width: 150px;
+            }
+        }
+    }
+
+    .ui-style {
+        .inner-wrapper {
+            max-width: 100%;
+            padding: 1rem;
+            text-align: center;
+            .images-container {
+                flex-flow: row wrap;
+            }
+        }
+
+        .inner-wrapper:nth-child(2) {
+            .images-container{
+                max-width: 100%;
+
+                .mask {
+                    @include display-flex(row);
+                    max-width: 100%;
+                    gap: 0.5rem;
+                    overflow-x: hidden;
+                }
+            }
+
+            .text-container {
+                p {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .lumi-intro {
+            .images-container .mask {
+                width: 100vw !important;
+                height: 19vh !important;
+            }
+        }
+    }
+
+    .lumi-sketches {
+        .sketch-one, .sketch-two, .sketch-three, .lumi-vectorized {
+            @include display-flex;
         }
     }
   }

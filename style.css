@@ -2264,12 +2264,18 @@ body.capstone-project section.ui-style-intro {
   min-width: 100%;
   padding: 2rem;
 }
+.lumi-transition .mask, .lumi-sketches .mask {
+  width: fit-content;
+}
+.lumi-transition p, .lumi-sketches p {
+  max-width: 30vw;
+}
 
 body.capstone-project section.lumi-transition {
   min-height: 50vh;
 }
 body.capstone-project section.lumi-transition p {
-  max-width: 50vw;
+  text-align: center;
 }
 
 .lumi-sketches {
@@ -2366,11 +2372,22 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
 }
 
 @media screen and (max-width: 450px) {
+  body.capstone-project {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   body.capstone-project .mask {
     padding: 0 0 1rem 0;
   }
+  body.capstone-project .intro-paragraph, body.capstone-project .problem-paragraph, body.capstone-project .solution-paragraph {
+    font-size: 1.25rem;
+  }
   body.capstone-project section.intro {
     gap: 1rem;
+  }
+  body.capstone-project .section-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
   }
   body.capstone-project .capstone-features .feature {
     flex-flow: column;
@@ -2384,8 +2401,82 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
   body.capstone-project .capstone-features .feature .feature-screens-container .mask img {
     width: 50vw;
   }
-  body.capstone-project .capstone-features .section.capstone-features section .compulsion-lopp .console-container {
+  body.capstone-project .capstone-features .section.capstone-features section .compulsion-loop .console-container {
     min-width: 100%;
+  }
+  body.capstone-project .interviews-intro .interviews-intro-wrapper {
+    flex-flow: column;
+  }
+  body.capstone-project .interviews-transition h2 {
+    text-align: left;
+    font-size: 1.75rem;
+  }
+  body.capstone-project .interview-questions .question-wrapper {
+    max-width: 100%;
+  }
+  body.capstone-project .interview-questions .question-wrapper .question .card {
+    align-items: self-start;
+  }
+  body.capstone-project .interview-questions .question-wrapper .answer {
+    align-items: flex-end;
+    flex-flow: column;
+  }
+  body.capstone-project .iterative-process h1 {
+    text-align: center;
+  }
+  body.capstone-project .wireframes .text-container {
+    gap: 0.5rem;
+  }
+  body.capstone-project .wireframes .text-container .line {
+    max-width: 150px;
+  }
+  body.capstone-project .artboards .text-container {
+    text-align: center;
+  }
+  body.capstone-project .mockups {
+    gap: 1rem;
+  }
+  body.capstone-project .mockups .text-container {
+    gap: 0.5rem;
+  }
+  body.capstone-project .mockups .text-container .mask {
+    padding: 0;
+  }
+  body.capstone-project .mockups .text-container .line {
+    max-width: 150px;
+  }
+  body.capstone-project .ui-style .inner-wrapper {
+    max-width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+  body.capstone-project .ui-style .inner-wrapper .images-container {
+    flex-flow: row wrap;
+  }
+  body.capstone-project .ui-style .inner-wrapper:nth-child(2) .images-container {
+    max-width: 100%;
+  }
+  body.capstone-project .ui-style .inner-wrapper:nth-child(2) .images-container .mask {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    gap: 0.5rem;
+    overflow-x: hidden;
+  }
+  body.capstone-project .ui-style .inner-wrapper:nth-child(2) .text-container p {
+    padding: 1rem;
+  }
+  body.capstone-project .ui-style .lumi-intro .images-container .mask {
+    width: 100vw !important;
+    height: 19vh !important;
+  }
+  body.capstone-project .lumi-sketches .sketch-one, body.capstone-project .lumi-sketches .sketch-two, body.capstone-project .lumi-sketches .sketch-three, body.capstone-project .lumi-sketches .lumi-vectorized {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
   }
 }
 body.about-me {

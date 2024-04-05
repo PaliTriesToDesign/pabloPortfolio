@@ -64,7 +64,7 @@ const questionTl = gsap.timeline({
         start: '30% center',
         end: '80% center',
         toggleActions: 'play none none none',
-        markers: true
+        markers: false
     }
 })
 
