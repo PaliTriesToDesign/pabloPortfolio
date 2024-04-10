@@ -2503,6 +2503,37 @@ body.about-me .console-container {
   min-width: 22rem;
   max-width: 22rem;
 }
+@media screen and (max-width: 450px) {
+  body.about-me .console-container .bottom-bar-container {
+    position: relative;
+    bottom: 0;
+    justify-content: space-between;
+    filter: none;
+    padding-top: 0.5rem;
+    align-items: center;
+  }
+  body.about-me .console-container .bottom-bar-container > * {
+    padding: 0;
+    opacity: 0.75;
+  }
+  body.about-me .console-container .bottom-bar-container .mobile-author {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+  }
+  body.about-me .console-container .desktop-author {
+    display: none;
+  }
+}
+@media screen and (min-width: 451px) {
+  body.about-me .console-container .bottom-bar-container .desktop-author {
+    display: block;
+  }
+  body.about-me .console-container .bottom-bar-container .mobile-author {
+    display: none;
+  }
+}
 body.about-me .console-container .images-container {
   position: relative;
   border-radius: 0.5rem;
