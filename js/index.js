@@ -211,8 +211,8 @@ nameButton.addEventListener('click', function() {
     window.addEventListener('scroll', updateStageTitle)
 
     // MUTE=======================
-     mute.addEventListener('click', toggleMute);
-    document.addEventListener('load', roomTone);
+    //  mute.addEventListener('click', toggleMute);
+    // document.addEventListener('load', roomTone);
 
 // END OF PROGRESS BAR=================
 
@@ -291,6 +291,8 @@ earthSlideOutTl
 // END OF EARTH CURVATURE=========
 
 // PROJECTS========================
+
+
 const projectsTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#projects",
