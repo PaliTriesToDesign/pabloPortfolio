@@ -841,10 +841,18 @@ button, .launch-project-button, #submitButton {
     align-items: center;
     gap: 1rem;
     position: absolute;
-    top: 100%;
+    top: 0%;
+    height: 100%;
+  }
+  #projects #project .project-container .project-images .mask {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
   #projects #project .project-container .project-images img {
-    width: 30%;
+    width: 40%;
   }
 }
 .iterative-process .mask {

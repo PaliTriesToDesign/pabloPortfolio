@@ -328,7 +328,8 @@ const projectOneTl = gsap.timeline({
 })
 
 projectOneTl
-  .to('.main-mask .project-images', {
+  .to('.main-mask .project-images .mask img', {
+    y: 230,
     bottom: '-20%',
   })
   .to('.main-mask', {

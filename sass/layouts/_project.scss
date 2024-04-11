@@ -172,11 +172,17 @@
                     @include display-flex(row, center, center);
                     gap: 1rem;
                     position: absolute;
-                    top: 100%;
+                    top: 0%;
+                    height: 100%;
+
+                    .mask {
+                        @include display-flex(row);
+                        gap: 1rem;
+                    }
     
                     img {
                         // width: 9vw;
-                        width: 30%;
+                        width: 40%;
                     }
                 
                 }
