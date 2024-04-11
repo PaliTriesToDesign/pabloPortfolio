@@ -21,11 +21,20 @@
         overflow-x: hidden;
     }
 
-    // .capstone-solution {
-    //     .feature-icon {
-    //         display: none;
-    //     }
-    // }
+    .capstone-solution {
+        .mobile-features-icons {
+            @include display-flex(row, space-between, center);
+            width: 100%;
+
+            img {
+                width: 2.5rem;
+            }
+        }
+
+        .feature-icon {
+            display: none;
+        }
+    }
 
     .capstone-features {
 
@@ -74,7 +83,13 @@
 
             .question {
                 .card {
+                    @include drop-shadow;
+                    background-color: $background-colour;
+                    color: $dark-text-colour;
+                    padding: 1rem;
+                    border-radius: 1rem;
                     align-items: self-start;
+                    gap: 1rem;
                 }
             }
 
@@ -101,6 +116,19 @@
                 max-width: 150px;
             }
         }
+
+        .images-container {
+            @include display-flex(row, center, center);
+            justify-content: center;
+            align-content: center;
+            overflow-x: scroll;
+            margin: 1rem;
+            
+            img {
+                transform: translateX(100%);
+                width: 55%;
+            }
+        }
     }
 
     // ARTBOARDS
@@ -125,10 +153,24 @@
                 max-width: 150px;
             }
         }
+
+        .images-container {
+            @include display-flex(row, center, center);
+            justify-content: center;
+            align-content: center;
+            overflow-x: scroll;
+            margin: 1rem;
+            
+            img {
+                transform: translateX(430%);
+                width: 55%;
+            }
+        }
     }
 
     .ui-style {
         .inner-wrapper {
+            flex-flow: column;
             max-width: 100%;
             padding: 1rem;
             text-align: center;
@@ -138,7 +180,7 @@
         }
 
         .inner-wrapper:nth-child(2) {
-            .images-container{
+            .images-container {
                 max-width: 100%;
 
                 .mask {
@@ -159,14 +201,36 @@
         .lumi-intro {
             .images-container .mask {
                 width: 100vw !important;
-                height: 19vh !important;
+                height: 22vh !important;
+            }
+        }
+    }
+
+    // LUMI TRANSITION
+    .lumi-transition, .lumi-sketches {
+        .mask {
+            padding: 1rem;
+            width: 100vw;
+
+            p {
+                max-width: 100%;
             }
         }
     }
 
     .lumi-sketches {
+        .mask-wrapper {
+            max-width: 100%;
+
+            .mask {
+                max-width: 100%;
+            }
+        }
+
         .sketch-one, .sketch-two, .sketch-three, .lumi-vectorized {
             @include display-flex;
+            max-width: 100%;
+            gap: 1rem;
         }
     }
   }

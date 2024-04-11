@@ -124,7 +124,7 @@ const solutionTl = gsap.timeline({
 })
 
 solutionTl
-    .to(['.capstone-solution h1', '.solution-paragraph'], {
+    .to(['.capstone-solution h1', '.solution-paragraph', '.capstone-solution .mobile-features-icons'], {
         duration: 2,
         opacity: 1,
         y: 0,

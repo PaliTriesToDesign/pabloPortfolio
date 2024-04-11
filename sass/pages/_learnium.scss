@@ -122,6 +122,10 @@ body.capstone-project section {
 .capstone-solution{ 
     position: relative;
 
+    .mobile-features-icons {
+        display: none;
+    }
+
     .solution-inner-container {
         display: flex;
         flex-flow: column;

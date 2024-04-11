@@ -1844,6 +1844,9 @@ body.capstone-project section {
 .capstone-solution {
   position: relative;
 }
+.capstone-solution .mobile-features-icons {
+  display: none;
+}
 .capstone-solution .solution-inner-container {
   display: flex;
   flex-flow: column;
@@ -2406,6 +2409,19 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
     max-width: 100%;
     overflow-x: hidden;
   }
+  body.capstone-project .capstone-solution .mobile-features-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  body.capstone-project .capstone-solution .mobile-features-icons img {
+    width: 2.5rem;
+  }
+  body.capstone-project .capstone-solution .feature-icon {
+    display: none;
+  }
   body.capstone-project .capstone-features .feature {
     flex-flow: column;
     align-items: start;
@@ -2432,7 +2448,13 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
     max-width: 100%;
   }
   body.capstone-project .interview-questions .question-wrapper .question .card {
+    box-shadow: 0px 6px 0px 0px #C8C8C8;
+    background-color: #FFFFFF;
+    color: #383838;
+    padding: 1rem;
+    border-radius: 1rem;
     align-items: self-start;
+    gap: 1rem;
   }
   body.capstone-project .interview-questions .question-wrapper .answer {
     align-items: flex-end;
@@ -2446,6 +2468,20 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
   }
   body.capstone-project .wireframes .text-container .line {
     max-width: 150px;
+  }
+  body.capstone-project .wireframes .images-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    overflow-x: scroll;
+    margin: 1rem;
+  }
+  body.capstone-project .wireframes .images-container img {
+    transform: translateX(100%);
+    width: 55%;
   }
   body.capstone-project .artboards .text-container {
     text-align: center;
@@ -2462,7 +2498,22 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
   body.capstone-project .mockups .text-container .line {
     max-width: 150px;
   }
+  body.capstone-project .mockups .images-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    overflow-x: scroll;
+    margin: 1rem;
+  }
+  body.capstone-project .mockups .images-container img {
+    transform: translateX(430%);
+    width: 55%;
+  }
   body.capstone-project .ui-style .inner-wrapper {
+    flex-flow: column;
     max-width: 100%;
     padding: 1rem;
     text-align: center;
@@ -2487,13 +2538,28 @@ body.capstone-project section.learnium-outro .visit-website a:hover {
   }
   body.capstone-project .ui-style .lumi-intro .images-container .mask {
     width: 100vw !important;
-    height: 19vh !important;
+    height: 22vh !important;
+  }
+  body.capstone-project .lumi-transition .mask, body.capstone-project .lumi-sketches .mask {
+    padding: 1rem;
+    width: 100vw;
+  }
+  body.capstone-project .lumi-transition .mask p, body.capstone-project .lumi-sketches .mask p {
+    max-width: 100%;
+  }
+  body.capstone-project .lumi-sketches .mask-wrapper {
+    max-width: 100%;
+  }
+  body.capstone-project .lumi-sketches .mask-wrapper .mask {
+    max-width: 100%;
   }
   body.capstone-project .lumi-sketches .sketch-one, body.capstone-project .lumi-sketches .sketch-two, body.capstone-project .lumi-sketches .sketch-three, body.capstone-project .lumi-sketches .lumi-vectorized {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    gap: 1rem;
   }
 }
 body.about-me {
