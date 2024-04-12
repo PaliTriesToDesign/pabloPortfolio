@@ -123,9 +123,13 @@ function starshipRotating() {
       booster.classList.add('rotating');
       
       isStarshipOn = true;
-      if(isSeparated === false && isStarshipOn === true && isLoaderOnScreen === false) {
+      if(isSeparated === false && isStarshipOn === true) {
         appendBoosterFire();
       }
+      // isStarshipOn = true;
+      // if(isSeparated === false && isStarshipOn === true && isLoaderOnScreen === false) {
+      //   appendBoosterFire();
+      // }
     } else {
       starship.classList.remove('rotating');
       booster.classList.remove('rotating');

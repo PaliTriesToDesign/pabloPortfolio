@@ -1737,34 +1737,64 @@ body.home {
   overflow-x: hidden;
 }
 
-.scroll-up-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #111111;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: #FFFFFF;
-  filter: drop-shadow(0px 4px 0px #C8C8C8);
-  animation: fade 1200ms steps(1) infinite;
-  position: absolute;
-  bottom: 65%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-}
-.scroll-up-section i {
-  font-size: 1.25rem;
-}
-@keyframes fade {
-  0% {
-    opacity: 0;
+@media screen and (max-width: 450px) {
+  .scroll-up-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0px 4px 0px #C8C8C8);
+    animation: fade 1200ms steps(1) infinite;
+    position: absolute;
+    bottom: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
   }
-  50% {
-    opacity: 1;
+  .scroll-up-section i {
+    font-size: 1.25rem;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 }
-
+@media screen and (min-width: 451px) {
+  .scroll-up-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0px 4px 0px #C8C8C8);
+    animation: fade 1200ms steps(1) infinite;
+    position: absolute;
+    bottom: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  .scroll-up-section i {
+    font-size: 1.25rem;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
 /*END OF LIFT OFF SECTION==========*/
 *, *::before, *::after {
   margin: 0;
