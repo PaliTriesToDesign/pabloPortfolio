@@ -190,10 +190,10 @@ body.home {
             animation: fade 1200ms steps(1) infinite;
         
             position: absolute;
-            bottom: 80%;
+            bottom: 15%;
             left: 50%;
             transform: translateX(-50%);
-            z-index: -1;
+            z-index: 1;
         
             i {
                 font-size: 1.25rem;
