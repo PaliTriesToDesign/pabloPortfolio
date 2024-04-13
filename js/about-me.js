@@ -116,7 +116,7 @@ function turnOn(){
         backgroundColor: '#87FFC5',    
     })
     consoleImage.style.backgroundImage = 'url(../assets/aboutMe/pablo.webp)';
-    consoleText.innerHTML = `<p>Hey there I'm just a guy who loves <b>illustrating</b>, <b>designing</b> and <b>coding</b>. I enjoy taking <b>inspiring ideas</b> and bringing them to life in my projects.</p>`;
+    consoleText.innerHTML = `<p>Hey there! I'm just a guy who loves <b>illustrating</b>, <b>designing</b> and <b>coding</b>. I enjoy taking <b>inspiring ideas</b> and bringing them to life in my projects.</p>`;
 }
 
 function turnOff(){
