@@ -100,24 +100,8 @@ section {
 
 /*PROJECTS SECTION================*/
 .projects-section {
-    max-width: unset;
-    // opacity: 0;
-
-    .section-wrapper {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 2rem;
-
-        padding: 2rem 0;
-        border-radius: 1rem;
-        background-color: $background-colour;
-
-        .section-content-wrapper {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-
-        }
+    .mask {
+        padding: 1rem
     }
 }
 /*END OF PROJECTS SECTION================*/

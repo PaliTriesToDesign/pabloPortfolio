@@ -232,10 +232,10 @@ nameButton.addEventListener('click', function() {
 const aboutMeTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#about-me",
-    start: "top top",
+    start: "center top",
     end: "top top",
     toggleActions: "none none play none",
-    markers: false
+    markers: true
   },
   defaults: {
     ease: 'elastic.out(0.15, 0.3)',
@@ -300,8 +300,8 @@ earthSlideOutTl
 const projectsTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#projects",
-    start: "bottom+=10% center",
-    end: "bottom center",
+    start: "bottom+=20% center",
+    end: "top center",
     toggleActions: "none reverse play none",
     markers: false
   },
@@ -313,11 +313,17 @@ const projectsTl = gsap.timeline({
 
 projectsTl
   .to('.projects-mask h1', {
-    yPercent: -200
+    y: 0
   })
   .to('.projects-mask .projects-line', {
     width: '100%'
   }, '<')
+  .to('.projects-section .mask .project', {
+    y: 0,
+  })
+  .to(['.projects-mask h1', '.projects-mask .projects-line'], {
+    opacity: 0.25,
+  })
 
 projectsTl.reverse();
 
