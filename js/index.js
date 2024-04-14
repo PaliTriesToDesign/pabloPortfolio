@@ -235,7 +235,7 @@ const aboutMeTl = gsap.timeline({
     start: "center top",
     end: "top top",
     toggleActions: "none none play none",
-    markers: true
+    markers: false
   },
   defaults: {
     ease: 'elastic.out(0.15, 0.3)',
