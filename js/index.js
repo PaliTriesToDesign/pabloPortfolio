@@ -29,17 +29,10 @@ window.onbeforeunload = function () {
   window.scrollTo(0, document.body.scrollHeight);
 };
 
-// window.onload = roomTone();
-
 window.onload = function () {
   window.scrollTo(0, document.body.scrollHeight);
 }
 // END OF SCROLL TO THE BOTTOM
-
-
-// PROGRESS BAR==================
-const mute = document.getElementById('soundIcon');
-// const scrollUp = document.getElementById('scrollUp');
 
 // GET SCROLL PERCENTAGE==========
 window.addEventListener('scroll', getScrollPercentage);
@@ -80,10 +73,7 @@ function removeBoosterFire(){
 }
 //END OF CREATE FIRE ELEMENT======
 
-
-
 // STAGE SEPARATION===============
-
 function stageSeparation(){
 
     scrollPercentage  = getScrollPercentage();
