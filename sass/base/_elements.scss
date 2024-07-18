@@ -53,3 +53,27 @@ body:has(.starship-system:hover) .follower {
 
 }
 /*MASKS===========================*/
+
+/*CUSTOM CURSOR ==================*/
+.featured {
+    .cursor {
+        background-color: $darker-yellow-accent-colour;
+    }
+}
+.cursor {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100%;
+    background-color: $green-accent-colour;
+    scale: 1;
+    left:  -30px;
+    top:  -30px;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+/*END OF CUSTOM CURSOR ============*/

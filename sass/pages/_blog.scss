@@ -1,0 +1,87 @@
+body.blog {
+    @include display-flex(column, center);
+    position: relative;
+
+    background-color: #0b001c;
+    background-image: url(../../assets/world/bgRepeat-caseStudy.svg);
+    background-size: contain;
+    background-position: center;
+}
+
+.blog-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: max-content;
+    width: 60vw;
+    margin: 2rem;
+
+    .featured-post {
+        background-color: $darker-yellow-accent-colour;
+        color: $purple-accent-colour;
+        font-weight: bold;
+        padding: .25rem 0.5rem;
+        border-radius: 0.5rem
+    }
+
+    .post {
+        @include display-flex(column, space-between, flex-start);
+        @include card;
+        gap: 2rem;
+        padding: 2rem;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        & > * {
+            pointer-events: none;
+        }
+
+        .post-inner-container {
+            width: 100%;
+            @include display-flex(column, flex-end, flex-start);
+            height: 100%;
+            gap: 0.5rem;
+            
+            .post-title {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    a#postLink {
+        height: max-content;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        height: 100%;
+    }
+
+    .post:not(.featured) {
+        .post-inner-container {
+            height: 100%;
+            flex-flow: column;
+        }
+    }
+
+    a#postLink:nth-child(2) {
+        grid-column: 3/-1;
+        grid-row: 1/-1;
+    }
+
+    a#postLink:nth-child(3){
+        grid-column: 1/2;
+        grid-row: 2/3;
+        
+    }
+
+    a#postLink:nth-child(4){
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+

@@ -5,3 +5,12 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+// CARD
+@mixin card ($background: $background-colour, $colour: $dark-text-colour, $dropshadow: $drop-shadow-colour, $padding: 1rem){
+    background-color: $background;
+    color: $colour;
+    border-radius: 1rem;
+    padding: $padding;
+    box-shadow: 0px 4px 0px 0px $drop-shadow-colour;
+}
