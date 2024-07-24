@@ -1,0 +1,243 @@
+:root {
+    --background-color: hsl(0, 0%, 13%);
+    --cell-color-hover: #72ff89;
+    --cell-color: #fff;
+    // --cell-size: 50px;
+    --cell-size: 100%;
+    --num-of-cols: 40;
+    --num-of-rows: 40;
+    --tile-clip-path: polygon(5% 0%, 100% 0%, 100% 85%, 95% 100%, 0 100%, 0% 15%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body.post {
+    @include display-flex(column, flex-start, center);
+    gap: 4rem;
+    background-color: #0b001c;
+    color: $background-colour;
+    background-image: url(../../assets/world/bgRepeat-caseStudy.svg);
+    background-size: contain;
+    background-position: center;
+    width: 100vw;
+
+    main.main-section {
+        @include display-flex(column, flex-start, flex-start);
+        height: 85vh;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 10px solid $background-colour;
+    }
+}
+
+// GRID ==========================
+.title-arrow-container {
+    @include display-flex;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: blinking 1600ms infinite;
+    pointer-events: none;
+
+    p {
+        opacity: 0.2;
+    }
+}
+
+#gridContainer {
+    --grid-size: 120rem;
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    align-content: start;
+    width: fit-content;
+    background-color: var(--background-color);
+    min-height: var(--grid-size);
+    width: var(--grid-size);
+    overflow: hidden;
+}
+
+.cell {
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: 1px solid var(--cell-color-hover);
+    opacity: .02;
+}
+
+.arrow {
+    color: $background-colour;
+    font-size: 1.5rem;
+}
+
+@keyframes blinking {
+    0% {
+       opacity: 1; 
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+// END OF GRID ===================
+
+// CONTENT =======================
+body.post {
+    @include for-size(phone-only){
+        #textDesktop {
+            display: none;
+        }
+
+        
+        #textMobile {
+            display: block;
+        }
+
+        section.content {
+            margin: 1rem;
+            width: 92%;
+        }
+
+        .bottom-nav-container {
+            width: 92%;
+        }
+    }
+}
+
+#textDesktop {
+    display: block;
+}
+
+#textMobile {
+    display: none;
+}
+
+section.content {
+    @include display-flex(column, flex-start, flex-start);
+    @include card;
+    gap: 2rem;
+    padding: 2rem;
+    width: 60%;
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+    
+    #title {
+        font-size: 4vw;
+    }
+
+    .steps-container {
+        .steps, .step {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        ol {
+            padding-left: 1.25rem;
+        }
+        a {
+            color: unset;
+        }
+    }
+
+    .steps-extended {
+        width: 100%;
+        max-width: 100%;
+        
+        .step {
+            @include display-flex(column, flex-start, flex-start);            
+            gap: 1rem;
+            width: 100%;
+            max-width: 100%;
+
+            h2, h3 {
+                margin-top: 2rem;
+            }
+
+            .code-wrapper {
+                display: flex;
+                flex-flow: column;
+                width: 100%;
+                gap: 1rem;
+            }
+        }
+
+        .partial-result-container {
+            @include display-flex(column, flex-start, flex-start);
+            gap: 1rem;
+            max-width: 100%;
+            margin: 4rem 0;
+
+            .partial-wrapper {
+                @include display-flex(column, center, center);
+                border-radius: .5rem;
+                width: 100%;
+                overflow: hidden;
+                text-align: center;
+            }
+            
+            .partial-result {
+                --size: 60vw;
+                display: grid;
+                grid-template-columns: repeat(20, 1fr);
+                grid-template-rows: repeat(20, 1fr);
+                background-color: $dark-text-colour;
+                width: var(--size);
+                height: var(--size);
+                border-radius: .5rem;
+
+                .cell:hover {
+                    border: 1px solid #72ff89;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .matrix-example {
+        display: grid;
+        grid-template-columns: repeat(3, 40px);
+        grid-template-rows: repeat(3, 40px);
+        gap: .5rem;
+        background-color: $dark-text-colour;
+        width: fit-content;
+        padding: 1rem;
+        border-radius: .5rem;
+        align-self: center;
+
+        &:has(.center:hover) .matrix-cell:not(.matrix-cell.center) {
+            background-color: #72ff89;
+            border: none;
+            color: $dark-text-colour;
+        }
+
+        .matrix-cell {
+            @include display-flex();
+            --size: 100%;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 0.25rem;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;            
+        }
+
+        & + p {
+            align-self: center;
+            text-align: center;
+        }
+    }
+
+    .p-important {
+        font-weight: bold;
+    }
+    // end of .steps-extended
+}
+// END OF CONTENT ================

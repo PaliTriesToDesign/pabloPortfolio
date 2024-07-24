@@ -1,0 +1,29 @@
+.tooltip {
+    position: absolute;
+    background-color: $green-accent-colour;
+    color: $dark-text-colour;
+    border-radius: .25rem;
+    left: 20%;
+    top: -50%;
+    padding: .25rem .5rem;
+    pointer-events: none;
+
+
+    p {
+        width: max-content;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: $green-accent-colour;
+        left: 50%;
+        bottom: -30%;
+        rotate: 45deg;
+        transform: translate(-50%, -50%);
+    }
+}

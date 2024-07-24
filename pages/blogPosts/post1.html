@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="../assets/branding/LogoFill.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css" integrity="sha512-5HvW0a7ihK3ro2KhwEksDHXgIezsTeZybZDIn8d8Y015Ny+t7QWSIjnlCTjFzlK7Klb604HLGjsNqU/i5mJLjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="../../js/blogPosts/blog-post-1.js" defer></script>
+</head>
+<body class="post post-1">
+    <main id="top" class="main-section">
+        <div id="gridContainer" class="grid-container"></div>
+        <div class="title-arrow-container">
+            <p id="textDesktop">Mover your cursor around</p>
+            <p id="textMobile">Tap on any cell</p>
+        </div>
+    </main>
+    <section class="content">
+        <h1 id="title">How to create a Background Grid Hover&nbsp;Effect</h1>
+        <p>So a few days ago, I was just browsing the web and I came across this website <a href="https://www.neoculturalcouture.com/" target="_blank">Neo Cultural Couture</a> and thought it was really cool. After exploring it a little bit, I went like, "Oh, that grid effect looks cool, and I BELIEVE I can reproduce it," so I closed all my tabs and started working on it.</p>
+        <p>When I take on a challenge like this, I believe that observing carefully what elements are interacting and breaking it down into smaller steps is key to being able to complete a project. So here's how I did it:</p>
+        <div class="steps-container">
+            <p class="steps">Steps</p>
+            <ol>
+                <li class="step"><a href="#creatingAGrid">Creating a Grid</a></li>
+                <ol>
+                    <li><a href="#amountOfCells">Amount of cells</a></li>
+                </ol>
+                <li class="step"><a href="#hoverEffect">Hover Effect</a></li>
+                <ol>
+                    <li><a href="#hoveredCell">Lighting up a hovered cell</a></li>
+                    <li><a href="#surroundingCells">Lighting up surrounding cells</a></li>
+                </ol>
+                <li class="step"><a href="#hoverMatrix">Hover Matrix</a></li>
+                <ol>
+                    <li><a href="#randNum">Random number of cells</a></li>
+                    <li><a href="#randPos">Random cells' positions</a></li>
+                </ol>
+                <li class="step"><a href="#finalDetails">Final Details &nbsp; using GSAP</a></li>
+            </ol>
+        </div>
+        
+        <div class="steps-extended">
+            <div class="step step-1">
+                <h2 id="creatingAGrid">1. Creating a Grid</h2>
+                <p>First things first, we need a grid. For now, we will only create an HTML container as we are creating each cell using JavaScript for reasons that will become clear later.</p>
+
+                <div class="code-wrapper">
+                    <!-- Code snippet -->
+                    <div class="code-container">
+                        <div class="code-container-top">
+                            <div class="circles-container">
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                            </div>
+                        </div>
+                        <div class="code-container-bottom">
+                            <pre class="language-markup">
+<code class="language-markup">&lt;body&gt;
+    &lt;div id=&quot;gridContainer&quot;&gt;&lt;/div&gt;
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;!-- This is all we need so far --&gt;</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <!-- End of code snippet -->
+
+                    <p>We will also use CSS to style our grid and to create a class that will come in handy when we generate our cell elements. <br><br>
+                    One of the tricky parts of this project is ensuring that the cells span horizontally and vertically across the whole window while preserving a perfect square shape. <br><br>
+                    However, most modern digital displays have an aspect ratio of 16:9, meaning that for every 16 units wide, they have 9 units of height. I could be wrong, but in my head, that means we won't be able to have a grid that perfectly fits all of its rows and columns within the window viewport if we want to keep perfect squares rather than rectangles (remember the 16:9 ratio). In other words, the grid will overflow either horizontally or vertically (up to us), but the good news is that we can hide whatever overflows. <br><br>
+                    With that in mind, we can choose how many columns and rows we want, each taking up a fraction of the available space (e.g., 50 columns, 50 rows).
+                </p>
+
+                    <!-- Code snippet -->
+                    <div class="code-container">
+                        <div class="code-container-top">
+                            <div class="circles-container">
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                            </div>
+                        </div>
+                        <div class="code-container-bottom">
+                            <pre class="language-css">
+<code class="language-css">#gridContainer {
+    /*This size ensures the grid overflows the users' viewport*/
+    --grid-size: 120rem;
+    display: grid;
+
+    /*A 120rem x 120rem grid divided into 50 cols and 50 rows*/
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    align-content: start;
+    width: fit-content;
+    background-color: hsl(0, 0%, 10%);
+
+    /*Height: 120rem, Width: 120rem*/
+    min-height: var(--grid-size);
+    width: var(--grid-size);
+    overflow: hidden;
+}
+.cell {
+    /*The cells will take up all the space available 
+    from its parent, the grid*/
+    --cell-size: 100%;
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: 1px solid #72ff89;
+    opacity: .02;
+}</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <!-- End of code snippet -->
+                </div>
+
+                <h3 id="amountOfCells">1.1 Amount of Cells</h3>
+                <p>The reason we are not creating individual &lt;div&gt; elements for each cell is that depending on their size (or the grid size), we could need hundreds of them. Imagine creating them one by one and then having to update or fix something—what a nightmare, right? Instead, we’ll generate these cells dynamically using JavaScript, which will make it easier to manage and update them as needed.  <br><br>
+                So, we will select our grid element with JavaScript, then create a grid object with the number of columns and rows that we need. Based on those numbers, we will calculate the total amount of cells that we will generate (columns times rows). Finally, using a simple "for" loop, we will create each &lt;div&gt; element, add the ".cell" class to them, append them to our grid element, and push each cell inside an array so we have somewhere to store them.</p>
+
+                <!-- Code snippet -->
+                <div class="code-container">
+                    <div class="code-container-top">
+                        <div class="circles-container">
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                        </div>
+                    </div>
+                    <div class="code-container-bottom">
+                        <pre class="language-js">
+<code class="language-js">const gridContainer = document.getElementById('gridContainer');
+const grid = {
+    columns: 50
+    rows: 27,
+    /*As I said before, the grid will overflow,
+    so we don't need to fill it up completely;
+    hence only 27 rows.*/
+}
+
+let cellELement;
+let cellsArr = [];
+
+let totalCells = grid.rows * grid.columns;
+
+for(let i = 0; i <= totalCells; i++){
+    cellELement = document.createElement('div');
+    cellELement.classList.add('cell');
+    cellELement.id = `cell-${i}`;
+    gridContainer.appendChild(cellELement);
+    cellsArr.push(cellELement);
+};</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- End of code snippet -->
+            </div>
+            <!-- End of Step 1 -->
+
+            <!-- Step 2 -->
+            <div class="step step-2">
+                <h2 id="hoverEffect">2. Hover Effect</h2>
+                <p>Now that we have a grid with hundreds of cells in it, we can finally create a hover state for each cell. Let's do it!</p>
+                <h3 id="hoveredCell">2.1 Lighting up a hovered cell</h3>
+                <p>Adding the hover state is pretty straightforward. It updates the cell's border color and opacity.</p>
+
+                <!-- Code snippet -->
+                    <div class="code-container">
+                        <div class="code-container-top">
+                            <div class="circles-container">
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                                <div class="circle-shape"></div>
+                            </div>
+                        </div>
+                        <div class="code-container-bottom">
+                            <pre class="language-css">
+<code class="language-css">.cell {
+    --cell-size: 100%;
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: 1px solid #72ff89;
+    opacity: .02;
+}
+.cell:hover {
+    border: 1px solid #72ff89;
+    opacity: 1;
+}</code>
+                            </pre>
+                        </div>
+                    </div>
+                <!-- End of code snippet -->
+            </div>
+            <!-- End of Step 2 -->
+
+            <!-- partial solution -->
+            <div class="partial-result-container">
+                <h3>Partial Result</h3>
+                <p>We have created an HTML container, generated some cells with JavaScript, and injected them into our container after adding just one CSS class. At this stage, we should have something similar to this:</p>
+                <div class="partial-wrapper">
+                    <div id="partialResult1" class="partial-result"></div>
+                </div>
+                <p>This is fun and all, but there's a catch. We don't want to light up the cell we are hovering over; we want to light up the surrounding cells. I'm sure a CSS master could come up with a CSS-only solution to this using advanced selectors; however, I went for a JavaScript approach. Here comes the 'headache'.</p>
+            </div>
+            <!-- partial solution -->
+
+
+            <!-- step2 -->
+            <div class="step step-2">
+                <h3 id="surroundingCells">2.2 Lighting up surrounding cells</h3>
+                <p>Now, as we want to light up the immediately surrounding cells of the cell we are currently hovering over, we can think of it as another grid (or matrix) of 3 columns by 3 rows. This is because we need to select the top-left (TL), top (T), top-right (TR), left (L), right (R), bottom-left (BL), bottom (B), and bottom-right (BR) cells, relative to the center, which is the cell being hovered over.</p>
+                <div class="matrix-example">
+                    <div class="matrix-cell">
+                        <p>TL</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>T</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>TR</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>L</p>
+                    </div>
+                    <div class="matrix-cell center">
+                        <p>C</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>R</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>BL</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>B</p>
+                    </div>
+                    <div class="matrix-cell">
+                        <p>BR</p>
+                    </div>
+                </div>
+                <p>Hover over or tap C (Center)</p>
+            </div>
+            <!--end of  step 2 -->
+
+            <!-- step 3 -->
+            <div class="step step-3">
+                <h2 id="hoverMatrix">3. Hover Matrix</h2>
+                <p>We already have the hover grid in our heads. Now let’s create it with JavaScript. <br><br>
+                To achieve this, we need to define a matrix that represents the relative positions of the cells surrounding the hovered cell. Here is how we can do it:</p>
+
+                <!-- Code snippet -->
+                <div class="code-container">
+                    <div class="code-container-top">
+                        <div class="circles-container">
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                        </div>
+                    </div>
+                    <div class="code-container-bottom">
+                        <pre class="language-js">
+<code class="language-js">const grid = {
+    columns: 50
+    rows: 27,
+}
+
+let cellHoverMatrix = [
+    -grid.columns - 1, -grid.columns, -grid.columns + 1,  // Top-left,      Top,    Top-right
+    -1,                  /* center */                +1,  // Left,          Center,     Right
+    +grid.columns - 1, +grid.columns, +grid.columns + 1   // Bottom-left, Bottom, Bottom-right
+];</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- End of code snippet -->
+
+                 <p class="p-important">Explanation:</p>
+                 <p>Let's start with the easy ones: "-1" and "+1". These two values select the cells directly to the left and right of the current cell, respectively. Now, if you want to move down to the next row, you need to add the total number of columns. This effectively takes you to the cell in the next row. That is why "+grid.columns" selects the cell directly below the current cell. <br><br>
+                This matrix allows us to calculate the positions of the cells surrounding the hovered cell. Using this matrix, we can dynamically select which cells to highlight based on their relative positions.</p>
+
+                <p>However, we don't want to light up all of the cells as that would be... you know... not so interesting. So we need to think about two more things:</p>
+
+                <h3 id="randNum">3.1 Random number of cells</h3>
+                <p>Each time we hover over a cell, there are 8 different surrounding cells that we can light up (out of 9 cells in a 3x3 grid, excluding the center cell we are hovering over). With that in mind, we can generate a random number from 1 to the length of our matrix array. </p>
+
+                <!-- Code snippet -->
+                <div class="code-container">
+                    <div class="code-container-top">
+                        <div class="circles-container">
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                        </div>
+                    </div>
+                    <div class="code-container-bottom">
+                        <pre class="language-js">
+<code class="language-js">/*Array of cells that we created at the beginning*/
+cellsArr.forEach((cell, index) => {
+    cell.addEventListener('mouseenter', () => {
+        let randNumOfCells = Math.floor(Math.random() * cellHoverMatrix.length) + 1;
+    });
+});</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- End of code snippet -->
+
+                 <p>We iterate through the "cellsArr" array that we created at the beginning using the "forEach" method. Then, we add a "mouseenter" event listener to each cell, which generates a random number each time the cursor enters a cell.</p>
+
+                <h3 id="randPos">3.2 Random cells' positions</h3>
+                <p>But now we need to do something with those random numbers that we are generating. Let’s say we hover over a cell and get the number 5. This means we want to light up 5 different surrounding cells. <br><br>
+                Which ones? To determine this, we use a for loop to randomly select positions in our matrix. We repeat this process as many times as the random number, which in this case is 5. By selecting random positions from our matrix array, we can dynamically choose which surrounding cells to highlight.</p>
+
+                <!-- Code snippet -->
+                <div class="code-container">
+                    <div class="code-container-top">
+                        <div class="circles-container">
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                        </div>
+                    </div>
+                    <div class="code-container-bottom">
+                        <pre class="language-js">
+<code class="language-js">/*Array of cells that we created at the beginning*/
+cellsArr.forEach((cell, index) => {
+    cell.addEventListener('mouseenter', () => {
+        let randNumOfCells = Math.floor(Math.random() * cellHoverMatrix.length) + 1;
+
+        for(let i = 0; i < randNumOfCells; i++){
+            let randMatrixPosition = Math.floor(Math.random() * cellHoverMatrix.length);
+
+            let targetIndex = index + cellHoverMatrix[randMatrixPosition];
+
+            partialArray2[targetIndex].style.opacity = '1';
+            setTimeout(() => {
+                partialArray2[targetIndex].style.opacity = '0.02';
+            }, 200);
+
+        };
+    });
+});</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- End of code snippet -->
+                 <p>We "highlight" the cells by increasing their opacity from 0.02 to 1. After 200 milliseconds, we revert those changes.</p>
+
+                <div class="partial-result-container">
+                    <h3>Partial Result</h3>
+                    <p>We have created an HTML container, generated some cells with JavaScript, and injected them into our container after adding just one CSS class. We also created a matrix that allows us to select different cell positions by generating a random number and selecting a random position relative to the hovered cell. For now, we have only changed the opacity of those cells. At this stage, we should have something similar to this:</p>
+                    <div class="partial-wrapper">
+                        <div id="partialResult2" class="partial-result"></div>
+                    </div>
+                    <p>We are almost there. Now the only thing we need to do is adjust the transitions using GSAP instead of directly changing the opacity with CSS. This allows us to create smoother and more customizable effects by adjusting various parameters.</p>
+                </div>
+                <!-- partial solution -->
+            </div>
+            <!-- end of step 3 -->
+
+            <!-- step 4 -->
+            <div class="step step-4">
+                <h2 id="finalDetails">4. Final Details using GSAP</h2>
+                <p>We can create a function that uses GSAP to animate the cell transitions. This function will handle the animation, allowing for smoother and more dynamic effects compared to using CSS alone.</p>
+
+                <!-- Code snippet -->
+                <div class="code-container">
+                    <div class="code-container-top">
+                        <div class="circles-container">
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                            <div class="circle-shape"></div>
+                        </div>
+                    </div>
+                    <div class="code-container-bottom">
+                        <pre class="language-js">
+<code class="language-js">/*Array of cells that we created at the beginning*/
+cellsArr.forEach((cell, index) => {
+    cell.addEventListener('mouseenter', () => {
+        let randNumOfCells = Math.floor(Math.random() * cellHoverMatrix.length) + 1;
+
+        for(let i = 0; i < randNumOfCells; i++){
+            let randMatrixPosition = Math.floor(Math.random() * cellHoverMatrix.length);
+
+            let targetIndex = index + cellHoverMatrix[randMatrixPosition];
+
+            /*Remove the previous lines of code and use this function*/
+            colorCell(cellsArr[targetIndex]);
+        };
+    });
+});
+
+function colorCell(cell){
+    gsap.to(cell, {
+        borderRadius: 8,
+        opacity: 0.5
+    });
+
+    gsap.to(cell, {
+        borderRadius: 0,
+        duration: 0.8,
+        ease: "power4.out",
+        opacity: .02,
+        delay: 0.35,
+    });
+};</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- End of code snippet -->
+
+                <p>You should now have something similar to what you saw at the beginning! I hope you found this project insightful and that it provided a useful learning experience. Feel free to share it with others who might benefit from it or find it interesting. Your feedback and contributions are always welcome. Happy coding and keep creating amazing things!</p>
+
+
+            <!-- end of step 4 -->
+        </div>        
+    </section>
+    
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-nav-container">
+        
+
+    </div>
+    <!-- End Of Bottom Bar -->
+
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-bar-container">
+        <div class="stage-container">
+            <a class="home-icon" href="../../index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>  
+            <div class="prev-next-container">
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <div class="blog">
+            <a href="../blog.html">
+                <i class="fa-regular fa-file-lines"></i>
+            </a>
+        </div>
+
+        <div class="social">
+            <a href="https://linkedin.com/in/palimv" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/PaliTriesToDesign" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <div class="back-to-top">
+            <a href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+        </div>
+    </div>
+    <!-- End Of Bottom Bar -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

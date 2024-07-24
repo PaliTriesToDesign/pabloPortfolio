@@ -1,41 +1,12 @@
-
-let date = new Date();
-let day = date.getDate();
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let month = months[date.getMonth()];
-let year = date.getFullYear();
+import { postsInfo } from "./posts-info.js";
 
 const posts = document.querySelectorAll(".post");
-const postsInfo = [{
-    id: null,
-    title: "",
-    datePublished: "2024-07-18",
-    nextPrevPosts: []
-}, {
-    id: null,
-    title: "",
-    datePublished: "2024-07-18",
-    nextPrevPosts: []
-},{
-    id: null,
-    title: "",
-    datePublished: "2024-07-18",
-    nextPrevPosts: []
-},{
-    id: null,
-    title: "",
-    datePublished: "2024-07-18",
-    nextPrevPosts: []
-}];
 const staggerAmount = 0.1;
 
 postsInfo.forEach((post, index) => {
     let id = index + 1;
     post.id = id;
-    post.title = `This is my first blog post! Test ${id}.`
-});
 
-postsInfo.forEach(post => {
     let prevId = post.id - 1;
     let nextId = post.id + 1;
 
@@ -46,11 +17,16 @@ postsInfo.forEach(post => {
     } else{
         post.nextPrevPosts.push({id: prevId}, {id: nextId});
     }
+
+    post.url = `blogPosts/post${index + 1}.html`;
 });
 
 posts.forEach((post, index) => {
+    // post.parentElement.setAttribute("href", postsInfo[index].url);
     const postTitle = post.querySelector(".post-title");
-    postTitle.textContent = postsInfo[index].title; 
+    const postDate = post.querySelector(".post-date");
+    postTitle.textContent = postsInfo[index].title;
+    postDate.textContent = postsInfo[index].datePublished;
 })
 
 function postMouseEnter(post){
@@ -60,6 +36,10 @@ function postMouseEnter(post){
         ease: "elastic.out(1,0.8)",
         duration: 1
     });
+    gsap.to(post.querySelector(".featured-post"), {
+        y: -5,
+        ease: "elastic.out(1,0.8)"
+    });
 }
 function postMouseLeave(post){
     gsap.to(post.querySelectorAll(".post-inner-container > *"), {
@@ -67,6 +47,10 @@ function postMouseLeave(post){
         stagger: staggerAmount,
         ease: "elastic.out(1,1)",
         duration: 2
+    });
+    gsap.to(post.querySelector(".featured-post"), {
+        y: 0,
+        ease: "elastic.out(1,0.8)"
     });
 }
 

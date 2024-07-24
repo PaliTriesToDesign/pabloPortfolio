@@ -57,7 +57,7 @@ body:has(.starship-system:hover) .follower {
 /*CUSTOM CURSOR ==================*/
 .featured {
     .cursor {
-        background-color: $darker-yellow-accent-colour;
+        background-color: $background-colour;
     }
 }
 .cursor {
@@ -65,7 +65,8 @@ body:has(.starship-system:hover) .follower {
     width: var(--size);
     height: var(--size);
     border-radius: 100%;
-    background-color: $green-accent-colour;
+    // background-color: $green-accent-colour;
+    background-color: $background-colour;
     scale: 1;
     left:  -30px;
     top:  -30px;
@@ -77,3 +78,67 @@ body:has(.starship-system:hover) .follower {
     z-index: 1;
 }
 /*END OF CUSTOM CURSOR ============*/
+
+/*CODE SNIPPETS ==================*/
+.code-container {
+    border-radius: 0.5rem;
+    background-color: #272822;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+
+    .code-container-top {
+        max-width: 100%;
+        padding: 1rem;
+        background-color: $dark-text-colour;
+        border-radius: .5rem .5rem 0rem 0rem;
+
+        .circles-container {
+            @include display-flex(row, flex-start, flex-start);
+            gap: 0.5rem;
+            height: 100%;
+            width: 100%;
+            
+            .circle-shape {
+                --size: 12px;
+                border-radius: 100%;
+                width: var(--size);
+                height: var(--size);
+
+                &:first-of-type {
+                    background-color: hsl(0, 80%, 60%);
+                }
+                &:nth-of-type(2) {
+                    background-color: hsl(50, 90%,60%);
+                }
+                &:last-of-type {
+                    background-color: hsl(100, 80%, 60%);
+                }
+            }
+        }
+    }
+
+    .code-container-bottom {
+        max-width: 100%;
+    }
+}
+/*END OF CODE SNIPPETS ===========*/
+
+/*BOTTOM BLOG NAV=================*/
+.bottom-nav-container {
+    @include display-flex(row, space-between, center);
+    width: 60%;
+    margin-bottom: 4rem;
+
+    .prev-next-container {
+        @include display-flex(row);
+        gap: 1rem;
+    }
+
+    i {
+        @include card;
+    }
+}
+/*END OF BOTTOM BLOG NAV==========*/
+

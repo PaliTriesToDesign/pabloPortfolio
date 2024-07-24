@@ -2,11 +2,28 @@
     .bottom-bar-container {
 
         .stage-container {
-
             .stage-inner {
                 display: none;
             }
         }
+
+        .blog {
+            display: none;
+            
+        }
+    }
+}
+
+@include for-size(tablet-portrait-up) {
+    .blog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        border-radius: 0.5rem;
+        background-color: $bar-colour;
+        font-size: 1.5rem;
     }
 }
 
@@ -15,17 +32,16 @@
     width: 100%;
     bottom: 2rem;
     z-index: 101;
-
     display: flex;
     justify-content: center;
     flex-flow: row nowrap;
     gap: 1rem;
-
     color: $contrast-colour;
-    filter: drop-shadow(0px 4px 0px $drop-shadow-colour);
-
-
     animation: 1600ms cubic-bezier(.47,1.64,.41,.8)  0s 1 slideInFromBottom;
+
+    // & > * {
+    //     filter: drop-shadow(0px 4px 0px $drop-shadow-colour);
+    // }
 
     @keyframes slideInFromBottom {
         0% {
@@ -50,6 +66,18 @@
 
     }
 
+    .prev-next-container {
+        @include display-flex(row);
+        gap: .5rem;
+        cursor: pointer;
+
+        & > * {
+            padding: 0.75rem;
+            border-radius: .25rem;
+            // border: 2px solid $dark-drop-shadow-colour;
+        }
+    }
+
     .altitude, .stage-inner {
         display: flex;
         align-items: center;
@@ -60,17 +88,23 @@
         background-color: $contrast-colour;
         border-radius: 4px;
         padding: 0.25rem 1rem;
+        pointer-events: none;
 
         min-width: 104px;
     }
 
-    .about-me-icon, .bar-icons {
+    .home-icon, .about-me-icon, .bar-icons {
         font-size: 1.5rem;
         padding: 0 0.5rem;
 
         &:hover {
             color: $purple-accent-colour;
         }
+    }
+
+    .blog {
+        padding: 0rem 1rem;
+        position: relative;
     }
 
     .social {
@@ -87,8 +121,6 @@
         padding: 1rem;
 
         &:hover {
-            background-color: $green-accent-colour;
-
             i {
                 transform: translateY(-2px);
             }
