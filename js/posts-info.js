@@ -1,7 +1,7 @@
 export const postsInfo = [
     {
         title: "Background Grid Hover Effect",
-        datePublished: "July 24rd, 2024",
+        datePublished: "July 24th, 2024",
         url: "",
         nextPrevPosts: []
     }, {
